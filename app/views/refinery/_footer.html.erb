@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-fixed-bottom navbar-bottom" role="navigation">
+  <div class="row">
+    <div class="logo-share col-md-3">
+      <h1 id='logo'>
+        <%= link_to Refinery::Core.site_name, refinery.root_path %>
+      </h1>
+    </div>
+    <div class="btn-group col-md-9 navbar-bottom-menu">
+      <a type="button" class="btn btn-default" href="/">首页</a>
+      <a type="button" class="btn btn-default">综合简介</a>
+      <a type="button" class="btn btn-default">参展商中心</a>
+      <a type="button" class="btn btn-default">买家中心</a>
+      <a type="button" class="btn btn-default">媒体中心</a>
+      <a type="button" class="btn btn-default">文化活动</a>
+    </div>
+  </div>
+  <div class="row copy-right">
+    <p>
+      <%= t('.copyright', :year => Time.now.year,
+                      :site_name => Refinery::Core.site_name) %>
+    </p>
+  </div>
+</nav>

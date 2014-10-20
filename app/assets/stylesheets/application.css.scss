@@ -1,0 +1,155 @@
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require refinery/formatting
+ *= require refinery/theme
+ *= require_self
+ //= require foundation_and_overrides
+ *= require_tree .
+ */
+
+
+body {
+  background: #DDD;
+  font-family: Verdana;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#body, #side_body {
+  float: left;
+  width: 45%;
+  background: white;
+  color: #333;
+  padding: 20px;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0px;
+  li {
+    float: left;
+    margin-right: 10px;
+    a {
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+    &.selected a, a:hover {
+      background: #CCC;
+    }
+  }
+}
+
+.carousel .carousel-inner .item .img-responsive{
+  max-width: 100%;
+  height: auto;
+}
+
+.allwidth {
+  width: 100% !important;
+}
+
+.card-holder {  
+  position: fixed;
+  width: 0px;
+  overflow: visible;
+  z-index: 100;
+  top: 80px;
+  left: 100%;
+}
+
+.card-wrapper {
+  display: inline-block;
+  float: left;
+  clear: both;
+}
+
+.card {
+  position: relative;
+  left: -32px;
+  width: 327px !important;
+  padding: 0px !important;
+  margin: 1px;  
+  x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+  background: rgb(30,30,30);
+  transition: all 0.3s ease-in-out 0.1s;
+  div {
+    margin: 0;
+  }
+  .bg-left {
+    height: 83px;
+  }
+}
+
+.card:hover {
+  position: relative;
+  left: -290px;
+  margin-left: -32px;
+  box-shadow: 
+    0 -8px 8px -8px rgba(0, 0, 0, 0.5),
+    0 8px 8px -8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-content {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.bg {
+  padding-top: 18px;
+  padding-left: 120px !important;
+}
+
+.bg-01 { background: rgb(164,55,90); }
+.bg-02 { background: rgb(83,13,41); }
+.bg-03 { background: rgb(65,102,176); }
+.bg-04 { background: rgb(11,31,63)}
+.bg-05 { background: rgb(113,144,66); }
+.bg-06 { background: rgb(47,64,26); }
+.bg-07 { background: rgb(213,70,13); }
+.bg-08 { background: rgb(161,53,18); }
+
+.navbar-bottom {
+  background-color: rgba(0,0,0,0.7)!important;
+  border: 0 !important;
+  .row {
+    max-width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .navbar-bottom-menu .btn {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    width: 200px;
+    height: 80px;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.5) inset;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-radius: 0;
+    font-size: 28px;
+    padding-top: 22px;
+  }
+}
+
+.copy-right {
+  background-color: rgb(47,143,218);
+  //height: 20px;
+}
