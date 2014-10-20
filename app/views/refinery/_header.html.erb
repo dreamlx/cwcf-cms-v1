@@ -1,17 +1,17 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container allwidth">
-
-  	<div class="col-md-12">
-  		<div class="col-md-2">
-  			<h1 id='logo'>
-	 			<%= link_to Refinery::Core.site_name, refinery.root_path %>
-			</h1>
-  		</div>
-  		<div class="col-md-10">
-			<h1 id='web-title'>
-				26th 中国深圳国际钟表展 WATCH & CLOCK FAIR.CHINA
-			</h1>
-		</div>
-  	</div>
+	<img src='<%= asset_path("top.png") %>' />
+  <div class="col-md-12 login-regist">
+    <div id="menu" class="col-md-1 login-menu">
+      <ul>
+        <li><a>登录</a></li>
+        <li><a>注册会员</a></li>
+      </ul>
+    </div>
+    <div class="col-md-2 input-group">
+      <input type="text" class="form-control">
+      <span class="input-group-btn">
+      <a class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></a>
+      </span>
+    </div> 
   </div>
 </nav>
