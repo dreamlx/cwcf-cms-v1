@@ -132,20 +132,25 @@ body {
     margin-left: 0px;
     margin-right: 0px;
   }
-  .navbar-bottom-menu .btn {
-    background: transparent;
-    border: 0;
-    color: #fff;
-    width: 200px;
-    height: 80px;
-    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.5) inset;
-    border-left: 1px solid rgba(255,255,255,0.3);
-    border-top: 0;
-    border-bottom: 0;
-    border-right: 0;
-    border-radius: 0;
-    font-size: 28px;
-    padding-top: 22px;
+  .navbar-bottom-menu {
+    min-width: 800px;
+    .btn {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      width: 15%;
+      height: 80px;
+      -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.5) inset;
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-top: 0;
+      border-bottom: 0;
+      border-right: 0;
+      border-radius: 0;
+      font-size: 28px;
+      padding-top: 22px;
+      overflow: hidden;
+      text-overflow:ellipsis;
+    }
   }
 }
 
