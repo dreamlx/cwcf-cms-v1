@@ -32,7 +32,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>展会信息</span>" +
                     "</div>" +
                     "</div>" +
@@ -43,7 +43,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>展品范围</span>" +
                     "</div>" +
                     "</div>" +
@@ -54,7 +54,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>生活指南</span>" +
                     "</div>" +
                     "</div>" +
@@ -65,7 +65,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>历届回顾</span>" +
                     "</div>" +
                     "</div>" +
@@ -76,7 +76,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     " <div class='bg-left bg-05 col-md-1'>" +
                     " </div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>合作伙伴</span>" +
                     "</div>" +
                     "</div>" +
@@ -87,7 +87,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>联系我们</span>" +
                     "</div>" +
                     "</div>" +
@@ -95,11 +95,11 @@ $(function () {
                     " </div>";
             } else if (url_first_page === "partners") {
                 append_str = "<div class='card-wrapper'>" +
-                    "<a href='/news/infomation'>" +
+                    "<a href='/partners/gallery'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>展区划分</span>" +
                     "</div>" +
                     "</div>" +
@@ -110,7 +110,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>参展流程</span>" +
                     "</div>" +
                     "</div>" +
@@ -121,7 +121,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>展商查询</span>" +
                     "</div>" +
                     "</div>" +
@@ -132,7 +132,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>广告合作</span>" +
                     "</div>" +
                     "</div>" +
@@ -143,7 +143,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-05 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>资料下载</span>" +
                     "</div>" +
                     "</div>" +
@@ -154,7 +154,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>申请参展</span>" +
                     "</div>" +
                     "</div>" +
@@ -166,7 +166,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>观众预登记</span>" +
                     "</div>" +
                     "</div>" +
@@ -177,7 +177,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>VIP买家俱乐部</span>" +
                     "</div>" +
                     "</div>" +
@@ -188,7 +188,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>晶品荟（贵宾专享）</span>" +
                     "</div>" +
                     "</div>" +
@@ -199,7 +199,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>生活指南</span>" +
                     "</div>" +
                     "</div>" +
@@ -211,7 +211,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>CWCF新闻发布</span>" +
                     "</div>" +
                     "</div>" +
@@ -222,7 +222,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>媒体新闻报道</span>" +
                     "</div>" +
                     "</div>" +
@@ -233,7 +233,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>展会图片集锦</span>" +
                     "</div>" +
                     "</div>" +
@@ -244,7 +244,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>合作媒体</span>" +
                     "</div>" +
                     "</div>" +
@@ -255,7 +255,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-05 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>记者证申请</span>" +
                     "</div>" +
                     "</div>" +
@@ -266,7 +266,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>素材下载</span>" +
                     "</div>" +
                     "</div>" +
@@ -278,7 +278,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>展会日程</span>" +
                     "</div>" +
                     "</div>" +
@@ -289,7 +289,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>高峰论坛</span>" +
                     "</div>" +
                     "</div>" +
@@ -300,7 +300,7 @@ $(function () {
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
-                    "<div class='bg'>" +
+                    "<div class='bg col-md-10'>" +
                     "<span class='card-content'>新闻发布会</span>" +
                     "</div>" +
                     "</div>" +
