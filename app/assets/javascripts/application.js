@@ -16,4 +16,13 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+	$(document).foundation();
+	var search_url = location.pathname;
+	var url_first_page = search_url.split('/')[1];
+	if (url_first_page !== ""){
+		$('#menu-' + url_first_page).tab('show');
+	}else {
+		$('#menu-home').tab('show');
+	}
+});

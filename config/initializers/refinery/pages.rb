@@ -49,7 +49,7 @@ Refinery::Pages.configure do |config|
   # config.auto_expand_admin_tree = true
 
   # config.layout_template_whitelist = ["application"]
-  config.layout_template_whitelist = ["application", "home"]
+  config.layout_template_whitelist = ["application"]
   # config.use_layout_templates = false
   config.use_layout_templates = true
 
