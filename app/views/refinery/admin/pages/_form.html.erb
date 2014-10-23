@@ -70,6 +70,24 @@
         });
         e.preventDefault();
       });
+      $('.raptor-preset-element').raptor({
+
+        autoEnable:true,
+        plugins:{
+          dock:{
+            docked:true,
+            dockToElement:true,
+            persist:false
+          },
+          cancel:false,
+          revisions:false,
+          save:false,
+          saveJson:false,
+          unsavedEditWarning:false
+        },
+        unloadWarning:false,
+        maximum: 10000
+      });
     });
   </script>
 <% end %>
