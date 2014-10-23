@@ -5,14 +5,11 @@
 <%= javascript_include_tag 'admin' -%>
 <%= javascript_include_tag 'refinery/refinery' -%>
 <%= javascript_include_tag 'refinery/wymeditor', "wymeditor/lang/#{current_admin_locale}", "wymeditor/skins/refinery/skin" %>
+<%= javascript_include_tag 'raptor.min' -%>
 <%= yield :after_javascript_libraries -%>
 <% custom_javascripts.each do |js| %>
   <%= javascript_include_tag js %>
 <% end %>
-
- <!-- <script type="text/javascript" src='<%= asset_path("raptor.js") %>'></script> -->
- <%= javascript_include_tag 'raptor' -%>
-
 <%= yield :javascripts %>
 
 <% if controller.class.respond_to?(:xhr_pageable?) && !controller.class.xhr_pageable? %>

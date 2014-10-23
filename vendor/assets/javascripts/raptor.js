@@ -10310,6 +10310,13 @@ return jQuery;
 }));;
 // File end: /var/deployments/www.raptor-editor.com.3/raptor-gold/raptor-dependencies/jquery.js
 ;
+// File start: /var/deployments/www.raptor-editor.com.3/raptor-gold/raptor-dependencies/jquery-no-conflict.js
+var jQuery = window.jQuery.noConflict(true);
+var $ = jQuery;
+window['raptor'] = jQuery;
+;
+// File end: /var/deployments/www.raptor-editor.com.3/raptor-gold/raptor-dependencies/jquery-no-conflict.js
+;
 // File start: /var/deployments/www.raptor-editor.com.3/raptor-gold/raptor-dependencies/jquery-ui.js
 /*! jQuery UI - v1.10.4 - 2014-01-17
 * http://jqueryui.com
