@@ -82,11 +82,24 @@
           revisions:false,
           save:false,
           saveJson:false,
-          unsavedEditWarning:false
+          unsavedEditWarning:false,
+          placeholder:{
+            content: "这里填写内容",
+            tag: 'p',
+            select: true
+          }
         },
         unloadWarning:false,
         maximum: 10000
       });
     });
   </script>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <style type="text/css">
+    .new_page_parts {
+      z-index: 20;
+    }
+  </style>
 <% end %>
