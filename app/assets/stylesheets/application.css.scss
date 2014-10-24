@@ -195,10 +195,10 @@ a:hover {
   background: rgba(255,255,255,0.7);
   .show_body {
     width: 710px;
-    display: block;
+    display: table;
     margin: auto;
     padding-top: 7px;
-
+    padding-bottom: 100px;
     h1 {
       color: #2f8fda;
       border-left: 2px #2f8fda solid;
