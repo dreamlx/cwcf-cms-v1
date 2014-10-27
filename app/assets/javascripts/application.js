@@ -15,6 +15,7 @@
 //= require foundation
 //= require_tree .
 //= require bootstrap-sprockets
+//= require bootstrap
 
 $(function () {
     $(document).foundation();
@@ -50,7 +51,7 @@ $(function () {
                     " </a>" +
                     "</div>" +
                     "<div class='card-wrapper'>" +
-                    " <a href='#'>" +
+                    " <a href='/news/services'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
@@ -95,7 +96,7 @@ $(function () {
                     " </div>";
             } else if (url_first_page === "partners") {
                 append_str = "<div class='card-wrapper'>" +
-                    "<a href='/partners/gallery'>" +
+                    "<a href='/partners/placeview'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +

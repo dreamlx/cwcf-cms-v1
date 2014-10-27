@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        hotels:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Hotel
+            reorder: Réordonner les Hotels
+            reorder_done: Fin de réordonnancement des Hotels
+          records:
+            title: Hotels
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Hotel. Cliquer sur "Créer un(e) nouve(au/l/lle) Hotel" pour créer votre premi(er/ère) hotel.'
+          hotel:
+            view_live_html: Voir ce(t/tte) hotel <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) hotel
+            delete: Supprimer définitivement ce(t/tte) hotel
+      hotels:
+        show:
+          other: Autres Hotels
+  activerecord:
+    attributes:
+      'refinery/hotels/hotel':
+        title: Title
+        star: Star
+        address: Address
+        description: Description

@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        hotels:
+          actions:
+            create_new: Nieuwe Hotel toevoegen
+            reorder: De volgorde van de Hotels wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Hotel-volgorde
+          records:
+            title: Hotels
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Hotels. Druk op 'Nieuwe Hotel toevoegen' om de eerste toe te voegen.
+          hotel:
+            view_live_html: Deze hotel op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze hotel
+            delete: Deze hotel definitief verwijderen
+      hotels:
+        show:
+          other: Andere Hotels
+  activerecord:
+    attributes:
+      'refinery/hotels/hotel':
+        title: Title
+        star: Star
+        address: Address
+        description: Description

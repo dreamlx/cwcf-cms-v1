@@ -61,7 +61,7 @@ a:hover {
   width: 100% !important;
 }
 
-.card-holder {  
+.card-holder {
   position: fixed;
   width: 0px;
   overflow: visible;
@@ -81,7 +81,7 @@ a:hover {
   left: -290px;
   width: 327px !important;
   padding: 0px !important;
-  margin: 1px;  
+  margin: 1px;
   x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
   background: rgb(30,30,30);
@@ -99,7 +99,7 @@ a:hover {
 //  position: relative;
 //  left: -290px;
 //  margin-left: -32px;
-//  box-shadow: 
+//  box-shadow:
 //    0 -8px 8px -8px rgba(0, 0, 0, 0.5),
 //    0 8px 8px -8px rgba(0, 0, 0, 0.5);
 //  transition: all 0.3s ease-in-out;
@@ -177,7 +177,7 @@ a:hover {
     color: white;
     margin-top: 3px;
     width: 150px;
-  } 
+  }
   .input-group[class*="col-"] {
     width: 250px;
     float: right;
@@ -221,6 +221,21 @@ a:hover {
 #body {
   width: 100%;
   background: transparent;
+  .nav-tabs {
+    li {
+      > a{
+        color: white;
+        background-color: #959696;
+      }
+      > a:hover {
+        border-color: #2f8fda;
+        background-color: #2f8fda;
+      }
+    }
+    li.active > a {
+      background-color: #2f8fda;
+    }
+  }
 }
 
 #carousel-banners {

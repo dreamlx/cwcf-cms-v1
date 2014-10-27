@@ -1,11 +1,11 @@
 
 Refinery::PagesController.class_eval do
-  # before_filter :fetch_events, :only => [:show]
+  before_filter :fetch_hotels, :only => [:show]
 
-  # def fetch_events
-  #   @events = ::Refinery::Events::Event.all
-  # end
-  # protected :fetch_events
+  def fetch_hotels
+    @hotels = ::Refinery::Hotels::Hotel.all
+  end
+  protected :fetch_hotels
 
   skip_before_filter :find_page, :only => [:about_us]
   def about_us

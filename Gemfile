@@ -55,3 +55,4 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 #  gem 'refinerycms-events', :path => 'vendor/extensions'
 # gem 'refinerycms-blog'
 # gem "raptor-editor-rails"
+gem 'refinerycms-hotels', :path => 'vendor/extensions'

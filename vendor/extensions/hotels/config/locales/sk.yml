@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        hotels:
+          actions:
+            create_new: Pridať Hotel
+            reorder: Preusporiadať Hotels
+            reorder_done: Koniec radenia Hotels
+          records:
+            title: Hotels
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Hotels. Kliknite na "Pridať Hotel" pre pridanie prvého hotel.
+          hotel:
+            view_live_html: Zobraziť náhľad hotel<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť hotel
+            delete: Zmazať hotel
+      hotels:
+        show:
+          other: Daľšie Hotels
+  activerecord:
+    attributes:
+      'refinery/hotels/hotel':
+        title: Title
+        star: Star
+        address: Address
+        description: Description

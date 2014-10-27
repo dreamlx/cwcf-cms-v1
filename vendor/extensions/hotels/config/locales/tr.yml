@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        hotels:
+          actions:
+            create_new: Yeni Ekle Hotel
+            reorder: Tekrar sirala Hotels
+            reorder_done: Tekrar siralama tamamlandiHotels
+          records:
+            title: Hotels
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Hotels yok henuz.  Tikla "Yeni Ekle Hotel" eklemek senin ilk hotel.
+          hotel:
+            view_live_html: Bunu canlu hotel goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle hotel
+            delete: Bunu Sil hotel sonsuza dek
+      hotels:
+        show:
+          other: Diger Hotels
+  activerecord:
+    attributes:
+      'refinery/hotels/hotel':
+        title: Title
+        star: Star
+        address: Address
+        description: Description

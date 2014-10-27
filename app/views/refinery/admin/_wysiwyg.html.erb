@@ -9,8 +9,36 @@
   <div id='page_part_editors'>
     <% fields.each do |part| %>
       <div class='page_part' id='<%= part %>'>
-        <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+        <%= f.text_area part, :rows => 20, :class => 'raptor-preset-element widest' -%>
       </div>
     <% end %>
   </div>
 </div>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      window['raptor']('.raptor-preset-element').raptor({
+        autoEnable:true,
+        plugins:{
+          dock:{
+            docked:true,
+            dockToElement:true,
+            persist:false
+          },
+          cancel:false,
+          revisions:false,
+          save:false,
+          saveJson:false,
+          unsavedEditWarning:false,
+          placeholder:{
+            content: "这里填写内容",
+            tag: 'p',
+            select: true
+          }
+        },
+        unloadWarning:false,
+        maximum: 10000
+      });
+    });
+  </script>
+<% end %>

@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      hotels:
+        title: Hotels
+#        article: masculino/femenino
+    hotels:
+      admin:
+        hotels:
+          actions:
+            create_new: Crear nuevo hotel
+            reorder: Reordenar hotels
+            reorder_done: Reordenación de hotels completada
+          records:
+            title: Hotels
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay hotels todavía. Pulsa en "Crear nuevo Hotel" para crear tu primer hotel.
+          hotel:
+            view_live_html: Ver este hotel como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este hotel
+            delete: Borrar este hotel para siempre
+      hotels:
+        show:
+          other: Otros hotels
+  activerecord:
+    attributes:
+      'refinery/hotels/hotel':
+        title: Title
+        star: Star
+        address: Address
+        description: Description

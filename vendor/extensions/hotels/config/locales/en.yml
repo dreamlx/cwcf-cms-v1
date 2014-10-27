@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        hotels:
+          actions:
+            create_new: Add New Hotel
+            reorder: Reorder Hotels
+            reorder_done: Done Reordering Hotels
+          records:
+            title: Hotels
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Hotels yet. Click "Add New Hotel" to add your first hotel.
+          hotel:
+            view_live_html: View this hotel live <br/><em>(opens in a new window)</em>
+            edit: Edit this hotel
+            delete: Remove this hotel forever
+      hotels:
+        show:
+          other: Other Hotels
+  activerecord:
+    attributes:
+      'refinery/hotels/hotel':
+        title: Title
+        star: Star
+        address: Address
+        description: Description

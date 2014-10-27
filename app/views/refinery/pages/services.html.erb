@@ -1,0 +1,60 @@
+<div class='show_container'>
+	<div class='show_body'>
+		<h1 id='body_content_title'><%=raw @page.title() %></h1>
+		<section id='body'>
+      <ul class="nav nav-tabs" role="tablist">
+				<li class="active">
+					<a href='#traffic-services'  role="tab" data-toggle="tab">
+						交通信息
+						</a>
+				</li>
+				<li>
+					<a href='#hotel-services'  role="tab" data-toggle="tab">
+						酒店信息
+						</a>
+				</li>
+				<li>
+					<a href='#repast-services'  role="tab" data-toggle="tab">
+						餐饮指南
+						</a>
+				</li>
+				<li>
+					<a href='#other-services'  role="tab" data-toggle="tab">
+						其他服务
+						</a>
+				</li>
+      </ul>
+      <div class="tab-content">
+				<div class="tab-pane active" id='traffic-services'>
+					<%=raw @page.content_for(:traffic_services) %>
+				</div>
+				<div class="tab-pane" id='hotel-services'>
+					<ul id="hotels">
+						<% @hotels.each do |hotel| %>
+							<li>
+								<%= link_to hotel.title, refinery.hotels_hotel_path(hotel) %>
+								<%= hotel.address %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="tab-pane" id='repast-services'>
+					<%=raw @page.content_for(:repast_services) %>
+				</div>
+				<div class="tab-pane" id='other-services'>
+					<%=raw @page.content_for(:other_services) %>
+				</div>
+      </div>
+		</section>
+	</div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @page.background_image.present? %>
+  <style type="text/css">
+    body {
+      background-image: url(<%= @page.background_image.url -%>);
+    }
+  </style>
+  <% end %>
+<% end %>
