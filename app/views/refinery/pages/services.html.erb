@@ -32,7 +32,7 @@
 					<ul id="hotels">
 						<% @hotels.each do |hotel| %>
 							<li>
-								<%= link_to hotel.title, refinery.hotels_hotel_path(hotel) %>
+								<%= link_to hotel.title, "services/hotels/"+hotel.id.to_s(), {:controller => 'Refinery::Core::Engine:pages',:action => 'hotel_show',id: hotel}%>
 								<%= hotel.address %>
 							</li>
 						<% end %>

@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @hotel.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @hotel.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Star</h1>
+    <p>
+      <%=raw @hotel.star %>
+    </p>
+  </section>
+  <section>
+    <h1>Address</h1>
+    <p>
+      <%=raw @hotel.address %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @hotel.description %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="hotels">
+      <% @hotels.each do |hotel| %>
+        <li>
+          <%= link_to hotel.title, refinery.hotels_hotel_path(hotel) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
