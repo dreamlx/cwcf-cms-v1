@@ -9,7 +9,7 @@
 						</a>
 				</li>
 				<li>
-					<a href='#hotel-services'  role="tab" data-toggle="tab">
+					<a href='/news/services/hotels'>
 						酒店信息
 						</a>
 				</li>
@@ -32,7 +32,7 @@
 					<ul id="hotels">
 						<% @hotels.each do |hotel| %>
 							<li>
-								<%= link_to hotel.title, "services/hotels/"+hotel.id.to_s(), {:controller => 'Refinery::Core::Engine:pages',:action => 'hotel_show',id: hotel}%>
+								<%= link_to hotel.title, "services/hotels/"+hotel.id.to_s()%>
 								<%= hotel.address %>
 							</li>
 						<% end %>

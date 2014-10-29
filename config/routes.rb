@@ -1,9 +1,7 @@
 Refinery::Core::Engine.routes.prepend do
   get '/about-us', :to => 'pages#about_us', :as => :about_us
-  get '/news/services/hotels/:id', :to => 'pages#hotel_show'
-
-
-  # get '/hotels/:id', :to =>
+  get '/news/services/hotels', :to => 'Hotels::Hotels#index'
+  get '/news/services/hotels/:id', :to => 'Hotels::Hotels#show'
 end
 
 MyNewApp::Application.routes.draw do

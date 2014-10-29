@@ -57,8 +57,6 @@ module Refinery
     end
 
     def current_user_can_view_page?
-      puts "--"*50
-      puts page
       page.live? || current_refinery_user_can_access?("refinery_pages")
     end
 

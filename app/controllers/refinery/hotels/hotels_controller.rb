@@ -4,6 +4,7 @@ module Refinery
 
       before_filter :find_all_hotels
       before_filter :find_page
+      before_filter :find_services_page
 
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -27,6 +28,10 @@ module Refinery
 
       def find_page
         @page = ::Refinery::Page.where(:link_url => "/hotels").first
+      end
+
+      def find_services_page
+        @services_page = ::Refinery::Page.find("services")
       end
 
     end
