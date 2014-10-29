@@ -30,46 +30,15 @@
           <%=raw @services_page.content_for(:traffic_services) %>
         </div>
         <div class="tab-pane active" id='hotel-services'>
-
-            <%= @hotel.title %>
-
             <section>
-              <h2>Title</h2>
-              <p>
-                <%=raw @hotel.title %>
+              <h3><%=raw @hotel.title %></h3>
+              <p class="hotel-item-star">
+                星级：<span class="star"><%=raw @hotel.star %></span>
               </p>
             </section>
-            <section>
-              <h2>Star</h2>
-              <p>
-                <%=raw @hotel.star %>
-              </p>
-            </section>
-            <section>
-              <h2>Address</h2>
-              <p>
-                <%=raw @hotel.address %>
-              </p>
-            </section>
-            <section>
-              <h2>Description</h2>
-              <p>
-                <%=raw @hotel.description %>
-              </p>
-            </section>
-
-
-            <aside>
-              <h2><%= t('.other') %></h2>
-              <ul id="hotels">
-                <% @hotels.each do |hotel| %>
-                  <li>
-                    <%= link_to hotel.title, hotel.id.to_s() %>
-                  </li>
-                <% end %>
-              </ul>
-            </aside>
-
+            <p>
+              <%=raw @hotel.description %>
+            </p>
 
         </div>
         <div class="tab-pane" id='repast-services'>

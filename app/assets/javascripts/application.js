@@ -318,5 +318,16 @@ $(function () {
         $('#menu-' + url_first_page).tab('show');
     } else {
         //没有当前页
-    }
+    };
+
+
+    //hotel page
+    // $('.hotel-desc').find('img').remove();//清除列表表述中的图片
+    var hotel_desc = $('.hotel-desc').text();
+    var hotel_id = $('.hotel-desc').attr('data-index');
+    if (hotel_desc.length > 110){
+       $('.hotel-desc').html(hotel_desc.substr(0, 110) + "..." + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+     }else {
+       $('.hotel-desc').html(hotel_desc);
+     };
 });

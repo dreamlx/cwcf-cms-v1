@@ -30,15 +30,25 @@
           <%=raw @services_page.content_for(:traffic_services) %>
         </div>
         <div class="tab-pane active" id='hotel-services'>
-          <ul id="hotels">
+          <ol id="hotels">
             <% @hotels.each do |hotel| %>
-              <li>
-                <%= link_to hotel.title, "hotels/"+hotel.id.to_s()%>
-                <%= hotel.address %>
-                <img src='<%= hotel.hotel_avatar.url %>'/>
+              <li class="hotel-item" value='<%= hotel.id%>' >
+                <h3><%= hotel.title%></h3>
               </li>
+                <div class="col-md-12 ">
+                  <div class="col-md-8">
+
+                    <p>地址：<%= hotel.address %></p>
+                    <p>星级：<span class="star"><%= hotel.star %></span></p>
+                    <div class="hotel-desc" data-index='<%= hotel.id %>'><%=raw hotel.description %></div>
+                  </div>
+                  <div class="col-md-4">
+                    <img src='<%= hotel.hotel_avatar.url %>'/>
+                  </div>
+                </div>
+
             <% end %>
-          </ul>
+          </ol>
         </div>
         <div class="tab-pane" id='repast-services'>
           <%=raw @services_page.content_for(:repast_services) %>
@@ -60,5 +70,3 @@
   </style>
   <% end %>
 <% end %>
-
-<%= render '/refinery/content_page' %>

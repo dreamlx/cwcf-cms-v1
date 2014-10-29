@@ -29,14 +29,6 @@
 					<%=raw @page.content_for(:traffic_services) %>
 				</div>
 				<div class="tab-pane" id='hotel-services'>
-					<ul id="hotels">
-						<% @hotels.each do |hotel| %>
-							<li>
-								<%= link_to hotel.title, "services/hotels/"+hotel.id.to_s()%>
-								<%= hotel.address %>
-							</li>
-						<% end %>
-					</ul>
 				</div>
 				<div class="tab-pane" id='repast-services'>
 					<%=raw @page.content_for(:repast_services) %>
