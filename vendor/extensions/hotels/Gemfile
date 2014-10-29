@@ -1,5 +1,5 @@
-source "http://rubygems.org"
-
+# source "http://rubygems.org"
+source 'https://ruby.taobao.org'
 gemspec
 
 gem 'refinerycms', '~> 2.1.0'
@@ -15,7 +15,7 @@ end
 platforms :ruby do
   gem 'sqlite3'
   gem 'mysql2'
-  gem 'pg'
+  # gem 'pg'
 end
 
 group :development, :test do

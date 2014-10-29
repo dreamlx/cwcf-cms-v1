@@ -35,6 +35,7 @@
               <li>
                 <%= link_to hotel.title, "hotels/"+hotel.id.to_s()%>
                 <%= hotel.address %>
+                <img src='<%= hotel.hotel_avatar.url %>'/>
               </li>
             <% end %>
           </ul>
