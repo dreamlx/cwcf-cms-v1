@@ -323,11 +323,14 @@ $(function () {
 
     //hotel page
     // $('.hotel-desc').find('img').remove();//清除列表表述中的图片
-    var hotel_desc = $('.hotel-desc').text();
-    var hotel_id = $('.hotel-desc').attr('data-index');
-    if (hotel_desc.length > 110){
-       $('.hotel-desc').html(hotel_desc.substr(0, 110) + "..." + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
-     }else {
-       $('.hotel-desc').html(hotel_desc);
-     };
+    $hotel = $('.hotel-desc');
+    $hotel.each(function(){
+      var hotel_desc = $(this).text();
+      var hotel_id = $(this).attr('data-index');
+      if (hotel_desc.length > 110){
+         $(this).html(hotel_desc.substr(0, 110) + "..." + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+       }else {
+         $(this).html(hotel_desc + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+       };
+    });
 });
