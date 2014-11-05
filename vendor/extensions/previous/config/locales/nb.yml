@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      previous:
+        title: Previous
+    previous:
+      admin:
+        previous:
+          actions:
+            create_new: Lag en ny Previou
+            reorder: Endre rekkefølgen på Previous
+            reorder_done: Ferdig å endre rekkefølgen Previous
+          records:
+            title: Previous
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Previous enda. Klikk på "Lag en ny Previou" for å legge til din første previou.
+          previou:
+            view_live_html: Vis hvordan denne previou ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne previou
+            delete: Fjern denne previou permanent
+      previous:
+        show:
+          other: Andre Previous
+  activerecord:
+    attributes:
+      'refinery/previous/previou':
+        title: Title
+        previou_avatar_id: Previou Avatar
+        description: Description

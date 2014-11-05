@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      corp_partners:
+        title: Corp Partners
+    corp_partners:
+      admin:
+        corp_partners:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Corp Partner
+            reorder: Réordonner les Corp Partners
+            reorder_done: Fin de réordonnancement des Corp Partners
+          records:
+            title: Corp Partners
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Corp Partner. Cliquer sur "Créer un(e) nouve(au/l/lle) Corp Partner" pour créer votre premi(er/ère) corp partner.'
+          corp_partner:
+            view_live_html: Voir ce(t/tte) corp partner <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) corp partner
+            delete: Supprimer définitivement ce(t/tte) corp partner
+      corp_partners:
+        show:
+          other: Autres Corp Partners
+  activerecord:
+    attributes:
+      'refinery/corp_partners/corp_partner':
+        title: Title
+        corp_partner_avatar_id: Corp Partner Avatar
+        main_url: Main Url

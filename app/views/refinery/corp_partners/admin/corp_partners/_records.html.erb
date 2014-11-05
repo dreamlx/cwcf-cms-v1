@@ -1,0 +1,16 @@
+<%= render 'refinery/admin/search_header', :url => refinery.corp_partners_admin_corp_partners_path %>
+<div class='pagination_container'>
+  <% if @corp_partners.any? %>
+    <%= render 'corp_partners' %>
+  <% else %>
+    <p>
+      <% unless searching? %>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      <% else %>
+        <%= t('no_results', :scope => 'refinery.admin.search') %>
+      <% end %>
+    </p>
+  <% end %>
+</div>

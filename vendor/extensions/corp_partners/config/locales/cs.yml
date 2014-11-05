@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      corp_partners:
+        title: Corp Partners
+    corp_partners:
+      admin:
+        corp_partners:
+          actions:
+            create_new: Přidat Corp Partner
+            reorder: Řadit Corp Partners
+            reorder_done: Konec řazení Corp Partners
+          records:
+            title: Corp Partners
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Corp Partners. Zvolte "Přidat Corp Partner" pro přidání prvního corp partner.
+          corp_partner:
+            view_live_html: Zobrazit náhled corp partner<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit corp partner
+            delete: Smazat corp partner
+      corp_partners:
+        show:
+          other: Další Corp Partners
+  activerecord:
+    attributes:
+      'refinery/corp_partners/corp_partner':
+        title: Title
+        corp_partner_avatar_id: Corp Partner Avatar
+        main_url: Main Url

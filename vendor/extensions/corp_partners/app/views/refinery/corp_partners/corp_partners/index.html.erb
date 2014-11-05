@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="corp_partners">
+    <% @corp_partners.each do |corp_partner| %>
+      <li>
+        <%= link_to corp_partner.title, refinery.corp_partners_corp_partner_path(corp_partner) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

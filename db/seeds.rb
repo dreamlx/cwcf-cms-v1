@@ -11,3 +11,9 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS Hotels extension
 Refinery::Hotels::Engine.load_seed
+
+# Added by Refinery CMS Previous extension
+Refinery::Previous::Engine.load_seed
+
+# Added by Refinery CMS CorpPartners extension
+Refinery::CorpPartners::Engine.load_seed

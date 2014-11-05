@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="previous">
+    <% @previous.each do |previou| %>
+      <li>
+        <%= link_to previou.title, refinery.previous_previou_path(previou) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

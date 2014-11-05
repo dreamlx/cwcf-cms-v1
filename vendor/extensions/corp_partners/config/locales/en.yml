@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      corp_partners:
+        title: Corp Partners
+    corp_partners:
+      admin:
+        corp_partners:
+          actions:
+            create_new: Add New Corp Partner
+            reorder: Reorder Corp Partners
+            reorder_done: Done Reordering Corp Partners
+          records:
+            title: Corp Partners
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Corp Partners yet. Click "Add New Corp Partner" to add your first corp partner.
+          corp_partner:
+            view_live_html: View this corp partner live <br/><em>(opens in a new window)</em>
+            edit: Edit this corp partner
+            delete: Remove this corp partner forever
+      corp_partners:
+        show:
+          other: Other Corp Partners
+  activerecord:
+    attributes:
+      'refinery/corp_partners/corp_partner':
+        title: Title
+        corp_partner_avatar_id: Corp Partner Avatar
+        main_url: Main Url

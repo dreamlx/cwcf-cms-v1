@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      previous:
+        title: Previous
+    previous:
+      admin:
+        previous:
+          actions:
+            create_new: Yeni Ekle Previou
+            reorder: Tekrar sirala Previous
+            reorder_done: Tekrar siralama tamamlandiPrevious
+          records:
+            title: Previous
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Previous yok henuz.  Tikla "Yeni Ekle Previou" eklemek senin ilk previou.
+          previou:
+            view_live_html: Bunu canlu previou goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle previou
+            delete: Bunu Sil previou sonsuza dek
+      previous:
+        show:
+          other: Diger Previous
+  activerecord:
+    attributes:
+      'refinery/previous/previou':
+        title: Title
+        previou_avatar_id: Previou Avatar
+        description: Description

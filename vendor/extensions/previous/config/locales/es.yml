@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      previous:
+        title: Previous
+#        article: masculino/femenino
+    previous:
+      admin:
+        previous:
+          actions:
+            create_new: Crear nuevo previou
+            reorder: Reordenar previous
+            reorder_done: Reordenación de previous completada
+          records:
+            title: Previous
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay previous todavía. Pulsa en "Crear nuevo Previou" para crear tu primer previou.
+          previou:
+            view_live_html: Ver este previou como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este previou
+            delete: Borrar este previou para siempre
+      previous:
+        show:
+          other: Otros previous
+  activerecord:
+    attributes:
+      'refinery/previous/previou':
+        title: Title
+        previou_avatar_id: Previou Avatar
+        description: Description

@@ -226,7 +226,7 @@ a:hover {
     margin: auto;
     padding-top: 7px;
     padding-bottom: 200px;
-    h1 {
+    > h1 {
       color: #2f8fda;
       border-left: 2px #2f8fda solid;
       padding: 65px 0 0 10px;
@@ -279,4 +279,14 @@ a:hover {
 
 .hotel-item-star {
   float: right;
+}
+
+.row-fluid {
+  .col-md-12{
+    .row.mix-grid {
+      .mix {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }

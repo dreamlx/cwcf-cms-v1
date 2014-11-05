@@ -1,0 +1,31 @@
+<%= form_for [refinery, :corp_partners_admin, @corp_partner] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @corp_partner,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :corp_partner_avatar %>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :corp_partner_avatar_id,
+      :image => f.object.corp_partner_avatar,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :main_url -%>
+    <%= f.text_field :main_url -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.corp_partners.admin.corp_partners.corp_partner'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @corp_partner.title) -%>
+<% end -%>

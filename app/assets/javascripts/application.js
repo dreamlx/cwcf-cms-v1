@@ -62,7 +62,7 @@ $(function () {
                     "</a>" +
                     "</div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/news/previous'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
@@ -73,7 +73,7 @@ $(function () {
                     "</a>" +
                     "</div>" +
                     "<div class='card-wrapper'>" +
-                    " <a href='#'>" +
+                    " <a href='/news/corp_partners'>" +
                     "<div class='col-md-12 card'>" +
                     " <div class='bg-left bg-05 col-md-1'>" +
                     " </div>" +

@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      previous:
+        title: Previous
+    previous:
+      admin:
+        previous:
+          actions:
+            create_new: Add New Previou
+            reorder: Reorder Previous
+            reorder_done: Done Reordering Previous
+          records:
+            title: Previous
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Previous yet. Click "Add New Previou" to add your first previou.
+          previou:
+            view_live_html: View this previou live <br/><em>(opens in a new window)</em>
+            edit: Edit this previou
+            delete: Remove this previou forever
+      previous:
+        show:
+          other: Other Previous
+  activerecord:
+    attributes:
+      'refinery/previous/previou':
+        title: Title
+        previou_avatar_id: Previou Avatar
+        description: Description
