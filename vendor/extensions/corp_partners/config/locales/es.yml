@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      corp_partners:
+        title: Corp Partners
+#        article: masculino/femenino
+    corp_partners:
+      admin:
+        corp_partners:
+          actions:
+            create_new: Crear nuevo corp partner
+            reorder: Reordenar corp partners
+            reorder_done: Reordenación de corp partners completada
+          records:
+            title: Corp Partners
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay corp partners todavía. Pulsa en "Crear nuevo Corp Partner" para crear tu primer corp partner.
+          corp_partner:
+            view_live_html: Ver este corp partner como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este corp partner
+            delete: Borrar este corp partner para siempre
+      corp_partners:
+        show:
+          other: Otros corp partners
+  activerecord:
+    attributes:
+      'refinery/corp_partners/corp_partner':
+        title: Title
+        corp_partner_avatar_id: Corp Partner Avatar
+        main_url: Main Url

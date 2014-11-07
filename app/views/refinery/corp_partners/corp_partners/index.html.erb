@@ -1,0 +1,31 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%= @corp_partners_page.title() %></h1>
+    <section id='body'>
+      <div class="row-fluid">
+        <div class="col-md-12">
+          <div class="row mix-grid">
+            <% @corp_partners.each do |corp_partner| %>
+              <div class="col-md-4 col-sm-6 mix ">
+                <div class="mix-inner">
+                  <a href='<%= "//" + corp_partner.main_url %>'><img src='<%= corp_partner.corp_partner_avatar.url %>'></a>
+                  <span><%= corp_partner.title %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @corp_partners_page.background_image.present? %>
+  <style type="text/css">
+    body {
+      background-image: url(<%= @corp_partners_page.background_image.url -%>);
+    }
+  </style>
+  <% end %>
+<% end %>

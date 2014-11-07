@@ -46,10 +46,32 @@ a:hover {
   }
 }
 
-.header IMG {
-  min-width: 1200px;
-  width: 100%;
-  height: 150px;
+.header {
+  > IMG {
+    min-width: 1200px;
+    width: 100%;
+    height: 150px;
+  }
+  > div {
+    position: absolute;
+    top: 50px;
+  }
+  .website-body-title {
+    width: 1200px;
+    padding: 0;
+    .logo-pic {
+      max-width: 100px;
+      float: left;
+      margin-left: 20px;
+    }
+    .title-pic {
+      margin-left: 120px;
+      margin-top: 10px;
+      height: 43px;
+      width: 955px;
+      float: right;
+    }
+  }
 }
 
 .carousel .carousel-inner .item .img-responsive{
@@ -95,7 +117,7 @@ a:hover {
   }
 }
 
-//.card:hover {
+// .card:hover {
 //  position: relative;
 //  left: -290px;
 //  margin-left: -32px;
@@ -103,7 +125,7 @@ a:hover {
 //    0 -8px 8px -8px rgba(0, 0, 0, 0.5),
 //    0 8px 8px -8px rgba(0, 0, 0, 0.5);
 //  transition: all 0.3s ease-in-out;
-//}
+// }
 
 .card-content {
   display: inline-block;
@@ -204,7 +226,7 @@ a:hover {
     margin: auto;
     padding-top: 7px;
     padding-bottom: 200px;
-    h1 {
+    > h1 {
       color: #2f8fda;
       border-left: 2px #2f8fda solid;
       padding: 65px 0 0 10px;
@@ -257,4 +279,14 @@ a:hover {
 
 .hotel-item-star {
   float: right;
+}
+
+.row-fluid {
+  .col-md-12{
+    .row.mix-grid {
+      .mix {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }

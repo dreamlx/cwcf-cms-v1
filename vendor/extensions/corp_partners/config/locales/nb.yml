@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      corp_partners:
+        title: Corp Partners
+    corp_partners:
+      admin:
+        corp_partners:
+          actions:
+            create_new: Lag en ny Corp Partner
+            reorder: Endre rekkefølgen på Corp Partners
+            reorder_done: Ferdig å endre rekkefølgen Corp Partners
+          records:
+            title: Corp Partners
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Corp Partners enda. Klikk på "Lag en ny Corp Partner" for å legge til din første corp partner.
+          corp_partner:
+            view_live_html: Vis hvordan denne corp partner ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne corp partner
+            delete: Fjern denne corp partner permanent
+      corp_partners:
+        show:
+          other: Andre Corp Partners
+  activerecord:
+    attributes:
+      'refinery/corp_partners/corp_partner':
+        title: Title
+        corp_partner_avatar_id: Corp Partner Avatar
+        main_url: Main Url

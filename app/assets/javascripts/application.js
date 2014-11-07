@@ -62,7 +62,7 @@ $(function () {
                     "</a>" +
                     "</div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/news/previous'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
@@ -73,7 +73,7 @@ $(function () {
                     "</a>" +
                     "</div>" +
                     "<div class='card-wrapper'>" +
-                    " <a href='#'>" +
+                    " <a href='/news/corp_partners'>" +
                     "<div class='col-md-12 card'>" +
                     " <div class='bg-left bg-05 col-md-1'>" +
                     " </div>" +
@@ -320,14 +320,39 @@ $(function () {
         //没有当前页
     };
 
+    var url_else_page = search_url.split('/')[2];
+    if (url_else_page) {
+      setTimeout(function(){
+        // $("#card-holder").css();
+      //   $(".card:hover").css({
+      //    "position": "relative";
+      //    "left": "-290px";
+      //    "margin-left": "-32px";
+      //    "box-shadow":
+      //      "0 -8px 8px -8px rgba(0, 0, 0, 0.5),0 8px 8px -8px rgba(0, 0, 0, 0.5)";
+      //    "transition": "all 0.3s ease-in-out";
+      //  });
+        $(".card").animate({left:'-40px'},"slow",function(){
+          $(this).hover(function(){
+            $(this).animate({left:'-290px'},10);
+          },function(){
+            $(this).animate({left:'-40px'},10);
+          });
+        });
+      },800);
+    }
+
 
     //hotel page
     // $('.hotel-desc').find('img').remove();//清除列表表述中的图片
-    var hotel_desc = $('.hotel-desc').text();
-    var hotel_id = $('.hotel-desc').attr('data-index');
-    if (hotel_desc.length > 110){
-       $('.hotel-desc').html(hotel_desc.substr(0, 110) + "..." + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
-     }else {
-       $('.hotel-desc').html(hotel_desc);
-     };
+    $hotel = $('.hotel-desc');
+    $hotel.each(function(){
+      var hotel_desc = $(this).text();
+      var hotel_id = $(this).attr('data-index');
+      if (hotel_desc.length > 110){
+         $(this).html(hotel_desc.substr(0, 110) + "..." + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+       }else {
+         $(this).html(hotel_desc + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+       };
+    });
 });

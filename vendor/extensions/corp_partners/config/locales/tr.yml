@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      corp_partners:
+        title: Corp Partners
+    corp_partners:
+      admin:
+        corp_partners:
+          actions:
+            create_new: Yeni Ekle Corp Partner
+            reorder: Tekrar sirala Corp Partners
+            reorder_done: Tekrar siralama tamamlandiCorp Partners
+          records:
+            title: Corp Partners
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Corp Partners yok henuz.  Tikla "Yeni Ekle Corp Partner" eklemek senin ilk corp partner.
+          corp_partner:
+            view_live_html: Bunu canlu corp partner goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle corp partner
+            delete: Bunu Sil corp partner sonsuza dek
+      corp_partners:
+        show:
+          other: Diger Corp Partners
+  activerecord:
+    attributes:
+      'refinery/corp_partners/corp_partner':
+        title: Title
+        corp_partner_avatar_id: Corp Partner Avatar
+        main_url: Main Url

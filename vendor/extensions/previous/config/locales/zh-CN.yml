@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      previous:
+        title: Previous
+    previous:
+      admin:
+        previous:
+          actions:
+            create_new: 建立新的 Previou
+            reorder: 对 Previous 重新排序
+            reorder_done: 对 Previous 的重新排序结束
+          records:
+            title: Previous
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Previous yet. Click "Add New Previou" to add your first previou.
+            no_items_yet: 目前没有 Previous . 点击 "Add New Previou" 创建一个previou.
+          previou:
+            view_live_html: 查看 previou 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 previou
+            delete: 永久删除 previou
+      previous:
+        show:
+          other: 其他 Previous
+  activerecord:
+    attributes:
+      'refinery/previous/previou':
+        title: Title
+        previou_avatar_id: Previou Avatar
+        description: Description

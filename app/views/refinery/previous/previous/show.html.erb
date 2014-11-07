@@ -1,0 +1,29 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%= @previous_page.title() %></h1>
+    <section id='body'>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+          <a href='#description'  role="tab" data-toggle="tab">
+            基本介绍
+            </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id='description'>
+          <%=raw @previou.description %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @previous_page.background_image.present? %>
+  <style type="text/css">
+    body {
+      background-image: url(<%= @previous_page.background_image.url -%>);
+    }
+  </style>
+  <% end %>
+<% end %>

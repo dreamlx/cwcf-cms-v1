@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      previous:
+        title: Previous
+    previous:
+      admin:
+        previous:
+          actions:
+            create_new: Přidat Previou
+            reorder: Řadit Previous
+            reorder_done: Konec řazení Previous
+          records:
+            title: Previous
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Previous. Zvolte "Přidat Previou" pro přidání prvního previou.
+          previou:
+            view_live_html: Zobrazit náhled previou<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit previou
+            delete: Smazat previou
+      previous:
+        show:
+          other: Další Previous
+  activerecord:
+    attributes:
+      'refinery/previous/previou':
+        title: Title
+        previou_avatar_id: Previou Avatar
+        description: Description

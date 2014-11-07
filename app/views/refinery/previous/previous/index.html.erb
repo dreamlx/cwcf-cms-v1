@@ -1,0 +1,30 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%= @previous_page.title() %></h1>
+    <section id='body'>
+      <div class="row-fluid">
+        <div class="col-md-12">
+          <div class="row mix-grid">
+            <% @previous.each do |previou| %>
+              <div class="col-md-4 col-sm-6 mix ">
+                <div class="mix-inner">
+                  <a href='<%= "/news/previous/"+previou.id.to_s() %>'><img src='<%= previou.previou_avatar.url %>'></a>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @previous_page.background_image.present? %>
+  <style type="text/css">
+    body {
+      background-image: url(<%= @previous_page.background_image.url -%>);
+    }
+  </style>
+  <% end %>
+<% end %>
