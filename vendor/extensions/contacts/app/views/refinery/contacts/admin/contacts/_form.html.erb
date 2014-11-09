@@ -1,0 +1,35 @@
+<%= form_for [refinery, :contacts_admin, @contact] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @contact,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :telephone -%>
+    <%= f.text_field :telephone, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :fax -%>
+    <%= f.text_field :fax -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :postcode -%>
+    <%= f.number_field :postcode -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :address -%>
+    <%= f.text_field :address -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.contacts.admin.contacts.contact'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @contact.telephone) -%>
+<% end -%>

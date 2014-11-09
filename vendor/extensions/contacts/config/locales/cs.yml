@@ -1,0 +1,54 @@
+cs:
+  refinery:
+    plugins:
+      contact_types:
+        title: Contact Types
+      contacts:
+        title: Contacts
+    contacts:
+      admin:
+        contact_types:
+          actions:
+            create_new: Přidat Contact Type
+            reorder: "Řadit Contact Types"
+            reorder_done: Konec řazení Contact Types
+          records:
+            title: Contact Types
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Contact Types. Zvolte "Přidat
+              Contact Type" pro přidání prvního contact type.
+          contact_type:
+            view_live_html: Zobrazit náhled contact type<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit contact type
+            delete: Smazat contact type
+        contacts:
+          actions:
+            create_new: Přidat Contact
+            reorder: "Řadit Contacts"
+            reorder_done: Konec řazení Contacts
+          records:
+            title: Contacts
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Contacts. Zvolte "Přidat Contact"
+              pro přidání prvního contact.
+          contact:
+            view_live_html: Zobrazit náhled contact<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit contact
+            delete: Smazat contact
+      contact_types:
+        show:
+          other: Další Contact Types
+      contacts:
+        show:
+          other: Další Contacts
+  activerecord:
+    attributes:
+      refinery/contacts/contact_type:
+        name: Name
+      refinery/contacts/contact:
+        telephone: Telephone
+        fax: Fax
+        postcode: Postcode
+        email: Email
+        address: Address

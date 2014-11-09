@@ -62,3 +62,4 @@ gem 'refinerycms-hotels', :path => 'vendor/extensions'
 
 gem 'refinerycms-previous', :path => 'vendor/extensions'
 gem 'refinerycms-corp_partners', :path => 'vendor/extensions'
+gem 'refinerycms-contacts', :path => 'vendor/extensions'

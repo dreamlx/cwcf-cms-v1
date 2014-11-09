@@ -290,3 +290,43 @@ a:hover {
     }
   }
 }
+
+ul.contact_list {
+  overflow: hidden;
+  margin-bottom: 30px;
+  line-height: 1.5em !important;
+  li {
+    float: left;
+    list-style-type: none;
+  }
+  li.photo {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    span.txt {
+      position: absolute;
+      right: 3px;
+      bottom: 0;
+      line-height: 20px;
+      font-size: 14px;
+      z-index: 11;
+    }
+    span.bg {
+      background: url(../assets/arrow1.png) no-repeat;
+      width: 63px;
+      height: 64px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+  }
+  li.info {
+    height: 130px;
+    padding: 5px 15px;
+    overflow: hidden;
+  }
+  li.qr {
+    float: right !important;
+  }
+}

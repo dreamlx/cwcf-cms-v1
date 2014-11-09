@@ -1,0 +1,55 @@
+nb:
+  refinery:
+    plugins:
+      contact_types:
+        title: Contact Types
+      contacts:
+        title: Contacts
+    contacts:
+      admin:
+        contact_types:
+          actions:
+            create_new: Lag en ny Contact Type
+            reorder: Endre rekkefølgen på Contact Types
+            reorder_done: Ferdig å endre rekkefølgen Contact Types
+          records:
+            title: Contact Types
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Contact Types enda. Klikk på "Lag en ny Contact
+              Type" for å legge til din første contact type.
+          contact_type:
+            view_live_html: Vis hvordan denne contact type ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne contact type
+            delete: Fjern denne contact type permanent
+        contacts:
+          actions:
+            create_new: Lag en ny Contact
+            reorder: Endre rekkefølgen på Contacts
+            reorder_done: Ferdig å endre rekkefølgen Contacts
+          records:
+            title: Contacts
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Contacts enda. Klikk på "Lag en ny Contact"
+              for å legge til din første contact.
+          contact:
+            view_live_html: Vis hvordan denne contact ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne contact
+            delete: Fjern denne contact permanent
+      contact_types:
+        show:
+          other: Andre Contact Types
+      contacts:
+        show:
+          other: Andre Contacts
+  activerecord:
+    attributes:
+      refinery/contacts/contact_type:
+        name: Name
+      refinery/contacts/contact:
+        telephone: Telephone
+        fax: Fax
+        postcode: Postcode
+        email: Email
+        address: Address

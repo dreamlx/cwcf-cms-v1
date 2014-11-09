@@ -1,0 +1,18 @@
+<ul class="contact_list">
+  <li class="photo">
+    <span class="txt"><%= contact_item.nick_name %></span>
+    <span class="bg"></span>
+    <img width="130" height="130" src='<%= contact_item.avatar.url %>' />
+  </li>
+  <li class="info">
+    电话：<%= contact_item.telephone %><br>
+    传真：<%= contact_item.fax %><br>
+    邮编：<%= contact_item.postcode %><br>
+    QQ：<%= contact_item.qq %><br>
+    Email：<a href="mailto:<%= contact_item.email %>"><%= contact_item.email %></a><br>
+    地址：<%= contact_item.address %>
+  </li>
+  <li class="qr">
+    <img width="130" height="130" src='<%= contact_item.qrcode.url %>'>
+  </li>
+</ul>

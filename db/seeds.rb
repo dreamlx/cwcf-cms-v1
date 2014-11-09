@@ -17,3 +17,6 @@ Refinery::Previous::Engine.load_seed
 
 # Added by Refinery CMS CorpPartners extension
 Refinery::CorpPartners::Engine.load_seed
+
+# Added by Refinery CMS Contacts extension
+Refinery::Contacts::Engine.load_seed

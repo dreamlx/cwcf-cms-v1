@@ -1,16 +1,17 @@
 
 Refinery::PagesController.class_eval do
   before_filter :fetch_hotels, :only => [:show]
+  before_filter :find_all_contact_types
 
   def fetch_hotels
     @hotels = ::Refinery::Hotels::Hotel.all
   end
   protected :fetch_hotels
 
-  skip_before_filter :find_page, :only => [:about_us]
-  def about_us
-    @page = ::Refinery::Page.where(:link_url => '/about-us').first || error_404
-    @events = ::Refinery::Events::Event.all
-    render_with_templates?
+  def find_all_contact_types
+    @contact_types = ::Refinery::Contacts::ContactType.all
   end
+
+  protected :find_all_contact_types
+
 end

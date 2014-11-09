@@ -1,0 +1,55 @@
+fr:
+  refinery:
+    plugins:
+      contact_types:
+        title: Contact Types
+      contacts:
+        title: Contacts
+    contacts:
+      admin:
+        contact_types:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Contact Type
+            reorder: Réordonner les Contact Types
+            reorder_done: Fin de réordonnancement des Contact Types
+          records:
+            title: Contact Types
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Contact Type. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Contact Type" pour créer votre premi(er/ère)
+              contact type.
+          contact_type:
+            view_live_html: Voir ce(t/tte) contact type <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) contact type
+            delete: Supprimer définitivement ce(t/tte) contact type
+        contacts:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Contact
+            reorder: Réordonner les Contacts
+            reorder_done: Fin de réordonnancement des Contacts
+          records:
+            title: Contacts
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Contact. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Contact" pour créer votre premi(er/ère) contact.
+          contact:
+            view_live_html: Voir ce(t/tte) contact <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) contact
+            delete: Supprimer définitivement ce(t/tte) contact
+      contact_types:
+        show:
+          other: Autres Contact Types
+      contacts:
+        show:
+          other: Autres Contacts
+  activerecord:
+    attributes:
+      refinery/contacts/contact_type:
+        name: Name
+      refinery/contacts/contact:
+        telephone: Telephone
+        fax: Fax
+        postcode: Postcode
+        email: Email
+        address: Address

@@ -1,0 +1,54 @@
+it:
+  refinery:
+    plugins:
+      contact_types:
+        title: Contact Types
+      contacts:
+        title: Contacts
+    contacts:
+      admin:
+        contact_types:
+          actions:
+            create_new: Aggiungi Nuovo Contact Type
+            reorder: Riordina Contact Types
+            reorder_done: Termina il Riordino di Contact Types
+          records:
+            title: Contact Types
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Contact Types. Clicca "Aggiungi Nuovo
+              Contact Type" per aggiungere il tuo primo contact type.
+          contact_type:
+            view_live_html: Guarda live questo contact type <br/><em>(apre una nuova
+              finestra)</em>
+            edit: Modifica questo contact type
+            delete: Rimuovi per sempre questo contact type
+        contacts:
+          actions:
+            create_new: Aggiungi Nuovo Contact
+            reorder: Riordina Contacts
+            reorder_done: Termina il Riordino di Contacts
+          records:
+            title: Contacts
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Contacts. Clicca "Aggiungi Nuovo Contact"
+              per aggiungere il tuo primo contact.
+          contact:
+            view_live_html: Guarda live questo contact <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo contact
+            delete: Rimuovi per sempre questo contact
+      contact_types:
+        show:
+          other: Altri Contact Types
+      contacts:
+        show:
+          other: Altri Contacts
+  activerecord:
+    attributes:
+      refinery/contacts/contact_type:
+        name: Name
+      refinery/contacts/contact:
+        telephone: Telephone
+        fax: Fax
+        postcode: Postcode
+        email: Email
+        address: Address

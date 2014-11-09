@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141105012353) do
+ActiveRecord::Schema.define(:version => 20141109025500) do
+
+  create_table "refinery_contacts", :force => true do |t|
+    t.string   "telephone"
+    t.string   "fax"
+    t.integer  "postcode"
+    t.string   "email"
+    t.string   "address"
+    t.integer  "position"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "nick_name"
+    t.integer  "contact_type_id"
+    t.integer  "avatar_id"
+    t.integer  "qrcode_id"
+    t.integer  "qq"
+  end
+
+  create_table "refinery_contacts_contact_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "refinery_corp_partners", :force => true do |t|
     t.string   "title"

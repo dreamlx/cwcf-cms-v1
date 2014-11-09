@@ -84,7 +84,7 @@ $(function () {
                     " </a>" +
                     "</div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/news/about_us'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +

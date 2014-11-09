@@ -1,0 +1,55 @@
+tr:
+  refinery:
+    plugins:
+      contact_types:
+        title: Contact Types
+      contacts:
+        title: Contacts
+    contacts:
+      admin:
+        contact_types:
+          actions:
+            create_new: Yeni Ekle Contact Type
+            reorder: Tekrar sirala Contact Types
+            reorder_done: Tekrar siralama tamamlandiContact Types
+          records:
+            title: Contact Types
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Contact Types yok henuz.  Tikla "Yeni Ekle
+              Contact Type" eklemek senin ilk contact type.
+          contact_type:
+            view_live_html: Bunu canlu contact type goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle contact type
+            delete: Bunu Sil contact type sonsuza dek
+        contacts:
+          actions:
+            create_new: Yeni Ekle Contact
+            reorder: Tekrar sirala Contacts
+            reorder_done: Tekrar siralama tamamlandiContacts
+          records:
+            title: Contacts
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Contacts yok henuz.  Tikla "Yeni Ekle Contact"
+              eklemek senin ilk contact.
+          contact:
+            view_live_html: Bunu canlu contact goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle contact
+            delete: Bunu Sil contact sonsuza dek
+      contact_types:
+        show:
+          other: Diger Contact Types
+      contacts:
+        show:
+          other: Diger Contacts
+  activerecord:
+    attributes:
+      refinery/contacts/contact_type:
+        name: Name
+      refinery/contacts/contact:
+        telephone: Telephone
+        fax: Fax
+        postcode: Postcode
+        email: Email
+        address: Address
