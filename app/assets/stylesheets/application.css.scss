@@ -330,3 +330,11 @@ ul.contact_list {
     float: right !important;
   }
 }
+
+div.margin-bottom {
+  clear: both;
+  height: 2px;
+  line-height: 2px;
+  background: white;
+  margin-bottom: 20px;
+}

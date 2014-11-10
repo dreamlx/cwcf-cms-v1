@@ -6,6 +6,7 @@
         <h4><%= contact_type.name %></h4>
         <%= render partial: 'refinery/contacts/contacts/contact_item',
             collection: ::Refinery::Contacts::Contact.where(:contact_type_id => contact_type.id)%>
+        <div class="margin-bottom"></div>
       <% end %>
     </section>
   </div>

@@ -107,7 +107,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/partners/step'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
@@ -118,7 +118,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/partners/visitors'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
@@ -129,7 +129,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/partners/advert'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
@@ -140,7 +140,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/partners/download'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-05 col-md-1'>" +
                     "</div>" +
@@ -151,7 +151,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/partners/apply'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +
@@ -163,7 +163,7 @@ $(function () {
                     " </div>";
             } else if (url_first_page === "audience") {
                 append_str = "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/audience/audienceinfo'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
@@ -174,7 +174,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/audience/vipclub'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
@@ -185,7 +185,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/audience/exclusive'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
@@ -196,7 +196,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/news/services'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
@@ -208,7 +208,7 @@ $(function () {
                     " </div>";
             } else if (url_first_page === "media") {
                 append_str = "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/media/cwcf-news'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
@@ -219,7 +219,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/media/media-news'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
@@ -230,7 +230,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/media/place-photo'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
@@ -241,7 +241,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/media/cooperation'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1'>" +
                     "</div>" +
@@ -252,7 +252,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/media/reporter-reg'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-05 col-md-1'>" +
                     "</div>" +
@@ -263,7 +263,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/media/material-down'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +
@@ -275,7 +275,7 @@ $(function () {
                     " </div>";
             } else if (url_first_page === "event") {
                 append_str = "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/event/activity-schedule'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-01 col-md-1'>" +
                     "</div>" +
@@ -286,7 +286,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/event/cwcf-fm'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-02 col-md-1'>" +
                     "</div>" +
@@ -297,7 +297,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='#'>" +
+                    "<a href='/event/news-meeting'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-03 col-md-1'>" +
                     "</div>" +
