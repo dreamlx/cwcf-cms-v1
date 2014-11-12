@@ -51,12 +51,10 @@ gem 'refinerycms-testing'
 
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
-#  gem 'refinerycms-blog', '~> 2.1.0'
+gem 'refinerycms-blog', '~> 2.1.0'
 #  gem 'refinerycms-inquiries', '~> 2.1.0'
 #  gem 'refinerycms-search', '~> 2.1.0'
 #  gem 'refinerycms-page-images', '~> 2.1.0'
-#  gem 'refinerycms-events', :path => 'vendor/extensions'
-# gem 'refinerycms-blog'
 # gem "raptor-editor-rails"
 gem 'refinerycms-hotels', :path => 'vendor/extensions'
 gem 'refinerycms-corp_partners', :path => 'vendor/extensions'

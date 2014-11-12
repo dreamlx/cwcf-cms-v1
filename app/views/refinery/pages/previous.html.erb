@@ -1,0 +1,31 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><a href="/news/previous"><img src="/assets/back.jpg"></a>历届回顾</h1>
+    <section id='body'>
+      <ul class="nav nav-tabs" role="tablist">
+        <% (::Refinery::Page.where(:parent_id => @page.parent_id)).each do |previou_item| %>
+          <li class="<%= 'active' if previou_item.slug == @page.slug %>">
+            <a href='<%= "/news/previous/" + (::Refinery::Page.find(@page.parent_id)).slug + "/" + previou_item.slug %>'>
+              <%= previou_item.title() %>
+              </a>
+          </li>
+        <% end %>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id='description'>
+          <%=raw @page.content_for(:body) %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @page.background_image.present? %>
+  <style type="text/css">
+    body {
+      background-image: url(<%= @page.background_image.url -%>);
+    }
+  </style>
+  <% end %>
+<% end %>

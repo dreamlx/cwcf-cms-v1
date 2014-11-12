@@ -27,6 +27,18 @@
     %>
   </div>
 
+  <div class="field">
+    <%= f.label :page_avatar %>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :page_avatar_id,
+      :image => f.object.page_avatar,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+
   <%= render 'form_advanced_options', :f => f %>
 
   <%= render '/refinery/admin/form_actions', :f => f,
