@@ -1,0 +1,33 @@
+cs:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Přidat Exhibitor
+            reorder: Řadit Exhibitors
+            reorder_done: Konec řazení Exhibitors
+          records:
+            title: Exhibitors
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Exhibitors. Zvolte "Přidat Exhibitor" pro přidání prvního exhibitor.
+          exhibitor:
+            view_live_html: Zobrazit náhled exhibitor<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit exhibitor
+            delete: Smazat exhibitor
+      exhibitors:
+        show:
+          other: Další Exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand

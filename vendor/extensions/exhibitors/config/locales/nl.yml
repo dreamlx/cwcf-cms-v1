@@ -1,0 +1,33 @@
+nl:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Nieuwe Exhibitor toevoegen
+            reorder: De volgorde van de Exhibitors wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Exhibitor-volgorde
+          records:
+            title: Exhibitors
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Exhibitors. Druk op 'Nieuwe Exhibitor toevoegen' om de eerste toe te voegen.
+          exhibitor:
+            view_live_html: Deze exhibitor op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze exhibitor
+            delete: Deze exhibitor definitief verwijderen
+      exhibitors:
+        show:
+          other: Andere Exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand

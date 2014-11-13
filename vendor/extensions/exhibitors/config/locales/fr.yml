@@ -1,0 +1,33 @@
+fr:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Exhibitor
+            reorder: Réordonner les Exhibitors
+            reorder_done: Fin de réordonnancement des Exhibitors
+          records:
+            title: Exhibitors
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Exhibitor. Cliquer sur "Créer un(e) nouve(au/l/lle) Exhibitor" pour créer votre premi(er/ère) exhibitor.'
+          exhibitor:
+            view_live_html: Voir ce(t/tte) exhibitor <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) exhibitor
+            delete: Supprimer définitivement ce(t/tte) exhibitor
+      exhibitors:
+        show:
+          other: Autres Exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand

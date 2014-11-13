@@ -1,0 +1,33 @@
+tr:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Yeni Ekle Exhibitor
+            reorder: Tekrar sirala Exhibitors
+            reorder_done: Tekrar siralama tamamlandiExhibitors
+          records:
+            title: Exhibitors
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Exhibitors yok henuz.  Tikla "Yeni Ekle Exhibitor" eklemek senin ilk exhibitor.
+          exhibitor:
+            view_live_html: Bunu canlu exhibitor goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle exhibitor
+            delete: Bunu Sil exhibitor sonsuza dek
+      exhibitors:
+        show:
+          other: Diger Exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand
