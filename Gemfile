@@ -27,7 +27,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'activeadmin', github: 'activeadmin', branch: '0-6-stable'
+# gem 'activeadmin', github: 'activeadmin', branch: '0-6-stable'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
