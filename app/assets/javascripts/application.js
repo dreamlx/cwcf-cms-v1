@@ -334,7 +334,7 @@ $(function () {
       //  });
         $(".card").animate({left:'-40px'},"slow",function(){
           $(this).hover(function(){
-            $(this).animate({left:'-290px'},10);
+            $(this).animate({left:'-190px'},10);
           },function(){
             $(this).animate({left:'-40px'},10);
           });
