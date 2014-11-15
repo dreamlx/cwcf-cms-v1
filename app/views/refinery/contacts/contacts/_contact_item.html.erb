@@ -2,7 +2,7 @@
   <li class="photo">
     <span class="txt"><%= contact_item.nick_name %></span>
     <span class="bg"></span>
-    <img width="130" height="130" src='<%= contact_item.avatar.url %>' />
+    <img src='<%= contact_item.avatar.url %>' />
   </li>
   <li class="info">
     电话：<%= contact_item.telephone %><br>
@@ -13,6 +13,6 @@
     地址：<%= contact_item.address %>
   </li>
   <li class="qr">
-    <img width="130" height="130" src='<%= contact_item.qrcode.url %>'>
+    <img src='<%= contact_item.qrcode.url %>'>
   </li>
 </ul>

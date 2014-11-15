@@ -295,13 +295,14 @@ ul.contact_list {
   overflow: hidden;
   margin-bottom: 30px;
   line-height: 1.5em !important;
+  font-size: 12px;
   li {
     float: left;
     list-style-type: none;
   }
   li.photo {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     position: relative;
     span.txt {
       position: absolute;
@@ -322,13 +323,25 @@ ul.contact_list {
     }
   }
   li.info {
-    height: 130px;
+    height: 110px;
     padding: 5px 15px;
     overflow: hidden;
   }
   li.qr {
     float: right !important;
   }
+  img {
+    width: 110px;
+    height: 110px;
+  }
+  a {
+    color: black;
+  }
+
+  a:hover, a:focus {
+    color: #428bca;
+  }
+
 }
 
 div.margin-bottom {
@@ -341,4 +354,79 @@ div.margin-bottom {
 
 #body_content_title a{
   float: right;
+}
+
+
+div.h3-tit {
+  background: url(../assets/tit_bg.jpg) repeat-x bottom;
+  height: 24px;
+  line-height: 24px;
+  h3 {
+    display: inline-block;
+    float: left;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #9a1b23;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 24px;
+  }
+  span.h3-tit-arrow {
+    background: url(../assets/tit_arrow.png) no-repeat left top;
+    display: inline-block;
+    height: 27px;
+    width: 27px;
+  }
+}
+
+
+ul.downs {
+  overflow: hidden;
+  margin-top: 20px;
+  li {
+    overflow: hidden;
+    line-height: 41px;
+    margin-bottom: 20px;
+    span.tit {
+      width: 180px;
+      color: #a12931;
+      display: inline-block;
+    }
+    a {
+      width: 180px !important;
+    }
+  }
+}
+
+.download_btn {
+  border-bottom: 1px solid #727171;
+  font-size: 14px;
+  display: inline-block;
+  position: relative;
+  span {
+    width: 1px;
+    height: 27px;
+    background: #727171;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    background: url(../assets/down2.png) no-repeat right -156px;
+    display: block;
+    padding: 13px 70px 0 30px;
+    max-width: 160px;
+    text-align: center;
+    height: 41px;
+    line-height: 16px;
+    color: #333;
+  }
+  a:hover {
+    background-position: right 0 !important;
+    color: #9a1b23;
+  }
 }
