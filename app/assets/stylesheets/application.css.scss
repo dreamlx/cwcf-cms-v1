@@ -29,6 +29,20 @@ a:hover {
   text-decoration: none!important;
 }
 
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+
+ul, ol, dl {
+  font-size: 1em;
+  line-height: 1.6;
+  list-style-position: outside;
+  font-family: PingHei, 'Lucida Grande', 'Lucida Sans Unicode', STHeiti, Helvetica, Arial, Verdana, sans-serif;
+}
+
 #body, #side_body {
   float: left;
   width: 45%;
@@ -161,11 +175,11 @@ a:hover {
   .menu-bottom {
     ul{
       li {
-        width: 10%;
-        min-width: 120px;
+        width: 160px;
+        min-width: 160px;
         a {
           text-align: center;
-          font-size: 18px;
+          font-size: 14px;
           color: white;
           padding: 11px 15px;
         }
@@ -222,7 +236,7 @@ a:hover {
   margin-left: 153px;
   margin-top: -20px;
   min-height: 900px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.85);
   .show_body {
     width: 710px;
     display: table;
@@ -436,4 +450,34 @@ ul.downs {
 
 #logo {
   margin-top: 10px;
+}
+
+
+ul.dlist{
+  margin-top: 30px;
+  li {
+    width: 294px;
+    a {
+      box-sizing: initial;
+      background: url(../assets/down1.png) no-repeat 0 -50px;
+      width: 174px;
+      height: 37px;
+      line-height: 18px;
+      font-size: 14px;
+      color: #595757;
+      padding: 15px 60px 0 30px;
+      text-align: center;
+      display: block;
+    }
+    a:hover {
+      background-position: 0 0 !important;
+      color: #cc0000;
+    }
+  }
+  li.left {
+    float: left;
+  }
+  li.right {
+    float: right;
+  }
 }

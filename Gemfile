@@ -57,6 +57,4 @@ gem 'refinerycms-blog', '~> 2.1.0'
 # gem "raptor-editor-rails"
 gem 'refinerycms-hotels', :path => 'vendor/extensions'
 gem 'refinerycms-corp_partners', :path => 'vendor/extensions'
-gem 'refinerycms-contacts', :path => 'vendor/extensions'
-
 gem 'refinerycms-exhibitors', :path => 'vendor/extensions'

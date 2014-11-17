@@ -1,8 +1,6 @@
 PATH
   remote: vendor/extensions
   specs:
-    refinerycms-contacts (1.0)
-      refinerycms-core (~> 2.1.3)
     refinerycms-corp_partners (1.0)
       refinerycms-core (~> 2.1.3)
     refinerycms-exhibitors (1.0)
@@ -273,7 +271,6 @@ DEPENDENCIES
   refinerycms (~> 2.1.0)
   refinerycms-acts-as-indexed (~> 1.0.0)
   refinerycms-blog (~> 2.1.0)
-  refinerycms-contacts!
   refinerycms-corp_partners!
   refinerycms-exhibitors!
   refinerycms-hotels!
