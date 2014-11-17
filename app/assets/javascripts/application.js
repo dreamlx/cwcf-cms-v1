@@ -323,20 +323,11 @@ $(function () {
     var url_else_page = search_url.split('/')[2];
     if (url_else_page) {
       setTimeout(function(){
-        // $("#card-holder").css();
-      //   $(".card:hover").css({
-      //    "position": "relative";
-      //    "left": "-290px";
-      //    "margin-left": "-32px";
-      //    "box-shadow":
-      //      "0 -8px 8px -8px rgba(0, 0, 0, 0.5),0 8px 8px -8px rgba(0, 0, 0, 0.5)";
-      //    "transition": "all 0.3s ease-in-out";
-      //  });
         $(".card").animate({left:'-40px'},"slow",function(){
           $(this).hover(function(){
-            $(this).animate({left:'-190px'},10);
+            $(".card").animate({left:'-190px'},10);
           },function(){
-            $(this).animate({left:'-40px'},10);
+            $(".card").animate({left:'-40px'},10);
           });
         });
       },800);
