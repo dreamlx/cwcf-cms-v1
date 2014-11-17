@@ -176,8 +176,9 @@ ul, ol, dl {
   }
   .menu-bottom {
     ul{
-
-      *display:inline-box;
+      display:-moz-inline-box;
+      display:-webkit-inline-box;
+      display:inline-box;
       li {
         width: 160px;
         min-width: 160px;
@@ -283,6 +284,7 @@ ul, ol, dl {
 
 #carousel-banners {
   margin-top: -20px;
+  min-width: 1200px;
 }
 
 #hotels {
@@ -508,5 +510,12 @@ ul.dlist{
   }
   li.right {
     float: right;
+  }
+}
+
+.carousel .carousel-inner {
+  height: inherit;
+  .item .img-responsive {
+    overflow: hidden;
   }
 }

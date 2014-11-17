@@ -346,4 +346,12 @@ $(function () {
          $(this).html(hotel_desc + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
        };
     });
+
+    //调整首页图片大小
+    function adjust(){
+       var winh  = jQuery(window).height();
+       var wintop = $("#carousel-banners").offset().top;
+       $("#carousel-banners").css("height", winh-wintop-30);
+    }
+    window.onresize = adjust;
 });
