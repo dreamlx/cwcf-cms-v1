@@ -288,6 +288,19 @@ ul, ol, dl {
   div {
     padding: 0;
   }
+  .col-md-12 {
+    width: 670px;
+    padding-bottom: 20px;
+    border-bottom: solid 2px white;
+  }
+  .col-md-8 {
+    float: left;
+    width: 447px;
+  }
+  .col-md-4 {
+    float: right;
+    width: 223px;
+  }
 }
 
 .star {
