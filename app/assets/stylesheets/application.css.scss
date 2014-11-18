@@ -614,3 +614,36 @@ div.margin-2 {
   height: 20px;
   line-height: 20px;
 }
+
+div.margin-4 {
+  clear: both;
+  height: 2px;
+  line-height: 2px;
+  border-top: solid 2px white;
+  margin-bottom: 20px;
+}
+
+.f14 {
+  color: #2f8fda;
+  font-weight: normal;
+  line-height: 2em;
+  font-size: 14px;
+}
+
+
+ul.blist1 li {
+  float: left;
+  background: url(../assets/brand_bg1.png) no-repeat left top;
+  width: 215px;
+  min-height: 66px;
+  margin: 0 35px 10px 0;
+  padding: 10px 15px 15px 10px;
+  text-align: center;
+  div {
+    width: 180px;
+    height: 66px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
