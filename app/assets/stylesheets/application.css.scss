@@ -145,6 +145,8 @@ ul, ol, dl {
 
 .card-content {
   display: inline-block;
+  display: -moz-inline-block;
+  display: -webkit-inline-block;
   color: #fff;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
@@ -468,9 +470,9 @@ ul.downs {
 }
 
 .footer-menu.row {
-  display:-moz-inline-box;
-  display:-webkit-inline-box;
-  display:inline-box;
+  display:-moz-box;
+  display:-webkit-box;
+  display:box;
 }
 
 #logo {

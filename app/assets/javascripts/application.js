@@ -348,10 +348,18 @@ $(function () {
     });
 
     //调整首页图片大小
-    function adjust(){
-       var winh  = jQuery(window).height();
-       var wintop = $("#carousel-banners").offset().top;
-       $("#carousel-banners").css("height", winh-wintop-30);
+    if ($("#carousel-banners").length) {
+      function adjust(){
+         var winh  = jQuery(window).height();
+         var wintop = $("#carousel-banners").offset().top;
+         $("#carousel-banners").css("height", winh-wintop-30);
+      }
+      window.onresize = adjust;
+      adjust();
     }
-    window.onresize = adjust;
+
+    //底部菜单样式
+    $(".footer-menu.row").css({
+      "display":"-moz-box"
+    });
 });
