@@ -48,7 +48,7 @@ ul, ol, dl {
   width: 45%;
   background: white;
   color: #333;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .menu ul {
@@ -520,4 +520,97 @@ ul.dlist{
   .item .img-responsive {
     overflow: hidden;
   }
+}
+
+.au_tab {
+  overflow: hidden;
+  li {
+    float: left;
+    a {
+      background: url(../assets/tab.png) no-repeat;
+      display: block;
+      width: 100%;
+      height: 69px;
+    }
+    p {
+      margin: 40px 30px 40px 0;
+    }
+  }
+  li.i1 {
+    width: 346px;
+    a:hover {
+      background-position: 0 -78px;
+    }
+  }
+  li.i2 {
+    width: 375px;
+    margin-left: -21px;
+    a {
+      background-position: -375px 0;
+    }
+    a:hover {
+      background-position: -375px -78px ;
+    }
+  }
+}
+
+.little-title {
+  font-size: 18px;
+  color: #2f8fda;
+  margin-bottom: 20px;
+}
+
+
+.au_icos {
+  overflow: hidden;
+  li {
+    float: left;
+    width: 25%;
+    a:hover {
+      color: #2f8fda;
+    }
+    a {
+      background: url(../assets/icons3.png) no-repeat;
+      display: block;
+      width: 100%;
+      line-height: 20px;
+      padding: 27px 0 0 60px;
+      height: 47px;
+      color: #333;
+      font-size: 14px;
+    }
+  }
+
+  li.i1{
+     a {
+       background-position: -318px 0;
+     }
+     a:hover {
+       background-position: -318px -47px ;
+     }
+  }
+
+  li.i2 {
+    a {
+      background-position: -626px 0;
+    }
+    a:hover {
+      background-position: -626px -47px ;
+    }
+  }
+
+  li.i3 {
+    a {
+      background-position: -935px 0;
+    }
+    a:hover {
+      background-position: -935px -47px ;
+    }
+  }
+}
+
+div.margin-2 {
+  clear: both;
+  height: 20px;
+  line-height: 20px;
 }
