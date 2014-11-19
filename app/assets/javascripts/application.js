@@ -323,14 +323,14 @@ $(function () {
     var url_else_page = search_url.split('/')[2];
     if (url_else_page) {
       setTimeout(function(){
-        $(".card").animate({left:'-40px'},"slow",function(){
+        $(".card-holder").animate({"margin-left":'-40px'},"slow",function(){
           $(this).hover(function(){
-            $(".card").animate({left:'-190px'},10);
+            $(this).animate({"margin-left":'-190px'},"fast");
           },function(){
-            $(".card").animate({left:'-40px'},10);
+            $(this).animate({"margin-left":'-40px'},"fast");
           });
         });
-      },800);
+      },1000);
     }
 
 
