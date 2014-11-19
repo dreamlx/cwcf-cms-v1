@@ -297,7 +297,7 @@ ul, ol, dl {
     padding: 0;
   }
   .col-md-12 {
-    width: 670px;
+    width: 708px;
     padding-bottom: 20px;
     border-bottom: solid 2px white;
   }
@@ -645,5 +645,39 @@ ul.blist1 li {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+  }
+}
+
+.media_list {
+  li {
+    padding: 0 90px 0 0;
+    border-bottom: 1px solid #c6c4c3;
+    color: #595757;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  span {
+    float: right;
+  }
+  span.down {
+    margin-right: -80px;
+    a {
+      background: url(../assets/down2.png) no-repeat 0 -156px;
+      display: block;
+      width: 42px;
+      height: 32px;
+    }
+    a:hover {
+      background-position: 0 0;
+    }
+  }
+  h3 {
+    font-size: 14px;
+    a {
+      color: #000;
+    }
+    a:hover {
+      color: #2f8fda;
+    }
   }
 }
