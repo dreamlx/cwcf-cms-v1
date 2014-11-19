@@ -2,7 +2,7 @@ PATH
   remote: vendor/extensions
   specs:
     refinerycms-corp_partners (1.0)
-      refinerycms-core (~> 2.1.3)
+      refinerycms-core (~> 2.1.5)
     refinerycms-exhibitors (1.0)
       refinerycms-core (~> 2.1.3)
     refinerycms-hotels (1.0)

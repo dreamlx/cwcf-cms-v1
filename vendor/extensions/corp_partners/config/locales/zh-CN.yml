@@ -1,31 +1,51 @@
 zh-CN:
   refinery:
     plugins:
+      corp_partner_types:
+        title: Corp Partner Types
       corp_partners:
         title: Corp Partners
     corp_partners:
       admin:
+        corp_partner_types:
+          actions:
+            create_new: "建立新的 Corp Partner Type"
+            reorder: "对 Corp Partner Types 重新排序"
+            reorder_done: "对 Corp Partner Types 的重新排序结束"
+          records:
+            title: Corp Partner Types
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Corp Partner Types . 点击 "Add New Corp Partner Type"
+              创建一个corp partner type.
+          corp_partner_type:
+            view_live_html: "查看 corp partner type 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 corp partner type"
+            delete: "永久删除 corp partner type"
         corp_partners:
           actions:
-            create_new: 建立新的 Corp Partner
-            reorder: 对 Corp Partners 重新排序
-            reorder_done: 对 Corp Partners 的重新排序结束
+            create_new: "建立新的 Corp Partner"
+            reorder: "对 Corp Partners 重新排序"
+            reorder_done: "对 Corp Partners 的重新排序结束"
           records:
             title: Corp Partners
-            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
-
-            # There are no Corp Partners yet. Click "Add New Corp Partner" to add your first corp partner.
-            no_items_yet: 目前没有 Corp Partners . 点击 "Add New Corp Partner" 创建一个corp partner.
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Corp Partners . 点击 "Add New Corp Partner" 创建一个corp
+              partner.
           corp_partner:
-            view_live_html: 查看 corp partner 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 corp partner
-            delete: 永久删除 corp partner
+            view_live_html: "查看 corp partner 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 corp partner"
+            delete: "永久删除 corp partner"
+      corp_partner_types:
+        show:
+          other: "其他 Corp Partner Types"
       corp_partners:
         show:
-          other: 其他 Corp Partners
+          other: "其他 Corp Partners"
   activerecord:
     attributes:
-      'refinery/corp_partners/corp_partner':
+      refinery/corp_partners/corp_partner_type:
+        name: Name
+      refinery/corp_partners/corp_partner:
         title: Title
         corp_partner_avatar_id: Corp Partner Avatar
         main_url: Main Url

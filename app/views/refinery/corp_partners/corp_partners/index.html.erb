@@ -2,20 +2,23 @@
   <div class='show_body'>
     <h1 id='body_content_title'><%= @corp_partners_page.title() %></h1>
     <section id='body'>
-      <div class="row-fluid">
-        <div class="col-md-12">
-          <div class="row mix-grid">
-            <% @corp_partners.each do |corp_partner| %>
-              <div class="col-md-4 col-sm-6 mix ">
-                <div class="mix-inner">
-                  <a href='<%= "//" + corp_partner.main_url %>'><img src='<%= corp_partner.corp_partner_avatar.url %>'></a>
-                  <span><%= corp_partner.title %></span>
+      <% @corp_partner_types.each do |corp_partner_type| %>
+        <h3 class="little-title"><%= corp_partner_type.name %></h3>
+        <div class="row-fluid">
+          <div class="col-md-12">
+            <div class="row mix-grid">
+              <% (@corp_partners.where(:corp_partner_type_id => corp_partner_type.id)).each do |corp_partner| %>
+                <div class="col-md-4 col-sm-6 mix ">
+                  <div class="mix-inner">
+                    <a href='<%= "//" + corp_partner.main_url %>'><img src='<%= corp_partner.corp_partner_avatar.url %>'></a>
+                    <span><%= corp_partner.title %></span>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </section>
   </div>
 </div>
