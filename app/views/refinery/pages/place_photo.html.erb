@@ -1,0 +1,19 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'>展会图片集锦</h1>
+    <section id='body'>
+      <%=raw @page.content_for(:body) %>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>
