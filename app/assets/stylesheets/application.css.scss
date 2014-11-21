@@ -612,6 +612,12 @@ ul.dlist{
   }
 }
 
+div.margin-1 {
+  clear: both;
+  height: 30px;
+  line-height: 30px;
+}
+
 div.margin-2 {
   clear: both;
   height: 20px;
@@ -687,4 +693,65 @@ ul.blist1 li {
 
 .down-div {
   display: inline-block;
+}
+
+.w150 {
+  width: 120px;
+}
+
+ul.tab-5 {
+  overflow: hidden;
+  li {
+    float: left;
+    margin-left: -8px;
+    span {
+      display: inline-block;
+      float: left;
+    }
+    a {
+      display: block;
+      height: 27px;
+      line-height: 27px;
+      color: #fff;
+      width: 100%;
+      span.arrow-c {
+        background: #959696;
+        text-align: center;
+        font-size: 14px;
+        min-width: 80px;
+      }
+      span.arrow-l,span.arrow-r {
+        background: url(../assets/arrow6.png) no-repeat 0 0;
+        width: 13px;
+      }
+      span.arrow-r {
+        background-position:-13px 0;
+      }
+    }
+    a:hover {
+      span.arrow-l {
+        background-position: 0 -27px !important;
+      }
+      span.arrow-c {
+        background: #8d1b23 !important;
+      }
+      span.arrow-r {
+        background-position: -13px -27px !important;
+      }
+    }
+  }
+  li.first {
+    margin-left: 0 !important;
+  }
+  li.hover a {
+    span.arrow-l {
+      background-position: 0 -27px !important;
+    }
+    span.arrow-c {
+      background: #8d1b23 !important;
+    }
+    span.arrow-r {
+      background-position: -13px -27px !important;
+    }
+  }
 }
