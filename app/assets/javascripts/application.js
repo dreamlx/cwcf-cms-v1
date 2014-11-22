@@ -323,13 +323,13 @@ $(function () {
     var url_else_page = search_url.split('/')[2];
     if (url_else_page) {
       setTimeout(function(){
-        $(".card-holder").animate({"margin-left":'-40px'},"slow",function(){
-          $(this).hover(function(){
-            $(this).animate({"margin-left":'-190px'},"fast");
-          },function(){
-            $(this).animate({"margin-left":'-40px'},"fast");
-          });
-        });
+        // $(".card-holder").animate({"margin-left":'-30px'},"slow",function(){
+        //   $(this).hover(function(){
+        //     $(this).animate({"margin-left":'-190px'},"fast");
+        //   },function(){
+        //     $(this).animate({"margin-left":'-30px'},"fast");
+        //   });
+        // });
       },1000);
     }
 
