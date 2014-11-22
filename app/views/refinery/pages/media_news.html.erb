@@ -1,0 +1,46 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'>媒体新闻报道</h1>
+    <section id='body'>
+      <div class="margin-1"> </div>
+      <ul class="tab-5">
+        <li class="first hover">
+          <a href="/media/media-news/news_reports">
+            <span class="arrow-c w345">新闻报道</span>
+            <span class="arrow-r">&#160;</span>
+          </a>
+        </li>
+        <li>
+          <a href="/media/media-news/media_topic">
+            <span class="arrow-l">&#160;</span>
+            <span class="arrow-c w345">精彩专题</span>
+          </a>
+        </li>
+      </ul>
+      <div class="margin-1"> </div>
+      <ul class="news-list">
+        <% (::Refinery::Page.where(:parent_id => @page.id )).each do |news_item| %>
+        <li>
+          <a href='<%= refinery.url_for(news_item.url_marketable) %>'>
+            <%= news_item.title() %>
+          </a>
+          <span>
+            <%= news_item.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S').to_s %>
+          </span>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>
