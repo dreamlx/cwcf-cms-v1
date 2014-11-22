@@ -808,3 +808,25 @@ ul.news-list {
     width: 100%;
   }
 }
+
+.countdown_box {
+  position: absolute;
+  top: 140px;
+  left: 100px;
+  > span {
+    color: white;
+    font-size: 24px;
+  }
+  .countdown {
+    font-size: 24px;
+    color: white;
+    span {
+
+    }
+    span.digit {
+      font-family: "digit";
+      font-size: 42px;
+      color: #2f8fda;
+    }
+  }
+}
