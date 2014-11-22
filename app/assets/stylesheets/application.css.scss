@@ -12,6 +12,7 @@
  *= require refinery/formatting
  *= require refinery/theme
  *= require_self
+ *= require bxslider
  //= require foundation_and_overrides
  *= require_tree .
  *= require raptor-front-end
@@ -697,7 +698,7 @@ ul.blist1 li {
 }
 
 .w150 {
-  width: 120px;
+  width: 127px;
 }
 
 ul.tab-5 {
@@ -793,5 +794,17 @@ ul.news-list {
   }
   div.item-title {
     margin-top: 10px;
+  }
+}
+.photo-view {
+  width: 700px;
+  height: 500px;
+  background: #e7e7e7;
+  margin: 40px -2px;
+  padding: 30px;
+  text-align: center;
+  img {
+    height: auto;
+    width: 100%;
   }
 }

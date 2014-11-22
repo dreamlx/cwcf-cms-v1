@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bxslider
 //= require foundation
 //= require_tree .
 //= require bootstrap-sprockets
@@ -323,13 +324,13 @@ $(function () {
     var url_else_page = search_url.split('/')[2];
     if (url_else_page) {
       setTimeout(function(){
-        // $(".card-holder").animate({"margin-left":'-30px'},"slow",function(){
-        //   $(this).hover(function(){
-        //     $(this).animate({"margin-left":'-190px'},"fast");
-        //   },function(){
-        //     $(this).animate({"margin-left":'-30px'},"fast");
-        //   });
-        // });
+        $(".card-holder").animate({"margin-left":'-30px'},"slow",function(){
+          $(this).hover(function(){
+            $(this).animate({"margin-left":'-190px'},"fast");
+          },function(){
+            $(this).animate({"margin-left":'-30px'},"fast");
+          });
+        });
       },1000);
     }
 
@@ -362,4 +363,23 @@ $(function () {
     $(".footer-menu.row").css({
       "display":"-moz-box"
     });
+
+    if ($(".photo-list").length > 0 && $(".photo-list").find("img").length > 0){
+      var img_list_html = "<div class='photo-view'>"+ $(".photo-list").find("img")[0].outerHTML +"</div><ul class='bxslider'>";
+      $(".photo-list").find("img").each(function() {
+        img_list_html += "<li>" + this.outerHTML + "</li>";
+      })
+      img_list_html += "</ul>";
+      $(".photo-list").html(img_list_html);
+      $('.bxslider').bxSlider({
+        minSlides: 3,
+        maxSlides: 4,
+        moveSlides: 1,
+        slideWidth: 170,
+        slideMargin: 10
+      });
+      $('.bxslider img').click(function() {
+        $(".photo-view").html(this.outerHTML);
+      });
+    }
 });

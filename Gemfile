@@ -60,3 +60,5 @@ gem 'refinerycms-corp_partners', :path => 'vendor/extensions'
 gem 'refinerycms-exhibitors', :path => 'vendor/extensions'
 
 gem 'refinerycms-cooperations', :path => 'vendor/extensions'
+
+gem 'bxslider-rails'
