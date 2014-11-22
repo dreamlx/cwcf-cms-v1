@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @cooperation_type.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @cooperation_type.name %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="cooperation_types">
+      <% @cooperation_types.each do |cooperation_type| %>
+        <li>
+          <%= link_to cooperation_type.name, refinery.cooperations_cooperation_type_path(cooperation_type) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,55 @@
+fr:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Cooperation Type
+            reorder: Réordonner les Cooperation Types
+            reorder_done: Fin de réordonnancement des Cooperation Types
+          records:
+            title: Cooperation Types
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Cooperation Type. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Cooperation Type" pour créer votre
+              premi(er/ère) cooperation type.
+          cooperation_type:
+            view_live_html: Voir ce(t/tte) cooperation type <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) cooperation type
+            delete: Supprimer définitivement ce(t/tte) cooperation type
+        cooperations:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Cooperation
+            reorder: Réordonner les Cooperations
+            reorder_done: Fin de réordonnancement des Cooperations
+          records:
+            title: Cooperations
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Cooperation. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Cooperation" pour créer votre premi(er/ère)
+              cooperation.
+          cooperation:
+            view_live_html: Voir ce(t/tte) cooperation <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) cooperation
+            delete: Supprimer définitivement ce(t/tte) cooperation
+      cooperation_types:
+        show:
+          other: Autres Cooperation Types
+      cooperations:
+        show:
+          other: Autres Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url

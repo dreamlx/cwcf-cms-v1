@@ -18,8 +18,17 @@ namespace :init_db do
     end
   end
 
+# 序号 logo名称 品牌显示名称 简介
   desc "import exhibitor to database"
   task import_exhibitor: :environment do
-
+    $index = 0
+    CSV.foreach("/Users/hzz/Downloads/a.csv") do |row|
+      $index += 1;
+      unless $index == 1
+        ex_ = Refinery::Exhibitors::Exhibitor.new(title: row[2], logo: row[1], description: row[3]);
+        ex_.year = Time.new.year;
+        ex_.save!
+      end
+    end
   end
 end

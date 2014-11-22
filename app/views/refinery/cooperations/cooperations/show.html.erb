@@ -1,0 +1,37 @@
+<% content_for :body_content_title do %>
+  <%= @cooperation.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @cooperation.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Cooperation Avatar</h1>
+    <p>
+      <%=raw @cooperation.cooperation_avatar_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Main Url</h1>
+    <p>
+      <%=raw @cooperation.main_url %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="cooperations">
+      <% @cooperations.each do |cooperation| %>
+        <li>
+          <%= link_to cooperation.title, refinery.cooperations_cooperation_path(cooperation) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>

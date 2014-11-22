@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141119062638) do
+ActiveRecord::Schema.define(:version => 20141122040055) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -90,6 +90,46 @@ ActiveRecord::Schema.define(:version => 20141119062638) do
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
+
+  create_table "refinery_contacts", :force => true do |t|
+    t.string   "telephone"
+    t.string   "fax"
+    t.integer  "postcode"
+    t.string   "email"
+    t.string   "address"
+    t.integer  "position"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "nick_name"
+    t.integer  "contact_type_id"
+    t.integer  "avatar_id"
+    t.integer  "qrcode_id"
+    t.integer  "qq"
+  end
+
+  create_table "refinery_contacts_contact_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_cooperations", :force => true do |t|
+    t.string   "title"
+    t.integer  "cooperation_avatar_id"
+    t.string   "main_url"
+    t.integer  "position"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.integer  "cooperation_type_id"
+  end
+
+  create_table "refinery_cooperations_cooperation_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "refinery_corp_partners", :force => true do |t|
     t.string   "title"

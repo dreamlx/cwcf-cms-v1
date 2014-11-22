@@ -58,3 +58,7 @@ gem 'refinerycms-blog', '~> 2.1.0'
 gem 'refinerycms-hotels', :path => 'vendor/extensions'
 gem 'refinerycms-corp_partners', :path => 'vendor/extensions'
 gem 'refinerycms-exhibitors', :path => 'vendor/extensions'
+
+gem 'refinerycms-cooperations', :path => 'vendor/extensions'
+
+gem 'bxslider-rails'

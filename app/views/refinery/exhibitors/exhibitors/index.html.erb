@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="exhibitors">
+    <% @exhibitors.each do |exhibitor| %>
+      <li>
+        <%= link_to exhibitor.title, refinery.exhibitors_exhibitor_path(exhibitor) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

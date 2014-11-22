@@ -1,0 +1,20 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(cooperation_type) -%>">
+  <span class='title'>
+    <%= cooperation_type.name %>
+
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.cooperations_cooperation_type_path(cooperation_type),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_cooperations_admin_cooperation_type_path(cooperation_type),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.cooperations_admin_cooperation_type_path(cooperation_type),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => cooperation_type.name),
+        :method => :delete %>
+  </span>
+</li>

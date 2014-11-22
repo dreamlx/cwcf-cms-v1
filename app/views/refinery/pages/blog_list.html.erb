@@ -1,0 +1,30 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @page.title() %></h1>
+    <section id='body'>
+      <ul class="news-list">
+        <% (::Refinery::Page.where(:parent_id => @page.id )).each do |news_item| %>
+            <li>
+              <a href='<%= refinery.url_for(news_item.url_marketable) %>'>
+                <%= news_item.title() %>
+              </a>
+              <span>
+                <%= news_item.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S').to_s %>
+              </span>
+            </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>

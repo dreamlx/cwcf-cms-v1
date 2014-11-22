@@ -1,0 +1,50 @@
+zh-CN:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: "建立新的 Cooperation Type"
+            reorder: "对 Cooperation Types 重新排序"
+            reorder_done: "对 Cooperation Types 的重新排序结束"
+          records:
+            title: Cooperation Types
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Cooperation Types . 点击 "Add New Cooperation Type" 创建一个cooperation
+              type.
+          cooperation_type:
+            view_live_html: "查看 cooperation type 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 cooperation type"
+            delete: "永久删除 cooperation type"
+        cooperations:
+          actions:
+            create_new: "建立新的 Cooperation"
+            reorder: "对 Cooperations 重新排序"
+            reorder_done: "对 Cooperations 的重新排序结束"
+          records:
+            title: Cooperations
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Cooperations . 点击 "Add New Cooperation" 创建一个cooperation.
+          cooperation:
+            view_live_html: "查看 cooperation 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 cooperation"
+            delete: "永久删除 cooperation"
+      cooperation_types:
+        show:
+          other: "其他 Cooperation Types"
+      cooperations:
+        show:
+          other: "其他 Cooperations"
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url

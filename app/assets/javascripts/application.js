@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bxslider
 //= require foundation
 //= require_tree .
 //= require bootstrap-sprockets
@@ -323,11 +324,11 @@ $(function () {
     var url_else_page = search_url.split('/')[2];
     if (url_else_page) {
       setTimeout(function(){
-        $(".card-holder").animate({"margin-left":'-40px'},"slow",function(){
+        $(".card-holder").animate({"margin-left":'-30px'},"slow",function(){
           $(this).hover(function(){
             $(this).animate({"margin-left":'-190px'},"fast");
           },function(){
-            $(this).animate({"margin-left":'-40px'},"fast");
+            $(this).animate({"margin-left":'-30px'},"fast");
           });
         });
       },1000);
@@ -362,4 +363,55 @@ $(function () {
     $(".footer-menu.row").css({
       "display":"-moz-box"
     });
+
+    if ($(".photo-list").length > 0 && $(".photo-list").find("img").length > 0){
+      var img_list_html = "<div class='photo-view'>"+ $(".photo-list").find("img")[0].outerHTML +"</div><ul class='bxslider'>";
+      $(".photo-list").find("img").each(function() {
+        img_list_html += "<li>" + this.outerHTML + "</li>";
+      })
+      img_list_html += "</ul>";
+      $(".photo-list").html(img_list_html);
+      $('.bxslider').bxSlider({
+        minSlides: 3,
+        maxSlides: 4,
+        moveSlides: 1,
+        slideWidth: 170,
+        slideMargin: 10
+      });
+      $('.bxslider img').click(function() {
+        $(".photo-view").html(this.outerHTML);
+      });
+    }
+
+    if ($("#myDate").length > 0){
+      var $input = $("#myDate");
+      var time_div = $input.parent().parent();
+      var deadline = $input.val();
+
+      function timeElapse(date){
+        var current = Date();
+        var seconds = (Date.parse(date) - Date.parse(current)) / 1000;
+        var days = Math.floor(seconds / (3600 * 24));
+        seconds = seconds % (3600 * 24);
+        var hours = Math.floor(seconds / 3600);
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
+        seconds = seconds % 3600;
+        var minutes = Math.floor(seconds / 60);
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        seconds = seconds % 60;
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        var result = "<span class=\"digit\">" + days + "</span> <span>天</span> <span class=\"digit\">" + hours + "</span> <span>小时</span> <span class=\"digit\">" + minutes + "</span> <span>分</span> <span class=\"digit\">" + seconds + "</span> <span>秒</span>";
+        time_div.html(result);
+      }
+      timeElapse(deadline);
+      setInterval(function () {
+        timeElapse(deadline);
+      }, 500);
+    }
 });

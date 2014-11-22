@@ -1,0 +1,53 @@
+nb:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Lag en ny Cooperation Type
+            reorder: Endre rekkefølgen på Cooperation Types
+            reorder_done: Ferdig å endre rekkefølgen Cooperation Types
+          records:
+            title: Cooperation Types
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Cooperation Types enda. Klikk på "Lag en ny
+              Cooperation Type" for å legge til din første cooperation type.
+          cooperation_type:
+            view_live_html: Vis hvordan denne cooperation type ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne cooperation type
+            delete: Fjern denne cooperation type permanent
+        cooperations:
+          actions:
+            create_new: Lag en ny Cooperation
+            reorder: Endre rekkefølgen på Cooperations
+            reorder_done: Ferdig å endre rekkefølgen Cooperations
+          records:
+            title: Cooperations
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Cooperations enda. Klikk på "Lag en ny Cooperation"
+              for å legge til din første cooperation.
+          cooperation:
+            view_live_html: Vis hvordan denne cooperation ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne cooperation
+            delete: Fjern denne cooperation permanent
+      cooperation_types:
+        show:
+          other: Andre Cooperation Types
+      cooperations:
+        show:
+          other: Andre Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url
