@@ -1,0 +1,40 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%= @cooperation_page.title() %></h1>
+    <section id='body'>
+      <% @cooperation_types.each do |cooperation_type| %>
+        <h4 class="f14"><%= cooperation_type.name %></h4>
+        <div class="row-fluid">
+          <div class="col-md-12">
+            <div class="row mix-grid">
+              <% (@cooperations.where(:cooperation_type_id => cooperation_type.id)).each do |cooperation| %>
+              <div class="col-md-4 col-sm-6 mix ">
+                <div class="mix-inner pic_list_item_box">
+                  <a href='<%= "//" + cooperation.main_url %>'>
+                    <div class="pic_list">
+                      <img src='<%= cooperation.cooperation_avatar.url %>'>
+                    </div>
+                  </a>
+                  <div  class="item-title"><%= cooperation.title %></div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="margin-4"></div>
+      <% end %>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @cooperation_page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @cooperation_page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>

@@ -23,3 +23,6 @@ Refinery::Blog::Engine.load_seed
 
 # Added by Refinery CMS Exhibitors extension
 Refinery::Exhibitors::Engine.load_seed
+
+# Added by Refinery CMS Cooperations extension
+Refinery::Cooperations::Engine.load_seed

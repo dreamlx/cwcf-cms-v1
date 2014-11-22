@@ -1,0 +1,53 @@
+tr:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Yeni Ekle Cooperation Type
+            reorder: Tekrar sirala Cooperation Types
+            reorder_done: Tekrar siralama tamamlandiCooperation Types
+          records:
+            title: Cooperation Types
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Cooperation Types yok henuz.  Tikla "Yeni Ekle
+              Cooperation Type" eklemek senin ilk cooperation type.
+          cooperation_type:
+            view_live_html: Bunu canlu cooperation type goruntule <br/><em>(yeni bir
+              pencerede acar)</em>
+            edit: Bunu Duzenle cooperation type
+            delete: Bunu Sil cooperation type sonsuza dek
+        cooperations:
+          actions:
+            create_new: Yeni Ekle Cooperation
+            reorder: Tekrar sirala Cooperations
+            reorder_done: Tekrar siralama tamamlandiCooperations
+          records:
+            title: Cooperations
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Cooperations yok henuz.  Tikla "Yeni Ekle Cooperation"
+              eklemek senin ilk cooperation.
+          cooperation:
+            view_live_html: Bunu canlu cooperation goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle cooperation
+            delete: Bunu Sil cooperation sonsuza dek
+      cooperation_types:
+        show:
+          other: Diger Cooperation Types
+      cooperations:
+        show:
+          other: Diger Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url

@@ -22,7 +22,7 @@ namespace :init_db do
   desc "import exhibitor to database"
   task import_exhibitor: :environment do
     $index = 0
-    CSV.foreach("/Users/Zwm/Desktop/a.csv") do |row|
+    CSV.foreach("/Users/hzz/Downloads/a.csv") do |row|
       $index += 1;
       unless $index == 1
         ex_ = Refinery::Exhibitors::Exhibitor.new(title: row[2], logo: row[1], description: row[3]);

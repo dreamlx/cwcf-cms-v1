@@ -773,3 +773,24 @@ ul.news-list {
 .align-center {
   text-align: center;
 }
+
+.pic_list_item_box {
+  .pic_list {
+    display: table-cell;
+    max-width: 200px;
+    width: 200px;
+    max-height: 62px;
+    height: 62px;
+    background: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    img {
+      max-height: 60px;
+      width: auto;
+    }
+  }
+  div.item-title {
+    margin-top: 10px;
+  }
+}

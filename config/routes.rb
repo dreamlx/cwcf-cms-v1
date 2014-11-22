@@ -3,7 +3,7 @@ Refinery::Core::Engine.routes.prepend do
   get '/news/services/hotels', :to => 'Hotels::Hotels#index'
   get '/news/services/hotels/:id', :to => 'Hotels::Hotels#show'
   get '/news/corp_partners', :to => 'CorpPartners::CorpPartners#index'
-
+  get '/media/cooperation', :to => 'Cooperations::Cooperations#index'
   get '/partners/visitors', :to => 'Exhibitors::Exhibitors#index'
   # get '/news/corp_partners/:id', :to => 'CorpPartners::CorpPartners#show'
 end

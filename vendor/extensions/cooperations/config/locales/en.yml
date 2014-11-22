@@ -1,0 +1,52 @@
+en:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Add New Cooperation Type
+            reorder: Reorder Cooperation Types
+            reorder_done: Done Reordering Cooperation Types
+          records:
+            title: Cooperation Types
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Cooperation Types yet. Click "Add New Cooperation
+              Type" to add your first cooperation type.
+          cooperation_type:
+            view_live_html: View this cooperation type live <br/><em>(opens in a new
+              window)</em>
+            edit: Edit this cooperation type
+            delete: Remove this cooperation type forever
+        cooperations:
+          actions:
+            create_new: Add New Cooperation
+            reorder: Reorder Cooperations
+            reorder_done: Done Reordering Cooperations
+          records:
+            title: Cooperations
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Cooperations yet. Click "Add New Cooperation"
+              to add your first cooperation.
+          cooperation:
+            view_live_html: View this cooperation live <br/><em>(opens in a new window)</em>
+            edit: Edit this cooperation
+            delete: Remove this cooperation forever
+      cooperation_types:
+        show:
+          other: Other Cooperation Types
+      cooperations:
+        show:
+          other: Other Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url
