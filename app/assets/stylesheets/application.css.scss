@@ -271,6 +271,7 @@ ul, ol, dl {
 #body {
   width: 100%;
   background: transparent;
+  display: none;
   .nav-tabs {
     li {
       > a{
@@ -813,6 +814,7 @@ ul.news-list {
   position: absolute;
   top: 140px;
   left: 100px;
+  display: none;
   > span {
     color: white;
     font-size: 24px;
@@ -828,5 +830,26 @@ ul.news-list {
       font-size: 42px;
       color: #2f8fda;
     }
+  }
+}
+
+.previous-item {
+  width: 197px;
+  height: 282px;
+  background: #2f8fda;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.previous-title-item {
+  width: 197px;
+  height: 282px;
+  background: #2f8fda;
+  div {
+    font-size: 30px;
+    margin-left: 33%;
+    padding-top: 21%;
+    height: 180px;
   }
 }

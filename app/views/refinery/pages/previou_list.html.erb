@@ -9,7 +9,15 @@
               <div class="col-md-4 col-sm-6 mix ">
                 <div class="mix-inner">
                   <a href='<%= "/news/previous/"+previou_item.id.to_s() %>'>
-                    <img src='<%= previou_item.page_avatar.url if !previou_item.page_avatar.blank? %>'>
+                    <% if previou_item.page_avatar.blank? %>
+                      <div class="previous-title-item">
+                        <div><%= previou_item.title() %></div>
+                      </div>
+                    <% else %>
+                      <div class="previous-item">
+                        <img src='<%= previou_item.page_avatar.url %>'>
+                      </div>
+                    <% end %>
                   </a>
                 </div>
               </div>

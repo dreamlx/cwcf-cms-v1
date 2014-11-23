@@ -386,6 +386,7 @@ $(function () {
     if ($("#myDate").length > 0){
       var $input = $("#myDate");
       var time_div = $input.parent().parent();
+      var time_box = time_div.parent();
       var deadline = $input.val();
 
       function timeElapse(date){
@@ -409,9 +410,15 @@ $(function () {
         var result = "<span class=\"digit\">" + days + "</span> <span>天</span> <span class=\"digit\">" + hours + "</span> <span>小时</span> <span class=\"digit\">" + minutes + "</span> <span>分</span> <span class=\"digit\">" + seconds + "</span> <span>秒</span>";
         time_div.html(result);
       }
+      time_box.css("display", "inherit");
       timeElapse(deadline);
       setInterval(function () {
         timeElapse(deadline);
       }, 500);
     }
+
+
+
+    //end
+    $("#body").css("display", "inherit");
 });

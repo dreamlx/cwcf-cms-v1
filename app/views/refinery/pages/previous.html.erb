@@ -1,32 +1,38 @@
 <div class='show_container'>
   <div class='show_body'>
-    <h1 id='body_content_title'><a href="/news/previous"><img src="/assets/back.jpg"></a>历届回顾</h1>
+    <h1 id='body_content_title'><a href="<%= refinery.url_for(@page.parent.parent.url_marketable) %>"><img src="/assets/back.jpg"></a><%= @page.parent.parent.title() %></h1>
     <section id='body'>
-      <ul class="nav nav-tabs" role="tablist">
-        <% (::Refinery::Page.where(:parent_id => @page.parent_id)).each do |previou_item| %>
-          <li class="<%= 'active' if previou_item.slug == @page.slug %>">
-            <a href='<%= "/news/previous/" + (::Refinery::Page.find(@page.parent_id)).slug + "/" + previou_item.slug %>'>
-              <%= previou_item.title() %>
-              </a>
-          </li>
+      <div class="margin-1"></div>
+      <ul class="tab-5">
+        <% (::Refinery::Page.where(:parent_id => @page.parent_id )).each do |item| %>
+        <li class="<%= 'hover' if item == @page %>">
+          <a href="<%= refinery.url_for(item.url_marketable) %>">
+            <% if (::Refinery::Page.where(:parent_id => @page.parent_id ).first != item) %>
+            <span class="arrow-l">&#160;</span>
+            <% end %>
+            <span class="arrow-c w150"><%= item.title() %></span>
+            <% if (::Refinery::Page.where(:parent_id => @page.parent_id ).last != item) %>
+            <span class="arrow-r">&#160;</span>
+            <% end %>
+          </a>
+        </li>
         <% end %>
       </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" id='description'>
-          <%=raw @page.content_for(:body) %>
-        </div>
-      </div>
+
+      <div class="photo-list">
+        <%=raw @page.content_for(:body) %>
+      <div>
     </section>
   </div>
 </div>
 
 <% content_for :stylesheets do %>
-  <% if @page.background_image.present? %>
-  <style type="text/css">
-    body {
-      background: url(<%= @page.background_image.url -%>) no-repeat fixed;
-      background-size:cover;
-    }
-  </style>
-  <% end %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
 <% end %>
