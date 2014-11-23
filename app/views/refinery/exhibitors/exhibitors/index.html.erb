@@ -1,11 +1,47 @@
-<% content_for :body do %>
-  <ul id="exhibitors">
-    <% @exhibitors.each do |exhibitor| %>
-      <li>
-        <%= link_to exhibitor.title, refinery.exhibitors_exhibitor_path(exhibitor) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @visitors_page.title() %></h1>
+    <section id='body'>
+      <div class="margin-1"></div>
+      <div class="h3-tit">
+        <h3>展商搜索</h3>
+        <span class="h3-tit-arrow"></span>
+      </div>
 
-<%= render '/refinery/content_page' %>
+      <div class="margin-1"></div>
+      <form action="visitors" method="get">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td class="txt_input"><input type="text" name="place_num" value="" placeholder="输入展位号..."></td>
+            <td class="txt_input"><input type="text" name="place_name" value="" placeholder="输入公司名称..."></td>
+            <td class="btn"><input type="submit" value="提交"></td>
+          </tr>
+        </tbody></table>
+      </form>
+      <div class="margin-1"></div>
+
+      <ul id="exhibitors" class="blist">
+        <% @exhibitors.each do |exhibitor| %>
+        <li>
+          <div>
+            <a href="<%= refinery.exhibitors_exhibitor_path(exhibitor) %>" title="<%= exhibitor.title %>">
+              <img src="<%= exhibitor.logo_image.url if !exhibitor.logo_image.blank? %>" height="60" alt="<%= exhibitor.title %>">
+            </a>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @visitors_page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @visitors_page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>

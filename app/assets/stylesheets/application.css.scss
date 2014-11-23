@@ -642,6 +642,31 @@ div.margin-4 {
   font-size: 14px;
 }
 
+ul.blist {
+  overflow: hidden;
+  li {
+    float: left;
+    background: url(../assets/brand_bg.png) no-repeat left top;
+    width: 140px;
+    height: 81px;
+    margin: 0 1px 10px 0;
+    padding: 0 5px 0 2px;
+    text-align: center;
+    div {
+      width: 126px;
+      height: 75px;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    img {
+      max-height: 75px;
+      max-width: 100px;
+      vertical-align: middle;
+    }
+  }
+}
+
 
 ul.blist1 li {
   float: left;

@@ -6,7 +6,7 @@ module Refinery
       before_filter :find_page
 
       def index
-        fiter = params[:user_typein]
+        fiter = params[:place_name]
         @exhibitors = Exhibitor.where("title like '%#{fiter}%'")
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @exhibitor in the line below:
