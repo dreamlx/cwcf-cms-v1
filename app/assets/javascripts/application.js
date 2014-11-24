@@ -349,15 +349,25 @@ $(function () {
     });
 
     //调整首页图片大小
-    if ($("#carousel-banners").length) {
-      function adjust(){
-         var winh  = jQuery(window).height();
+
+    function adjust(){
+       var winh  = jQuery(window).height();
+       if ($("#carousel-banners").length) {
          var wintop = $("#carousel-banners").offset().top;
          $("#carousel-banners").css("height", winh-wintop-30);
-      }
-      window.onresize = adjust;
-      adjust();
+         $(".login_form").css("top", "106px");
+       }else{
+         $(".login_form").css("top", "114px");
+       }
+       if (menu_find !== "") {
+         $(".login_form").css("height", $(window).height()-117);
+       }else{
+         $(".login_form").css("height", $("body").height()-110);
+       }
+
     }
+    window.onresize = adjust;
+    adjust();
 
     //底部菜单样式
     $(".footer-menu.row").css({
@@ -451,11 +461,24 @@ $(function () {
       });
     }
 
-
     //站点标题栏查询
     $('.input-group-btn').click(function() {
       window.location.href= "/partners/visitors?place_num=&place_name=" + $('.input-group input').val();
     });
+
+    //注册
+    $(".close_btn").click(function(){
+      $(".login_form").fadeOut();
+      $("#card-holder").fadeIn();
+    });
+    $(".top-login-btn").click(function(){
+      $("#card-holder").fadeOut();
+      // $("")
+    })
+    $(".top-sign-btn").click(function(){
+      $("#login_form2").fadeIn();
+      $("#card-holder").fadeOut();
+    })
 
     //end
     $("#body").css("display", "inherit");
