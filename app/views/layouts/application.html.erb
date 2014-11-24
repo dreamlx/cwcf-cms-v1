@@ -21,6 +21,48 @@
         <div class='card-holder' id="card-holder">
 
         </div>
+        <div class="login_form" id="login_form2">
+          <div class="close_btn">X&nbsp;关闭</div>
+          <dl class="form_2">
+            <form id="regform" name="regform" url="/tools/submit_ajax.ashx?action=user_register" novalidate="novalidate">
+              <div id="regmsgtips" style="color:#BC1B23">&nbsp;</div>
+              <dd class="textinput">
+                <input id="txtEmail" type="text" class="input wide required email" placeholder="邮箱">
+              </dd>
+              <dd class="textinput">
+                <input id="txtMobileNO" type="text" class="input wide required digits" minlength="11" maxlength="11" placeholder="手机号">
+              </dd>
+              <dd class="textinput">
+                <input id="txtName" type="text" class="input wide required" placeholder="姓名">
+              </dd>
+              <dd class="textinput">
+                <input id="txtCompany" type="text" class="input wide required" placeholder="单位">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword1" type="password" value="" class="input wide required" minlength="6" maxlength="20" placeholder="密码">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword2" type="password" value="" class="input wide required" equalto="#txtPassword1" placeholder="密码确认">
+              </dd>
+              <dd class="sl">
+                <label class="label1  radio-on">
+                  <input type="radio" name="txtMemberType" value="1" id="RadioGroup1_0" checked="checked">
+                  参展商
+                </label>
+                <label class="label2">
+                  <input type="radio" name="txtMemberType" value="2" id="RadioGroup1_1">
+                  观众
+                </label>
+                <label style="margin:none !important" class="label3">
+                  <input type="radio" name="txtMemberType" value="3" id="RadioGroup1_2">
+                  记者
+                </label>
+              </dd>
+              <dd class="btn"><input id="btnButtonReg" type="button" value="注册"></dd>
+              <dd class="f1">请填写您的真实资料，以方便收到最新资讯！</dd>
+            </form>
+          </dl>
+        </div>
       </section>
       <footer>
         <%= render "/refinery/footer" -%>
