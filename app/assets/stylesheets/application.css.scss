@@ -1014,9 +1014,30 @@ ul.news-list {
       line-height: 20px;
       margin: 0;
     }
-    dd.btn {
-      width: 100%;
+    dd.form-btn {
+      width: 95%;
       text-align: right;
+      input {
+        color: white;
+        background: red;
+      }
+    }
+    dd.f {
+      height: 35px;
+      input {
+        float: left;
+      }
+      span.checkbox {
+        float: left;
+        margin: 0 0 0 8px;
+      }
+      a {
+        color: black;
+        float: right;
+      }
+      a:hover {
+        color: #2f8fda;
+      }
     }
   }
 }

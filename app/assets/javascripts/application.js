@@ -359,7 +359,7 @@ $(function () {
        }else{
          $(".login_form").css("top", "114px");
        }
-       if (menu_find !== "") {
+       if (menu_find !== "" && !url_else_page) {
          $(".login_form").css("height", $(window).height()-117);
        }else{
          $(".login_form").css("height", $("body").height()-110);
@@ -472,11 +472,13 @@ $(function () {
       $("#card-holder").fadeIn();
     });
     $(".top-login-btn").click(function(){
+      $("#login_form1").fadeIn();
+      $("#login_form2").fadeOut();
       $("#card-holder").fadeOut();
-      // $("")
     })
     $(".top-sign-btn").click(function(){
       $("#login_form2").fadeIn();
+      $("#login_form1").fadeOut();
       $("#card-holder").fadeOut();
     })
 

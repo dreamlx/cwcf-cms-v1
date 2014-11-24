@@ -21,6 +21,22 @@
         <div class='card-holder' id="card-holder">
 
         </div>
+        <div class="login_form" id="login_form1">
+          <div class="close_btn">X&nbsp;关闭</div>
+          <dl class="form_1">
+            <form id="loginform" name="loginform" url="/tools/submit_ajax.ashx?action=user_login">
+              <div id="msgtips" style="color:#BC1B23">&nbsp;</div>
+              <dd class="textinput"><input id="txtUserName" type="text" placeholder="邮箱"></dd>
+              <dd class="textinput"><input id="txtPassword" type="password" placeholder="密码"></dd>
+              <dd class="f"><input id="chkRemember" type="checkbox"><span class="custom checkbox">记录登录状态</span><a href="#">忘记密码</a></dd>
+              <dd class="form-btn">
+                <input id="btnLoginSubmit" type="button" value="登录">
+                <input id="turl" name="turl" type="hidden" value="/welcome.aspx">
+              </dd>
+              <dd>在线报名需要您注册成为网站会员，如已注册，请登录。</dd>
+            </form>
+          </dl>
+        </div>
         <div class="login_form" id="login_form2">
           <div class="close_btn">X&nbsp;关闭</div>
           <dl class="form_2">
@@ -58,7 +74,7 @@
                   记者
                 </label>
               </dd>
-              <dd class="btn"><input id="btnButtonReg" type="button" value="注册"></dd>
+              <dd class="form-btn"><input id="btnButtonReg" type="button" value="注册"></dd>
               <dd class="f1">请填写您的真实资料，以方便收到最新资讯！</dd>
             </form>
           </dl>
