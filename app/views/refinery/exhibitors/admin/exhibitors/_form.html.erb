@@ -21,6 +21,13 @@
   </div>
 
   <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+    :f => f,
+    :fields => [:images_text],
+    :object => "exhibitors/exhibitor" -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :year -%>
     <%= f.number_field :year -%>
   </div>

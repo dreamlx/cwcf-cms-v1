@@ -417,7 +417,39 @@ $(function () {
       }, 500);
     }
 
+    if ($("#exhibitors").length > 0) {
+      $("#exhibitors a").click(function() {
+        $("#exhibitorModal").css("display", "inherit");
+        if (this.children[0].src != window.location.href) {
+          $(".ex-logo").html(this.children[0].outerHTML);
+        }else {
+          $(".ex-logo").html("<div class='ex-logo-title'>" + this.title + "</div>");
+        }
 
+        $(".ex-title").text(this.title);
+        $(".ex-desc").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + this.dataset.description);
+        $(".ex-pic").html(this.dataset.images);
+        if ($(".ex-pic").find("img").length > 0) {
+          var ex_pic_list_html = "<ul class='bxslider'>";
+          $(".ex-pic").find("img").each(function() {
+            ex_pic_list_html += "<li>" + this.outerHTML + "</li>";
+          })
+          ex_pic_list_html += "</ul>";
+          $(".ex-pic").html(ex_pic_list_html);
+          $('.bxslider').bxSlider({
+            minSlides: 3,
+            maxSlides: 4,
+            moveSlides: 1,
+            slideWidth: 170,
+            slideMargin: 16
+          });
+        }
+      });
+
+      $("#exhibitorModal .close").click(function() {
+        $("#exhibitorModal").css("display", "none");
+      });
+    }
 
     //end
     $("#body").css("display", "inherit");

@@ -878,3 +878,104 @@ ul.news-list {
     height: 180px;
   }
 }
+
+
+.exhibitorModal.modal {
+  // display: inherit;
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999990;
+  > div {
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    .modal-content {
+      background-color: inherit;
+      box-shadow: none;
+      border: none;
+      .modal-header {
+        border-bottom: 0;
+        .close {
+          background: inherit;
+          color: #FFFFFF;
+          line-height: 60px;
+          position: absolute;
+          right: 15px;
+          font-size: 48px;
+          font-weight: 100;
+          text-align: center;
+          top: -10px;
+          width: 60px;
+          z-index: 999999;
+          text-decoration: none;
+          border: solid 1px white;
+          -webkit-border-radius: 60px !important;
+          -moz-border-radius: 60px !important;
+          border-radius: 60px !important;
+          -moz-box-shadow: 1px 1px 3px #000;
+          -webkit-box-shadow: 1px 1px 3px #000;
+          box-shadow: 1px 1px 3px #000;
+          opacity: 0.5;
+          text-shadow: none;
+        }
+        .close:hover {
+          border: solid 1px #2f8fda;
+          color: #2f8fda;
+        }
+      }
+      .modal-body {
+        height: 480px;
+        width: 60%;
+        margin: auto;
+        color: white;
+        font-weight: inherit;
+        // background: yellow;
+        .ex-body {
+          width: 100%;
+          height: 280px;
+          // background: red;
+          margin: auto;
+          .ex-logo {
+            background: black;
+            width: 200px;
+            height: 200px;
+            float: left;
+            display: flex;
+            .ex-logo-title {
+              width: 100%;
+              margin-top: 80px;
+              text-align: center;
+              font-size: 26px;
+              font-weight: bold;
+            }
+          }
+          .ex-content {
+            // background: blue;
+            width: 550px;
+            height: 200px;
+            float: right;
+            .ex-title {
+              // background: white;
+              font-size: 28px;
+              float: right;
+            }
+            .ex-desc {
+              margin-top: 62px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
