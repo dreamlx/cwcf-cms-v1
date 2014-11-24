@@ -451,6 +451,12 @@ $(function () {
       });
     }
 
+
+    //站点标题栏查询
+    $('.input-group-btn').click(function() {
+      window.location.href= "/partners/visitors?place_num=&place_name=" + $('.input-group input').val();
+    });
+
     //end
     $("#body").css("display", "inherit");
 });
