@@ -7,6 +7,12 @@ module Refinery
 
     def create
       super
+      role = Refinery::Role.find(2)
+      unless current_refinery_user.roles.include?(role)
+        # redirect_to root_path
+      end
+    rescue AbstractController::DoubleRenderError
+      render root_path
     rescue ::BCrypt::Errors::InvalidSalt, ::BCrypt::Errors::InvalidHash
       flash[:error] = t('password_encryption', :scope => 'refinery.users.forgot')
       redirect_to refinery.new_refinery_user_password_path
