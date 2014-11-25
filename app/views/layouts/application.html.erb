@@ -24,17 +24,24 @@
         <div class="login_form" id="login_form1">
           <div class="close_btn">X&nbsp;关闭</div>
           <dl class="form_1">
-            <form id="loginform" name="loginform" action="/refinery/users/login" method="post">
+
+            <form action="/refinery/users/login" method="post">
               <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
-              <div id="msgtips" style="color:#BC1B23">&nbsp;</div>
-              <dd class="textinput"><input id="txtUserName" type="text" placeholder="用户名" name="refinery_user[login]"></dd>
-              <dd class="textinput"><input id="txtPassword" type="password" placeholder="密码"  name="refinery_user[password]"></dd>
-              <dd class="f"><input id="chkRemember" type="checkbox"><span class="custom checkbox">记录登录状态</span><a href="#">忘记密码</a></dd>
+              <dd class="textinput">
+                <input id="txtUserName" type="text" placeholder="邮箱" name="refinery_user[login]">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword" type="password" placeholder="密码" name="refinery_user[password]" autocomplete="off">
+              </dd>
+              <dd class="f">
+                <a href="/refinery/users/password/new">忘记密码</a>
+              </dd>
+
               <dd class="form-btn">
                 <input id="btnLoginSubmit" type="submit" value="登录">
               </dd>
-              <dd>在线报名需要您注册成为网站会员，如已注册，请登录。</dd>
             </form>
+
           </dl>
         </div>
         <div class="login_form" id="login_form2">
