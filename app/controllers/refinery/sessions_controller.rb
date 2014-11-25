@@ -12,6 +12,10 @@ module Refinery
       redirect_to refinery.new_refinery_user_password_path
     end
 
+    def signed_in_root_path(resource_or_scope)
+      "/"
+    end
+
   protected
 
     # We don't like this alert.

@@ -21,6 +21,69 @@
         <div class='card-holder' id="card-holder">
 
         </div>
+        <div class="login_form" id="login_form1">
+          <div class="close_btn">X&nbsp;关闭</div>
+          <dl class="form_1">
+
+            <form action="/refinery/users/login" method="post">
+              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+              <dd class="textinput">
+                <input id="txtUserName" type="text" placeholder="邮箱" name="refinery_user[login]">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword" type="password" placeholder="密码" name="refinery_user[password]" autocomplete="off">
+              </dd>
+              <dd class="f">
+                <a href="/refinery/users/password/new">忘记密码</a>
+              </dd>
+
+              <dd class="form-btn">
+                <input id="btnLoginSubmit" type="submit" value="登录">
+              </dd>
+            </form>
+
+          </dl>
+        </div>
+        <div class="login_form" id="login_form2">
+          <div class="close_btn">X&nbsp;关闭</div>
+          <dl class="form_2">
+            <form id="regform" name="regform" action="/refinery/users" method="post" novalidate="novalidate">
+              <div style="margin:0;padding:0;display:inline">
+                <input name="utf8" type="hidden" value="✓">
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
+              </div>
+              <div id="regmsgtips" style="color:#BC1B23">&nbsp;</div>
+              <dd class="textinput">
+                <input id="txtEmail" type="text" class="input wide required email" name="user[email]" placeholder="邮箱">
+              </dd>
+              <dd class="textinput">
+                <input id="txtName" type="text" class="input wide required" name="user[username]" placeholder="用户名">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword1" type="password" value="" class="input wide required" minlength="6" maxlength="20" name="user[password]" placeholder="密码" autocomplete="off">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword2" type="password" value="" class="input wide required" equalto="#txtPassword1" name="user[password_confirmation]" placeholder="密码确认" autocomplete="off">
+              </dd>
+              <dd class="sl">
+                <label class="label1  radio-on">
+                  <input type="radio" name="user[roles][]" value="exhibitor" id="RadioGroup1_0" checked="checked">
+                  参展商
+                </label>
+                <label class="label2">
+                  <input type="radio" name="user[roles][]" value="normal" id="RadioGroup1_1">
+                  观众
+                </label>
+                <label style="margin:none !important" class="label3">
+                  <input type="radio" name="user[roles][]" value="journalist" id="RadioGroup1_2">
+                  记者
+                </label>
+              </dd>
+              <dd class="form-btn"><input id="btnButtonReg" type="submit" value="注册"></dd>
+              <dd class="f1">请填写您的真实资料，以方便收到最新资讯！</dd>
+            </form>
+          </dl>
+        </div>
       </section>
       <footer>
         <%= render "/refinery/footer" -%>

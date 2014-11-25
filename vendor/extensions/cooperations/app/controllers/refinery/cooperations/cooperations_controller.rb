@@ -31,7 +31,7 @@ module Refinery
       end
 
       def find_all_cooperation_types
-        @cooperation_types = CooperationType.all
+        @cooperation_types = CooperationType.order('position ASC')
       end
 
     end

@@ -24,7 +24,7 @@
         <% @exhibitors.each do |exhibitor| %>
         <li>
           <div>
-            <a href="<%= refinery.exhibitors_exhibitor_path(exhibitor) %>" title="<%= exhibitor.title %>">
+            <a title="<%= exhibitor.title %>" data-description="<%= exhibitor.description %>" data-images="<%= exhibitor.images_text %>" >
               <img src="<%= exhibitor.logo_image.url if !exhibitor.logo_image.blank? %>" height="60" alt="<%= exhibitor.title %>">
             </a>
           </div>
@@ -32,6 +32,34 @@
         <% end %>
       </ul>
     </section>
+  </div>
+</div>
+
+<div id="exhibitorModal" class="modal exhibitorModal" tabindex="-1" role="dialog" aria-labelledby="exhibitorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="exhibitorModalLabel"></h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row ex-body">
+          <div class="ex-logo">
+          </div>
+          <div class="ex-content">
+            <div class="ex-title">
+            </div>
+            <div class="ex-desc">
+            </div>
+          </div>
+        </div>
+        <div class="row ex-pic">
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -26,7 +26,7 @@ module Refinery
         @corp_partners = CorpPartner.order('position ASC')
       end
       def find_all_corp_partner_types
-        @corp_partner_types = CorpPartnerType.all
+        @corp_partner_types = CorpPartnerType.order('position ASC')
       end
 
       def find_page

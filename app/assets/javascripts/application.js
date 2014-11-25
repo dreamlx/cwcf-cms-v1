@@ -349,15 +349,25 @@ $(function () {
     });
 
     //调整首页图片大小
-    if ($("#carousel-banners").length) {
-      function adjust(){
-         var winh  = jQuery(window).height();
+
+    function adjust(){
+       var winh  = jQuery(window).height();
+       if ($("#carousel-banners").length) {
          var wintop = $("#carousel-banners").offset().top;
          $("#carousel-banners").css("height", winh-wintop-30);
-      }
-      window.onresize = adjust;
-      adjust();
+         $(".login_form").css("top", "106px");
+       }else{
+         $(".login_form").css("top", "114px");
+       }
+       if (menu_find !== "" && !url_else_page) {
+         $(".login_form").css("height", $(window).height()-117);
+       }else{
+         $(".login_form").css("height", $("body").height()-110);
+       }
+
     }
+    window.onresize = adjust;
+    adjust();
 
     //底部菜单样式
     $(".footer-menu.row").css({
@@ -417,7 +427,60 @@ $(function () {
       }, 500);
     }
 
+    if ($("#exhibitors").length > 0) {
+      $("#exhibitors a").click(function() {
+        $("#exhibitorModal").css("display", "inherit");
+        if (this.children[0].src != window.location.href) {
+          $(".ex-logo").html(this.children[0].outerHTML);
+        }else {
+          $(".ex-logo").html("<div class='ex-logo-title'>" + this.title + "</div>");
+        }
 
+        $(".ex-title").text(this.title);
+        $(".ex-desc").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + this.dataset.description);
+        $(".ex-pic").html(this.dataset.images);
+        if ($(".ex-pic").find("img").length > 0) {
+          var ex_pic_list_html = "<ul class='bxslider'>";
+          $(".ex-pic").find("img").each(function() {
+            ex_pic_list_html += "<li>" + this.outerHTML + "</li>";
+          })
+          ex_pic_list_html += "</ul>";
+          $(".ex-pic").html(ex_pic_list_html);
+          $('.bxslider').bxSlider({
+            minSlides: 3,
+            maxSlides: 4,
+            moveSlides: 1,
+            slideWidth: 170,
+            slideMargin: 16
+          });
+        }
+      });
+
+      $("#exhibitorModal .close").click(function() {
+        $("#exhibitorModal").css("display", "none");
+      });
+    }
+
+    //站点标题栏查询
+    $('.input-group-btn').click(function() {
+      window.location.href= "/partners/visitors?place_num=&place_name=" + $('.input-group input').val();
+    });
+
+    //注册
+    $(".close_btn").click(function(){
+      $(".login_form").fadeOut();
+      $("#card-holder").fadeIn();
+    });
+    $(".top-login-btn").click(function(){
+      $("#login_form1").fadeIn();
+      $("#login_form2").fadeOut();
+      $("#card-holder").fadeOut();
+    })
+    $(".top-sign-btn").click(function(){
+      $("#login_form2").fadeIn();
+      $("#login_form1").fadeOut();
+      $("#card-holder").fadeOut();
+    })
 
     //end
     $("#body").css("display", "inherit");
