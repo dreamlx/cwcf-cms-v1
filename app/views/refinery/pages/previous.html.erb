@@ -4,14 +4,14 @@
     <section id='body'>
       <div class="margin-1"></div>
       <ul class="tab-5">
-        <% (::Refinery::Page.where(:parent_id => @page.parent_id )).each do |item| %>
+        <% (::Refinery::Page.where(:parent_id => @page.parent_id )).order('lft ASC').each do |item| %>
         <li class="<%= 'hover' if item == @page %>">
           <a href="<%= refinery.url_for(item.url_marketable) %>">
-            <% if (::Refinery::Page.where(:parent_id => @page.parent_id ).first != item) %>
+            <% if (::Refinery::Page.where(:parent_id => @page.parent_id ).order('lft ASC').first != item) %>
             <span class="arrow-l">&#160;</span>
             <% end %>
             <span class="arrow-c w150"><%= item.title() %></span>
-            <% if (::Refinery::Page.where(:parent_id => @page.parent_id ).last != item) %>
+            <% if (::Refinery::Page.where(:parent_id => @page.parent_id ).order('lft ASC').last != item) %>
             <span class="arrow-r">&#160;</span>
             <% end %>
           </a>

@@ -19,7 +19,7 @@
       </ul>
       <div class="margin-1"> </div>
       <ul class="news-list">
-        <% (::Refinery::Page.where(:parent_id => @page.id )).each do |news_item| %>
+        <% (::Refinery::Page.where(:parent_id => @page.id )).order('lft ASC').each do |news_item| %>
         <li>
           <a href='<%= refinery.url_for(news_item.url_marketable) %>'>
             <%= news_item.title() %>

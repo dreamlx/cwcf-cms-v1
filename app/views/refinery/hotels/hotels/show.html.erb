@@ -3,28 +3,23 @@
   <div class='show_body'>
     <h1 id='body_content_title'><%=raw @services_page.title() %></h1>
     <section id='body'>
-      <ul class="nav nav-tabs" role="tablist">
-        <li>
-          <a href='#traffic-services'  role="tab" data-toggle="tab">
-            交通信息
-            </a>
+      <div class="margin-1"></div>
+      <ul class="tab-5">
+        <% (::Refinery::Page.where(:parent_id => @services_page)).order('lft ASC').each do |item| %>
+        <li class="<%= 'hover' if item == @hotel_page %>">
+          <a href="<%= refinery.url_for(item.url_marketable) %>">
+            <% if (::Refinery::Page.where(:parent_id => @services_page).order('lft ASC').first != item) %>
+            <span class="arrow-l">&#160;</span>
+            <% end %>
+            <span class="arrow-c w164"><%= item.title() %></span>
+            <% if (::Refinery::Page.where(:parent_id => @services_page).order('lft ASC').last != item) %>
+            <span class="arrow-r">&#160;</span>
+            <% end %>
+          </a>
         </li>
-        <li class="active">
-          <a href='/news/services/hotels'>
-            酒店信息
-            </a>
-        </li>
-        <li>
-          <a href='#repast-services'  role="tab" data-toggle="tab">
-            餐饮指南
-            </a>
-        </li>
-        <li>
-          <a href='#other-services'  role="tab" data-toggle="tab">
-            其他服务
-            </a>
-        </li>
+        <% end %>
       </ul>
+      <div class="margin-1"></div>
       <div class="tab-content">
         <div class="tab-pane" id='traffic-services'>
           <%=raw @services_page.content_for(:traffic_services) %>

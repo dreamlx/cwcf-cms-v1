@@ -5,7 +5,7 @@
       <div class="row-fluid">
         <div class="col-md-12">
           <div class="row mix-grid">
-            <% (::Refinery::Page.where(:parent_id => @page.id )).each do |previou_item| %>
+            <% (::Refinery::Page.where(:parent_id => @page.id )).order('lft ASC').each do |previou_item| %>
               <div class="col-md-4 col-sm-6 mix ">
                 <div class="mix-inner">
                   <a href='<%= "/news/previous/"+previou_item.id.to_s() %>'>
