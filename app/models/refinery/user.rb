@@ -99,7 +99,7 @@ module Refinery
         # add refinery role
         # add_role(:refinery)
         # add superuser role if there are no other users
-        add_role(:superuser) if ::Refinery::Role[:refinery].users.count == 1
+        # add_role(:superuser) if ::Refinery::Role[:refinery].users.count == 1
         # add plugins
         # self.plugins = Refinery::Plugins.registered.in_menu.names
       end
