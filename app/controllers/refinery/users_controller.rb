@@ -2,7 +2,7 @@ module Refinery
   class UsersController < Devise::RegistrationsController
 
     # Protect these actions behind an admin login
-    before_filter :redirect?, :only => [:new, :create]
+    # before_filter :redirect?, :only => [:new, :create]
 
     helper Refinery::Core::Engine.helpers
     layout 'refinery/layouts/login'
@@ -14,12 +14,18 @@ module Refinery
     # This method should only be used to create the first Refinery user.
     def create
       @user = User.new(params[:user])
+      role = params[:jiaose]
+      @user.add_role(role)
 
       if @user.create_first
         flash[:message] = "<h2>#{t('welcome', :scope => 'refinery.users.create', :who => @user.username).gsub(/\.$/, '')}.</h2>".html_safe
 
         sign_in(@user)
-        redirect_back_or_default(refinery.admin_root_path)
+        if @user.has_role?(:superuser)
+          redirect_back_or_default(refinery.admin_root_path)
+        else
+          redirect_back_or_default(refinery.root_path)
+        end
       else
         render :new
       end

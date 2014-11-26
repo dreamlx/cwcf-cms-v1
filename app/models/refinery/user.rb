@@ -87,16 +87,21 @@ module Refinery
       roles.any?{|r| r.title == title.to_s.camelize}
     end
 
+    def remove_role(title)
+      raise ArgumentException, "Role should be the title of the role not a role object." if title.is_a?(::Refinery::Role)
+      roles.delete_if { |r| r.title == title.to_s.camelize}
+    end
+
     def create_first
       if valid?
         # first we need to save user
         save
         # add refinery role
-        add_role(:refinery)
+        # add_role(:refinery)
         # add superuser role if there are no other users
         add_role(:superuser) if ::Refinery::Role[:refinery].users.count == 1
         # add plugins
-        self.plugins = Refinery::Plugins.registered.in_menu.names
+        # self.plugins = Refinery::Plugins.registered.in_menu.names
       end
 
       # return true/false based on validations
