@@ -1057,3 +1057,142 @@ ul.news-list {
 .w164 {
   width: 164px;
 }
+
+.form_txt {
+  color: #7f7f7f;
+  padding-left: 20px;
+  width: 416px;
+  margin: auto;
+}
+
+* input {
+  vertical-align: middle;
+}
+
+dl.form_bg {
+  background: url(../assets/form_bg.png) no-repeat;
+  width: 441px;
+  height: 633px;
+  padding: 125px 50px 0 30px;
+  margin: auto;
+  overflow: hidden;
+  font-size: 12px;
+  input, textarea {
+    color: #aaa;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+  input:focus {
+    outline: solid #2f8fda;
+  }
+  dd {
+    margin-bottom: 0;
+    padding: 3px 0;
+    color: #7f7f7f;
+    span {
+      border-left: 2px solid #7f7f7f;
+      display: inline-block;
+      padding: 0 5px;
+      min-width: 72px;
+      float: left;
+    }
+    input.txtinput1 {
+      background: url(../assets/text_bg13.jpg) no-repeat;
+      width: 196px;
+      height: 20px;
+      line-height: 20px;
+      border: none;
+      padding: 0 5px;
+    }
+    input.txtinput {
+      background: url(../assets/text_bg11.jpg) no-repeat;
+      width: 123px;
+      height: 20px;
+      line-height: 20px;
+      border: none;
+      padding: 0 5px;
+    }
+    input.txtinput2 {
+      background: url(../assets/text_bg14.jpg) no-repeat;
+      width: 245px;
+      height: 20px;
+      line-height: 20px;
+      border: none;
+      padding: 0 5px;
+    }
+    select {
+      width: auto;
+    }
+  }
+  dd.form-btn {
+    text-align: center;
+    input {
+      margin-left: 10px;
+    }
+  }
+}
+
+dl.form_bg1 {
+  background: url(../assets/form_bg.png) no-repeat;
+  width: 441px;
+  height: 633px;
+  padding: 92px 50px 0 30px;
+  margin: auto;
+  overflow: hidden;
+  font-size: 12px;
+  input, textarea {
+    color: #aaa;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+  input:focus {
+    outline: solid #2f8fda;
+  }
+  dd {
+    margin-bottom: 0;
+    padding: 3px 0;
+    color: #7f7f7f;
+    span {
+      border-left: 2px solid #7f7f7f;
+      display: inline-block;
+      padding: 0 5px;
+      min-width: 72px;
+      float: left;
+    }
+    input.txtinput1 {
+      background: url(../assets/text_bg13.jpg) no-repeat;
+      width: 196px;
+      height: 20px;
+      line-height: 20px;
+      border: none;
+      padding: 0 5px;
+    }
+    input.txtinput {
+      background: url(../assets/text_bg11.jpg) no-repeat;
+      width: 123px;
+      height: 20px;
+      line-height: 20px;
+      border: none;
+      padding: 0 5px;
+    }
+    input.txtinput2 {
+      background: url(../assets/text_bg14.jpg) no-repeat;
+      width: 245px;
+      height: 20px;
+      line-height: 20px;
+      border: none;
+      padding: 0 5px;
+    }
+    select {
+      width: auto;
+    }
+  }
+  dd.form-btn {
+    text-align: center;
+    input {
+      margin-left: 10px;
+    }
+  }
+}
