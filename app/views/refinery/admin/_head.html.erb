@@ -8,7 +8,7 @@
   <% custom_stylesheets.each do |css| %>
     <%= stylesheet_link_tag css.path, css.options %>
   <% end %>
-  <%= stylesheet_link_tag 'raptor-front-end' %>
+  <%= stylesheet_link_tag "application_admin" %>
   <%= yield :stylesheets %>
   <%= render 'refinery/admin/javascripts' %>
 </head>
