@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141124031315) do
+ActiveRecord::Schema.define(:version => 20141129145127) do
+
+  create_table "blanks", :force => true do |t|
+    t.string   "co_name"
+    t.string   "contact_name"
+    t.string   "brand_name"
+    t.string   "co_add"
+    t.string   "co_zip"
+    t.string   "co_phone"
+    t.string   "co_url"
+    t.string   "mobile_phone"
+    t.string   "job_columb"
+    t.string   "job_position"
+    t.string   "gender"
+    t.string   "email"
+    t.string   "country"
+    t.string   "media_type"
+    t.string   "apply_type"
+    t.string   "co_fax"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
