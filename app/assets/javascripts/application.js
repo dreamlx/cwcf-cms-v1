@@ -482,6 +482,24 @@ $(function () {
       $("#card-holder").fadeOut();
     })
 
+
     //end
     $("#body").css("display", "inherit");
+    //百度地图
+    if ($("#map-container").length > 0) {
+      var map = new BMap.Map("map-container");
+      var point = new BMap.Point(114.066518,22.536379);
+      var marker = new BMap.Marker(point);        // 创建标注
+      map.addOverlay(marker);// 将标注添加到地图中
+      map.centerAndZoom(point, 15);
+      map.addControl(new BMap.NavigationControl());
+      map.addControl(new BMap.ScaleControl());
+      map.addControl(new BMap.OverviewMapControl());
+      map.addControl(new BMap.MapTypeControl());
+      map.setCurrentCity("深圳"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+      map.enableScrollWheelZoom();    // 启动鼠标滚轮操作
+      map.enableKeyboard();
+      map.enableContinuousZoom();    // 开启连续缩放效果
+      map.enableInertialDragging();　// 开启惯性拖拽效果
+    }
 });
