@@ -48,8 +48,14 @@ class BlanksController < ApplicationController
 
       respond_to do |format|
         if @blank.save
-          format.html { redirect_to @blank, notice: '您的申请已经向后台提交' }
-          format.json { render json: @blank, status: :created, location: @blank }
+          # format.html { redirect_to @blank, notice: '您的申请已经向后台提交' }
+          # format.json { render json: @blank, status: :created, location: @blank }
+          # redirect_to "/media/reporter-reg/reporter_suc"
+          if (@blank.apply_type == "ju_apply")
+            format.html { redirect_to "/media/reporter-reg/reporter_suc"}
+          else
+            format.html { redirect_to "/partners/apply/apply_suc"}
+          end
         else
           format.html { render action: "new" }
           format.json { render json: @blank.errors, status: :unprocessable_entity }

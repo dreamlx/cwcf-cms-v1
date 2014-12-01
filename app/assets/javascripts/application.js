@@ -152,7 +152,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='/partners/apply'>" +
+                    "<a href='/partners/apply' id='ex_apply_href'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1'>" +
                     "</div>" +
@@ -253,7 +253,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='/media/reporter-reg'>" +
+                    "<a href='/media/reporter-reg' id='ju_apply_href'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-05 col-md-1'>" +
                     "</div>" +
@@ -332,6 +332,28 @@ $(function () {
           });
         });
       },1000);
+    }
+
+    //用户是否登录
+    if ($("#current_user").length == 0){
+      var patt1 = new RegExp("/partners/apply");
+      var patt2 = new RegExp("/media/reporter-reg");
+      if (patt1.test(location.pathname) || patt2.test(location.pathname)) {
+        window.location.href="/"
+      }
+
+      if ($("#ex_apply_href").length > 0) {
+        $("#ex_apply_href")[0].href = "javascript:;";
+        $("#ex_apply_href").click(function() {
+          $(".top-login-btn").trigger("click");
+        })
+      }
+      if ($("#ju_apply_href").length > 0) {
+        $("#ju_apply_href")[0].href = "javascript:;";
+        $("#ju_apply_href").click(function() {
+          $(".top-login-btn").trigger("click");
+        })
+      }
     }
 
 

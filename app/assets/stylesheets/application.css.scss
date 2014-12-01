@@ -27,6 +27,7 @@ body {
 
 a:hover {
   text-decoration: none!important;
+  background-color: initial!important;
 }
 
 ul, li {
@@ -1068,7 +1069,7 @@ ul.news-list {
   vertical-align: middle;
 }
 
-dl.form_bg {
+div.form_bg, dl.form_bg {
   background: url(../assets/form_bg.png) no-repeat;
   width: 441px;
   height: 633px;
@@ -1128,6 +1129,30 @@ dl.form_bg {
     text-align: center;
     input {
       margin-left: 10px;
+    }
+  }
+  h2 {
+    color: #9b1b23;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 40px;
+  }
+  ul {
+    overflow: hidden;
+    padding: 10px 0;
+    li {
+      float: left;
+      margin-right: 30px;
+      a {
+        color: #909090;
+        display: block;
+        border-bottom: 1px solid #fff;
+      }
+      a:hover {
+        border-bottom: 1px solid #2f8fda;
+        color: #333;
+      }
     }
   }
 }

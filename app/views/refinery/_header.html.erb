@@ -14,7 +14,7 @@
     <div class="menu col-md-1 login-menu">
       <ul>
         <% if refinery_user_signed_in? %>
-          <li><%= current_refinery_user %></li>
+          <li id="current_user"><%= current_refinery_user %></li>
           <li><a href="/refinery/logout">注销</a></li>
         <% else %>
           <li><a class="top-login-btn">登录</a></li>
