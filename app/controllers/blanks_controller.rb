@@ -45,7 +45,7 @@ class BlanksController < ApplicationController
     if current_refinery_user
       apply_type = params[:apply_type] # 申请参展(ex_apply) / 记者证申请(ju_apply)
       @blank = Blank.new(params[:blank])
-
+      @blank.user_id = current_refinery_user.id
       respond_to do |format|
         if @blank.save
           # format.html { redirect_to @blank, notice: '您的申请已经向后台提交' }
