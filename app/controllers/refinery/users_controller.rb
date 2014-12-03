@@ -24,7 +24,13 @@ module Refinery
         if @user.has_role?(:superuser)
           redirect_back_or_default(refinery.admin_root_path)
         else
-          redirect_back_or_default(refinery.root_path)
+          if @user.has_role?(:exhibitor)
+            redirect_to("/partners/apply")
+          elsif @user.has_role?(:journalist)
+            redirect_to("/media/reporter-reg")
+          else
+            redirect_back_or_default(refinery.root_path)
+          end
         end
       else
         render :new
