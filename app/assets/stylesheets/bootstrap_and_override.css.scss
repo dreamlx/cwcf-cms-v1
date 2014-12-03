@@ -1,3 +1,9 @@
 // Import Bootstrap and Customize it here.
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body {
+  background: #DDD;
+  font-family: "Microsoft YaHei";
+  font-size: 13px;
+  line-height: 18px;
+}

@@ -20,7 +20,7 @@
 
 body {
   background: #DDD;
-  font-family: "Microsoft YaHei"!important;
+  font-family: "Microsoft YaHei";
   font-size: 13px;
   line-height: 18px;
 }
@@ -41,7 +41,6 @@ ul, ol, dl {
   font-size: 1em;
   line-height: 1.6;
   list-style-position: outside;
-  font-family: PingHei, 'Lucida Grande', 'Lucida Sans Unicode', STHeiti, Helvetica, Arial, Verdana, sans-serif;
 }
 
 #body, #side_body {
@@ -151,7 +150,6 @@ ul, ol, dl {
   display: -moz-inline-block;
   display: -webkit-inline-block;
   color: #fff;
-  font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
@@ -255,6 +253,7 @@ ul, ol, dl {
     margin: auto;
     padding-top: 7px;
     padding-bottom: 200px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     > h1 {
       color: #2f8fda;
       border-left: 2px #2f8fda solid;
@@ -841,6 +840,7 @@ ul.news-list {
   top: 140px;
   left: 100px;
   display: none;
+  font-family: "Microsoft YaHei";
   > span {
     color: white;
     font-size: 24px;
