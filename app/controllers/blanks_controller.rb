@@ -1,6 +1,8 @@
 class BlanksController < ApplicationController
   # GET /blanks
   # GET /blanks.json
+
+  before_filter :auth_current_user, :only => [:show, :edit, :update, :destroy, :create]
   def index
     @blanks = Blank.all
 
@@ -95,6 +97,16 @@ class BlanksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to blanks_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def auth_current_user
+    if (current_refinery_user && current_refinery_user.has_role?(:superuser))
+
+    else
+      redirect_to "/"
     end
   end
 end

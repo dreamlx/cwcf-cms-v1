@@ -2,22 +2,20 @@
 
 <table>
   <tr>
-    <th>Co name</th>
-    <th>Contact name</th>
-    <th>Brand name</th>
-    <th>Co add</th>
-    <th>Co zip</th>
-    <th>Co phone</th>
-    <th>Co url</th>
-    <th>Mobile phone</th>
-    <th>Job columb</th>
-    <th>Job position</th>
-    <th>Gender</th>
-    <th>Email</th>
-    <th>Country</th>
-    <th>Media type</th>
-    <th>Apply type</th>
-    <th>Co fax</th>
+    <th>申请类型</th>
+    <th>公司名称</th>
+    <th>品牌名称</th>
+    <th>联系人</th>
+    <th>公司地址</th>
+    <th>公司邮编</th>
+    <th>公司电话</th>
+    <th>联系人电话</th>
+    <th>记者（负责栏目）</th>
+    <th>联系邮箱</th>
+    <th>国籍</th>
+    <th>记者（媒体类型）</th>
+    <th>公司传真</th>
+    <th>申请状态</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,22 +23,27 @@
 
 <% @blanks.each do |blank| %>
   <tr>
+    <td><% blank.apply_type %>
+        <% if blank.apply_type == "ex_apply" %>
+            参展商
+        <% else %>
+            记者证
+        <% end %>
+    </td>
     <td><%= blank.co_name %></td>
-    <td><%= blank.contact_name %></td>
     <td><%= blank.brand_name %></td>
+    <td><%= blank.contact_name %></td>
+    
     <td><%= blank.co_add %></td>
     <td><%= blank.co_zip %></td>
     <td><%= blank.co_phone %></td>
-    <td><%= blank.co_url %></td>
     <td><%= blank.mobile_phone %></td>
     <td><%= blank.job_columb %></td>
-    <td><%= blank.job_position %></td>
-    <td><%= blank.gender %></td>
     <td><%= blank.email %></td>
     <td><%= blank.country %></td>
     <td><%= blank.media_type %></td>
-    <td><%= blank.apply_type %></td>
     <td><%= blank.co_fax %></td>
+    <td><%= blank.status %></td>
     <td><%= link_to 'Show', blank %></td>
     <td><%= link_to 'Edit', edit_blank_path(blank) %></td>
     <td><%= link_to 'Destroy', blank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
