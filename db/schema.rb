@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141129145127) do
+ActiveRecord::Schema.define(:version => 20141203055637) do
 
   create_table "blanks", :force => true do |t|
     t.string   "co_name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20141129145127) do
     t.string   "co_fax"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "status"
   end
 
   create_table "refinery_blog_categories", :force => true do |t|

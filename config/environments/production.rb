@@ -49,9 +49,19 @@ MyNewApp::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  if config.respond_to?(:action_mailer)
-    # config.action_mailer.raise_delivery_errors = false
-  end
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'localhost: 3000' }
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.163.com",
+    :port => 25,
+    :domain => "163.com",
+    :authentication => :login,
+    :user_name => "cwcf_dev@163.com",
+    :password => "cwcf_12345678"
+  }
 
   # Enable threaded mode
   # config.threadsafe!

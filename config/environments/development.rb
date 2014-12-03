@@ -14,9 +14,19 @@ MyNewApp::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  if config.respond_to?(:action_mailer)
-    config.action_mailer.raise_delivery_errors = false
-  end
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'localhost: 3000' }
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.163.com",
+    :port => 25,
+    :domain => "163.com",
+    :authentication => :login,
+    :user_name => "cwcf_dev@163.com",
+    :password => "cwcf_12345678"
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
