@@ -524,4 +524,16 @@ $(function () {
       map.enableContinuousZoom();    // 开启连续缩放效果
       map.enableInertialDragging();　// 开启惯性拖拽效果
     }
+
+
+    $("ul.ico_links li.i3").hover(function() {
+      $(".qrcode").fadeIn();
+    }, function() {
+      $(".qrcode").fadeOut();
+    });
+    $("ul.ico_links li.i4").hover(function() {
+      $(".tele-share").fadeIn();
+    }, function() {
+      $(".tele-share").fadeOut();
+    });
 });
