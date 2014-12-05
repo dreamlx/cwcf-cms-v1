@@ -579,6 +579,9 @@ $(function () {
           type: 'put',
           dataType: 'json',
           data: JSON.stringify(postdata),
+          headers: {
+            'X-CSRF-Token': $("#authenticity_token").val()
+          },
           processData: false,
           contentType: "application/json; charset=UTF-8",
           success: function(data) {

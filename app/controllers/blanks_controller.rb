@@ -2,7 +2,7 @@ class BlanksController < ApplicationController
   # GET /blanks
   # GET /blanks.json
 
-  before_filter :auth_current_user, :only => [:show, :edit, :create, :index]
+  before_filter :auth_current_user, :only => [:show, :edit, :update, :create, :index]
   def index
     @blanks = Blank.all
 
