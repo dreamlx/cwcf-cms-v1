@@ -11,11 +11,11 @@ class BlankObserver < ActiveRecord::Observer
 
   def after_update(blank)
 
-    if blank.status = "accepted"
-      BlankMailer.confirm(blank).deliver
-    else
-      BlankMailer.deny(blank).deliver
-    end
+    # if blank.status = "accepted"
+    #   BlankMailer.confirm(blank).deliver
+    # else
+    #   BlankMailer.deny(blank).deliver
+    # end
   end
 
 end

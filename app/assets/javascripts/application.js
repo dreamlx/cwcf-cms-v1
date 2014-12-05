@@ -569,7 +569,9 @@ $(function () {
       $("#blanks .update_btn").click(function() {
         var _this = this;
         var postdata = {
-          "blank[status]": $("#select_" + _this.dataset.id)[0].value
+          "blank":{
+            "status": $("#select_" + _this.dataset.id)[0].value
+          }
         };
         alert("blanks/" + _this.dataset.id);
         $.ajax({
@@ -581,9 +583,10 @@ $(function () {
           contentType: "application/json; charset=UTF-8",
           success: function(data) {
             console.log(data);
+            $("#status_" + _this.dataset.id).text(data.blank.status);
           },
           error: function(errors){
-            console.log(errors);
+            alert("系统繁忙，请稍后再试");
           }
         });
       })

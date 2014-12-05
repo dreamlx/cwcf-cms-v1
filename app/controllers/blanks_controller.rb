@@ -2,7 +2,7 @@ class BlanksController < ApplicationController
   # GET /blanks
   # GET /blanks.json
 
-  before_filter :auth_current_user, :only => [:show, :edit, :update, :create, :index]
+  before_filter :auth_current_user, :only => [:show, :edit, :create, :index]
   def index
     @blanks = Blank.all
 
@@ -77,15 +77,23 @@ class BlanksController < ApplicationController
   def update
     @blank = Blank.find(params[:id])
 
-    respond_to do |format|
-      if @blank.update_attributes(params[:blank])
-        format.html { redirect_to @blank, notice: 'Blank was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @blank.errors, status: :unprocessable_entity }
-      end
+    if @blank.update_attributes(params[:blank])
+      render json: { blank: @blank }, status: 201, message: '更新成功', :callback => params['callback']
+    else
+      render json: { blank: @blank }, status: 400, message: '更新失败，请联系管理员', :callback => params['callback']
     end
+    # respond_to do |format|
+    #   if @blank.update_attributes(params[:blank])
+    #     puts "----"* 50
+    #     puts  @blank.status
+    #     puts params[:blank]
+    #     format.html { redirect_to @blank, notice: 'Blank was successfully updated.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: "edit" }
+    #     format.json { render json: @blank.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /blanks/1

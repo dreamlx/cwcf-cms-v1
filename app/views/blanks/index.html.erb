@@ -19,7 +19,7 @@
           <th>记者（媒体类型）</th>
           <th>公司传真</th>
           <th>申请状态</th>
-          <th>申请状态</th>
+          <th>更改状态</th>
           <th></th>
           <th></th>
         </tr>
@@ -46,7 +46,7 @@
           <td><%= blank.country %></td>
           <td><%= blank.media_type %></td>
           <td><%= blank.co_fax %></td>
-          <td><%= blank.status %></td>
+          <td id="status_<%= blank.id %>"><%= blank.status %></td>
           <td>
             <select name="blank[status]" id="select_<%= blank.id %>">
               <option value="applied">申请中</option>
