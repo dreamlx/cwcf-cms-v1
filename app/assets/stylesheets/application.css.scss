@@ -529,8 +529,33 @@ ul.dlist{
 
 .carousel .carousel-inner {
   height: inherit;
+  .carousel-inner-item {
+    // height: 600px;
+    width: 100%;
+    // background: red;
+  }
+  .carousel-inner-item-1 {
+    background: url(../assets/preview_1.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .carousel-inner-item-2 {
+    background: url(../assets/preview_2.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .carousel-inner-item-3 {
+    background: url(../assets/preview_3.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .carousel-inner-item-4 {
+    background: url(../assets/preview_4.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .carousel-inner-item-5 {
+    background: url(../assets/preview_5.jpg) no-repeat center;
+    background-size: cover;
+  }
   .item .img-responsive {
-    overflow: hidden;
+    // overflow: hidden;
   }
 }
 

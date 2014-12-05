@@ -387,9 +387,37 @@ $(function () {
          $(".login_form").css("height", $("body").height()-110);
        }
 
+       if($(".carousel-inner-item").length > 0) {
+         $(".carousel-inner-item").css("height", $(window).height()-117);
+       }
     }
     window.onresize = adjust;
     adjust();
+
+    $('#carousel-banners').on('slide.bs.carousel', function(e) {
+      // e.preventDefault();
+      if (e.direction === "left") {
+        var n_index = $(e.relatedTarget).index();
+        if (n_index === 0) {
+          n_index = $(e.relatedTarget).parent().children().length;
+        }
+        var pre_tar = $(e.relatedTarget).parent().children()[n_index - 1];
+        $(pre_tar).fadeOut();
+      }else {
+        var n_index = $(e.relatedTarget).index();
+        if (n_index === 4) {
+          n_index = -1;
+        }
+        var pre_tar = $(e.relatedTarget).parent().children()[n_index + 1];
+        $(pre_tar).fadeOut();
+      }
+      $(e.relatedTarget).fadeIn();
+    })
+
+    $('#carousel-banners').on('slid.bs.carousel', function(e) {
+      // e.preventDefault()
+      // $(e.relatedTarget).fadeIn();//
+    })
 
     //底部菜单样式
     $(".footer-menu.row").css({
