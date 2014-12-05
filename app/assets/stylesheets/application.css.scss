@@ -81,7 +81,6 @@ ul, ol, dl {
     // width: 1200px;
     top: 42px;
     width: 100%;
-    overflow: hidden;
     padding-left: 240px;
     img {
       height: 40px;
@@ -1313,13 +1312,16 @@ dl.form_bg1 {
   background: rgba(0,0,0,0.4);
 }
 
-body {
+#home-page {
   overflow-x: hidden;
+  #header {
+    overflow: hidden;
+    .header .website-body-title {
+      overflow: hidden;
+    }
+  }
 }
 
-#header {
-  overflow: hidden;
-}
 
 .no-content {
   width: 100%;
