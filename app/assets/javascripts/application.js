@@ -536,4 +536,28 @@ $(function () {
     }, function() {
       $(".tele-share").fadeOut();
     });
+
+    if ($("#blanks .update_btn").length > 0) {
+      $("#blanks .update_btn").click(function() {
+        var _this = this;
+        var postdata = {
+          "blank[status]": $("#select_" + _this.dataset.id)[0].value
+        };
+        alert("blanks/" + _this.dataset.id);
+        $.ajax({
+          url: "blanks/" + _this.dataset.id,
+          type: 'put',
+          dataType: 'json',
+          data: JSON.stringify(postdata),
+          processData: false,
+          contentType: "application/json; charset=UTF-8",
+          success: function(data) {
+            console.log(data);
+          },
+          error: function(errors){
+            console.log(errors);
+          }
+        });
+      })
+    }
 });

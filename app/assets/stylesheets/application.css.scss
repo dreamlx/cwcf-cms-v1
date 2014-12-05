@@ -70,20 +70,22 @@ ul, ol, dl {
     position: absolute;
     top: 34px;
   }
-  .website-body-title {
-    width: 1200px;
-    padding: 0;
-    .logo-pic {
-      max-width: 100px;
-      float: left;
-      margin-left: 20px;
+  .logo-pic {
+    margin-left: 20px;
+    position: absolute;
+    img {
+      width: 100px;
     }
-    .title-pic {
-      margin-left: 120px;
-      margin-top: 10px;
-      height: 43px;
-      width: 955px;
-      float: right;
+  }
+  .website-body-title {
+    // width: 1200px;
+    top: 42px;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 240px;
+    img {
+      height: 40px;
+      min-width: 889px;
     }
   }
 }
@@ -217,7 +219,7 @@ ul, ol, dl {
   position: absolute;
   top: 2px;
   width: 100%;
-  min-width: 550px;
+  // min-width: 550px;
   .login-menu {
     float: right;
     color: white;
@@ -225,9 +227,13 @@ ul, ol, dl {
     width: 150px;
   }
   .input-group[class*="col-"] {
-    width: 250px;
+    // width: 250px;
     float: right;
     height: 17px;
+    width: initial;
+    .input-group-btn {
+      width: initial;
+    }
     .btn {
       height: 17px;
       padding-top: 0px;
@@ -291,7 +297,7 @@ ul, ol, dl {
 
 #carousel-banners {
   margin-top: -20px;
-  min-width: 1200px;
+  // min-width: 1200px;
 }
 
 #hotels {
@@ -478,7 +484,7 @@ ul.downs {
   display:-moz-box;
   display:-webkit-box;
   display:box;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 #logo {
@@ -1279,4 +1285,12 @@ dl.form_bg1 {
   color: white;
   text-align: center;
   background: rgba(0,0,0,0.4);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#header {
+  overflow: hidden;
 }

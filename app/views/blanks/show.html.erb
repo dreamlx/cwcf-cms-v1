@@ -1,85 +1,101 @@
-<p id="notice"><%= notice %></p>
+<div class='blanks_body'>
+  <h1 id='body_content_title'>申请表单详细页</h1>
+  <section id='blanks'>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Co name:</b>
-  <%= @blank.co_name %>
-</p>
+    <p>
+      <b>Co name:</b>
+      <%= @blank.co_name %>
+    </p>
 
-<p>
-  <b>Contact name:</b>
-  <%= @blank.contact_name %>
-</p>
+    <p>
+      <b>Contact name:</b>
+      <%= @blank.contact_name %>
+    </p>
 
-<p>
-  <b>Brand name:</b>
-  <%= @blank.brand_name %>
-</p>
+    <p>
+      <b>Brand name:</b>
+      <%= @blank.brand_name %>
+    </p>
 
-<p>
-  <b>Co add:</b>
-  <%= @blank.co_add %>
-</p>
+    <p>
+      <b>Co add:</b>
+      <%= @blank.co_add %>
+    </p>
 
-<p>
-  <b>Co zip:</b>
-  <%= @blank.co_zip %>
-</p>
+    <p>
+      <b>Co zip:</b>
+      <%= @blank.co_zip %>
+    </p>
 
-<p>
-  <b>Co phone:</b>
-  <%= @blank.co_phone %>
-</p>
+    <p>
+      <b>Co phone:</b>
+      <%= @blank.co_phone %>
+    </p>
 
-<p>
-  <b>Co url:</b>
-  <%= @blank.co_url %>
-</p>
+    <p>
+      <b>Co url:</b>
+      <%= @blank.co_url %>
+    </p>
 
-<p>
-  <b>Mobile phone:</b>
-  <%= @blank.mobile_phone %>
-</p>
+    <p>
+      <b>Mobile phone:</b>
+      <%= @blank.mobile_phone %>
+    </p>
 
-<p>
-  <b>Job columb:</b>
-  <%= @blank.job_columb %>
-</p>
+    <p>
+      <b>Job columb:</b>
+      <%= @blank.job_columb %>
+    </p>
 
-<p>
-  <b>Job position:</b>
-  <%= @blank.job_position %>
-</p>
+    <p>
+      <b>Job position:</b>
+      <%= @blank.job_position %>
+    </p>
 
-<p>
-  <b>Gender:</b>
-  <%= @blank.gender %>
-</p>
+    <p>
+      <b>Gender:</b>
+      <%= @blank.gender %>
+    </p>
 
-<p>
-  <b>Email:</b>
-  <%= @blank.email %>
-</p>
+    <p>
+      <b>Email:</b>
+      <%= @blank.email %>
+    </p>
 
-<p>
-  <b>Country:</b>
-  <%= @blank.country %>
-</p>
+    <p>
+      <b>Country:</b>
+      <%= @blank.country %>
+    </p>
 
-<p>
-  <b>Media type:</b>
-  <%= @blank.media_type %>
-</p>
+    <p>
+      <b>Media type:</b>
+      <%= @blank.media_type %>
+    </p>
 
-<p>
-  <b>Apply type:</b>
-  <%= @blank.apply_type %>
-</p>
+    <p>
+      <b>Apply type:</b>
+      <%= @blank.apply_type %>
+    </p>
 
-<p>
-  <b>Co fax:</b>
-  <%= @blank.co_fax %>
-</p>
+    <p>
+      <b>Co fax:</b>
+      <%= @blank.co_fax %>
+    </p>
 
 
-<%= link_to 'Edit', edit_blank_path(@blank) %> |
-<%= link_to 'Back', blanks_path %>
+    <%= link_to 'Edit', edit_blank_path(@blank) %> |
+    <%= link_to 'Back', blanks_path %>
+  </section>
+</div>
+
+<% content_for :stylesheets do %>
+<style type="text/css">
+.blanks_body {
+  margin: 40px 40px 80px 40px;
+}
+.blanks_body h1 {
+  margin-bottom: 40px;
+}
+</style>
+<% end %>
