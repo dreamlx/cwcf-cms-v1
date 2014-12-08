@@ -7,23 +7,23 @@
       <form class="filterform" name="filterform" action="/blanks" method="get">
         <dd class="filter-item"><span>申请类型</span>
           <select name="media_type">
-            <option>请选择</option>
-            <option value="记者证">记者证</option>
-            <option value="参展商">参展商</option>
+            <option value="all">请选择</option>
+            <option value="ju_apply">记者证</option>
+            <option value="ex_apply">参展商</option>
           </select>
         </dd>
         <dd  class="filter-item"><span>申请状态</span>
           <select name="status">
-            <option>请选择</option>
-            <option value="applied">applied</option>
-            <option value="accepted">accepted</option>
-            <option value="denied">denied</option>
+            <option value="all">请选择</option>
+            <option value="applied">申请中</option>
+            <option value="accepted">已通过</option>
+            <option value="denied">已拒绝</option>
           </select>
         </dd>
         <dd  class="filter-item">
           <input name="co_name" placeholder="公司名称">
         </dd>
-        <dd class="filter-item"><input id="btnButtonReg" type="submit" value="应用"></dd>
+        <dd class="filter-item"><input id="btnButtonReg" type="submit" value="确定"></dd>
       </form>
     </div>
     <section id='blanks'>
@@ -71,7 +71,15 @@
           <td><%= blank.country %></td>
           <td><%= blank.media_type %></td>
           <td><%= blank.co_fax %></td>
-          <td id="status_<%= blank.id %>"><%= blank.status %></td>
+          <td id="status_<%= blank.id %>">
+						<% if blank.status == "applied" %>
+							申请中
+						<% elsif blank.status == "accepted" %>
+							已通过
+						<% else %>
+							已拒绝
+						<% end %>
+					</td>
           <td>
             <select name="blank[status]" id="select_<%= blank.id %>">
               <option value="applied">申请中</option>

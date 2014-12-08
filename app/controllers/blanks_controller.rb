@@ -4,7 +4,29 @@ class BlanksController < ApplicationController
 
   before_filter :auth_current_user, :only => [:show, :edit, :update, :create, :index]
   def index
-    @blanks = Blank.all
+    f_type = params[:media_type]
+    f_status = params[:status]
+    f_coname = params[:co_name]
+    
+    if f_type != "all"  
+      if f_status != "all"
+        @blanks = Blank.where("apply_type = ? AND status = ?", f_type, f_status)
+      else
+        @blanks = Blank.where("apply_type = ?", f_type)
+      end
+    else
+      if f_status != "all"
+        @blanks = Blank.where("status = ?", f_status)
+      else
+        @blanks = Blank.all
+      end
+    end
+    
+    unless f_coname.blank? 
+      @blanks.select! do |item|
+        item.co_name.include?(f_coname)
+      end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
