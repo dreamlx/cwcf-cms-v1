@@ -2,6 +2,30 @@
   <div class='blanks_body'>
     <h1 id='body_content_title'>表单申请列表 <a href="/refinery" class="return-admin">Admin</a></h1>
     <input name="authenticity_token" id="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
+    <div class="blanks-filter">
+      <h4>过滤器</h4>
+      <form class="filterform" name="filterform" action="/blanks" method="get">
+        <dd class="filter-item"><span>申请类型</span>
+          <select name="media_type">
+            <option>请选择</option>
+            <option value="记者证">记者证</option>
+            <option value="参展商">参展商</option>
+          </select>
+        </dd>
+        <dd  class="filter-item"><span>申请状态</span>
+          <select name="status">
+            <option>请选择</option>
+            <option value="applied">applied</option>
+            <option value="accepted">accepted</option>
+            <option value="denied">denied</option>
+          </select>
+        </dd>
+        <dd  class="filter-item">
+          <input name="co_name" placeholder="公司名称">
+        </dd>
+        <dd class="filter-item"><input id="btnButtonReg" type="submit" value="应用"></dd>
+      </form>
+    </div>
     <section id='blanks'>
       <table>
         <tr>

@@ -1333,3 +1333,19 @@ dl.form_bg1 {
 .return-admin {
  font-size: 20px;
 }
+
+.filterform {
+  margin-bottom: 60px;
+  .filter-item {
+    float: left;
+    margin-left: 50px;
+    span {
+      float: left;
+      margin-right: 10px;
+    }
+    select {
+      float: right;
+      width: auto;
+    }
+  }
+}
