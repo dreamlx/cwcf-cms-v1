@@ -31,4 +31,13 @@ namespace :init_db do
       end
     end
   end
+  
+  desc "set default blanks"
+  task default_blank_status: :environment do
+    Blank.all.each do |blank|
+      if blank.status.blank?
+        blank.status = "applied"
+      end
+    end
+  end
 end
