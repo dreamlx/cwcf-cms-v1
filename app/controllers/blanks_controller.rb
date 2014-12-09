@@ -88,7 +88,7 @@ class BlanksController < ApplicationController
     else
       respond_to do |format|
         @blank = Blank.new
-        format.html { render action: "new", notice: '您必须先登录' }
+        format.html { render action: "new", notice: '您必须先登录 并且一个用户只能有一次申请' }
       end
     end
 
