@@ -62,3 +62,7 @@ gem 'refinerycms-exhibitors', :path => 'vendor/extensions'
 gem 'refinerycms-cooperations', :path => 'vendor/extensions'
 
 gem 'bxslider-rails'
+
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
