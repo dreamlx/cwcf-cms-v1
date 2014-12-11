@@ -1364,8 +1364,7 @@ dl.form_bg1 {
 }
 
 .ordered_line_items {
-  height: 50px;
-  margin-bottom: 32px;
+  // height: 50px;
   div {
     float: left;
     width: 50px;
@@ -1380,4 +1379,5 @@ dl.form_bg1 {
 .order_btn {
   float: right;
   width: 300px;
+  margin-top: 40px;
 }
