@@ -1,4 +1,5 @@
 CKEDITOR.editorConfig = function (config) {
+  config.PreserveSessionOnFileBrowser = true;
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
   config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
   config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
