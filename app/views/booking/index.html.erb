@@ -13,3 +13,9 @@
 </tr>
 <% end %>
 </div>
+
+<table>
+<% @cart.line_items.each do |item| %>
+  <td><%= item.product.number %></td>
+<% end %>
+</table>

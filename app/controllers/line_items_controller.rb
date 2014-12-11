@@ -4,7 +4,7 @@ class LineItemsController < ApplicationController
 
   before_filter :set_cart, only: [:create]
   before_filter :set_line_item, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @line_items = LineItem.all
 
@@ -82,7 +82,7 @@ class LineItemsController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def set_line_item
     @line_item = LineItem.find(params[:id])

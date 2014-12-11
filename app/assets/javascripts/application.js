@@ -573,7 +573,6 @@ $(function () {
             "status": $("#select_" + _this.dataset.id)[0].value
           }
         };
-        alert("blanks/" + _this.dataset.id);
         $.ajax({
           url: "blanks/" + _this.dataset.id,
           type: 'put',
@@ -593,5 +592,72 @@ $(function () {
           }
         });
       })
+    }
+
+    if ($(".product_item").length > 0) {
+      $(".ordered_line_items").children().each(function() {
+        var ordered_line_product_id = $(this)[0].id.slice(13);
+        var ordered_line_id = $(this)[0].dataset.id;
+        $(".product_item").each(function() {
+          if ($(this)[0].id.slice(13) == ordered_line_product_id) {
+            $(this).addClass("active");
+            $(this)[0].dataset.id = ordered_line_id;
+          }
+        });
+      });
+      $(".product_item").click(function() {
+        var _this = this;
+        var postdata = {
+          "product_id": $(this)[0].id.slice(13)
+        };
+        var post_url = "/line_items";
+        var post_type = 'post';
+        if ($(_this).hasClass("active")) {
+          post_url = "/line_items/" + $(this)[0].dataset.id;
+          post_type = "delete";
+          postdata = "";
+        }
+        $.ajax({
+          url: post_url,
+          type: post_type,
+          dataType: 'json',
+          data: JSON.stringify(postdata),
+          headers: {
+            'X-CSRF-Token': $("#authenticity_token").val()
+          },
+          processData: false,
+          contentType: "application/json; charset=UTF-8",
+          success: function(data) {
+            if ($(_this).hasClass("active")) {
+              $(_this).removeClass("active");
+              var ordered_line_product_id = $(_this)[0].id.slice(13);
+              var ordered_line_id = $(_this)[0].dataset.id;
+              $(".ordered_line_items").children().each(function() {
+                if ($(this)[0].id.slice(13) == ordered_line_product_id) {
+                  $(this)[0].remove();
+                }
+              });
+              if ($(".ordered_line_items").children().length == 0) {
+                var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
+                $(".ordered_line_items").html(no_content_str);
+              }
+            } else {
+              $(_this).addClass("active");
+              var ordered_html = $(".ordered_line_items").html();
+              if ($(".ordered_line_items").children().length == 0) {
+                ordered_html = "";
+              }
+              $(_this)[0].dataset.id = data.id;
+              ordered_html += "<div id='ordered_item_" + $(_this)[0].id.slice(13) + "' data-id='" + data.id +"'>" + $(_this)[0].dataset.number +"</div>";
+              $(".ordered_line_items").html(ordered_html);
+            }
+          },
+          error: function(errors){
+            alert("系统繁忙，请稍后再试");
+          }
+        });
+
+
+      });
     }
 });

@@ -1,0 +1,55 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @page.title() %></h1>
+    <section id='body'>
+
+      <div class="margin-1"></div>
+      <div class="margin-1"></div>
+      <div>
+
+        <h3>已选展位</h3>
+        <div class="ordered_line_items">
+          <% if @cart.line_items.length > 0 %>
+            <% @cart.line_items.each do |item| %>
+            <div id="ordered_item_<%= item.product.id %>" data-id="<%= item.id %>"><%= item.product.number %></div>
+            <% end %>
+          <% else %>
+            还没有选座，请点选下面座位，点击两次可取消
+          <% end %>
+        </div>
+
+        <div class="order_btn">
+          <a type="button" class="btn btn-warning btn-lg btn-block" style="background-color: #ec971f!important">提交订单</a>
+        </div>
+
+        <div class="margin-1"></div>
+        <h3>可用展位</h3>
+
+        <div class="list_products">
+          <input id="authenticity_token" name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+          <% @products.each do |product| %>
+            <% if product.status == "free" %>
+              <div class="product_item" id="product_item_<%= product.id %>" data-number="<%= product.number %>">
+                <%= product.number %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+      <div class="margin-1"></div>
+      <%=raw @page.content_for(:body) %>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>
