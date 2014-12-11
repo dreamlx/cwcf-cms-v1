@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<h2>您当前的购物车</h2>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<table>
+  <%= render(@cart.line_items) %>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?'} %>

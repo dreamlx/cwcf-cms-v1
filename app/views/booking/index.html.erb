@@ -8,7 +8,7 @@
   <% if product.status == "free" %>
     <td><%= product.number %> </td>
     <td><%= product.id %> </td>
-    <td><%= button_to 'add to cart', line_items_path(product_id: product.id) %></td>
+    <td><%= button_to '加入我的展区预定', line_items_path(product_id: product.id) %></td>
   <% end %>
 </tr>
 <% end %>
