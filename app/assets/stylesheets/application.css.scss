@@ -1349,3 +1349,35 @@ dl.form_bg1 {
     }
   }
 }
+
+.product_item {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: #2f8fda;
+  border: 3px solid white;
+  text-align: center;
+  padding: 12px 0;
+}
+.product_item.active {
+  background: #729D17;
+}
+
+.ordered_line_items {
+  // height: 50px;
+  div {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #729D17;
+    border: 3px solid white;
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+
+.order_btn {
+  float: right;
+  width: 300px;
+  margin-top: 40px;
+}
