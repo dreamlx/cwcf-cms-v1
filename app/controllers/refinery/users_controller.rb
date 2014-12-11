@@ -11,6 +11,10 @@ module Refinery
       @user = User.new
     end
 
+    def show
+      @user = current_refinery_user
+    end
+
     # This method should only be used to create the first Refinery user.
     def create
       @user = User.new(params[:user])

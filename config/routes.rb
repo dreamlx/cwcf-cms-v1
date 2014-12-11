@@ -10,6 +10,17 @@ end
 
 MyNewApp::Application.routes.draw do
 
+  get "booking/index"
+
+  resources :line_items
+
+
+  resources :carts
+
+
+  resources :products
+
+
   resources :blanks
 
 

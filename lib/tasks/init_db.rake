@@ -40,4 +40,11 @@ namespace :init_db do
       end
     end
   end
+
+  desc "init test products"
+  task init_test_products: :environment do
+    for i in 1..60 do
+      Product.create!(number: i, status: "free")
+    end
+  end
 end
