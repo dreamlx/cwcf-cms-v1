@@ -11,17 +11,12 @@ end
 MyNewApp::Application.routes.draw do
 
   get "booking/index"
-
   resources :line_items
-
-
   resources :carts
-
-
   resources :products
-
-
   resources :blanks
+  
+  mount Ckeditor::Engine => '/ckeditor'
 
 
   # This line mounts Refinery's routes at the root of your application.

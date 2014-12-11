@@ -9,7 +9,7 @@
   <div id='page_part_editors'>
     <% fields.each do |part| %>
       <div class='page_part' id='<%= part %>'>
-        <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+        <%= f.cktext_area part, :rows => 40, :ckeditor => {:language => 'zh-cn'} %>
       </div>
     <% end %>
   </div>
