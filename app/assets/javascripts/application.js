@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bxslider
+//= require ckeditor/init
 //= require foundation
 //= require_tree .
 //= require bootstrap-sprockets
