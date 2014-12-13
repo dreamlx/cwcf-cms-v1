@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bxslider
+//= require ckeditor/init
 //= require foundation
 //= require_tree .
 //= require bootstrap-sprockets
@@ -584,8 +585,15 @@ $(function () {
           processData: false,
           contentType: "application/json; charset=UTF-8",
           success: function(data) {
-            console.log(data);
-            $("#status_" + _this.dataset.id).text(data.blank.status);
+            var status_str = "";
+            if (data.blank.status == "applied") {
+              status_str = "申请中";
+            } else if (data.blank.status == "accepted") {
+              status_str = "已通过";
+            } else {
+              status_str = "已拒绝";
+            }
+            $("#status_" + _this.dataset.id).text(status_str);
           },
           error: function(errors){
             alert("系统繁忙，请稍后再试");
