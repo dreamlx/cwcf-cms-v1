@@ -2,13 +2,14 @@ class BlanksController < ApplicationController
   # GET /blanks
   # GET /blanks.json
 
-  before_filter :auth_current_user, :only => [:show, :edit, :update, :create, :index]
+  before_filter :auth_current_user, :only => [:show, :edit, :update, :create]
+  before_filter :auth_current_super_user, :only => [:index]
   def index
-    f_type = params[:media_type]
-    f_status = params[:status]
+    f_type = (!params[:media_type].blank? ? params[:media_type] : 'all')
+    f_status =  (!params[:status].blank? ? params[:status] : 'all')
     f_coname = params[:co_name]
-    
-    if f_type != "all"  
+
+    if f_type != "all"
       if f_status != "all"
         @blanks = Blank.where("apply_type = ? AND status = ?", f_type, f_status)
       else
@@ -21,8 +22,8 @@ class BlanksController < ApplicationController
         @blanks = Blank.all
       end
     end
-    
-    unless f_coname.blank? 
+
+    unless f_coname.blank?
       @blanks.select! do |item|
         item.co_name.include?(f_coname)
       end
@@ -133,7 +134,14 @@ class BlanksController < ApplicationController
   private
 
   def auth_current_user
-    if (current_refinery_user && current_refinery_user.has_role?(:superuser))
+    if (current_refinery_user)
+    else
+      redirect_to "/"
+    end
+  end
+
+  def auth_current_super_user
+    if current_refinery_user.has_role?(:superuser)
     else
       redirect_to "/"
     end
