@@ -6,7 +6,11 @@ class BlankObserver < ActiveRecord::Observer
   #   BlankMailer.confirm("627363747@qq.com").deliver
   # end
   def after_create(blank)
-    BlankMailer.apply(blank).deliver
+    begin
+      BlankMailer.apply(blank).deliver
+    rescue Net::SMTPAuthenticationError
+      
+    end
   end
 
   def after_update(blank)
