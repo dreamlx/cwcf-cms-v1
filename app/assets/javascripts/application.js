@@ -421,9 +421,12 @@ $(function () {
     })
 
     //底部菜单样式
-    $(".footer-menu.row").css({
-      "display":"-moz-box"
-    });
+    $(".footer-menu.row").css("display", "-moz-box");
+
+    //
+    if ($(".previous-item").length > 0) {
+      $(".previous-item").css("display", "-moz-stack");
+    }
 
     if ($(".photo-list").length > 0 && $(".photo-list").find("img").length > 0){
       var img_list_html = "<div class='photo-view'>"+ $(".photo-list").find("img")[0].outerHTML +"</div><ul class='bxslider'>";
