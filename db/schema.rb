@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141210143014) do
+ActiveRecord::Schema.define(:version => 20141217023713) do
 
   create_table "blanks", :force => true do |t|
     t.string   "co_name"
@@ -62,10 +62,16 @@ ActiveRecord::Schema.define(:version => 20141210143014) do
     t.integer  "cart_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "order_id"
   end
 
   add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
   add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
+
+  create_table "orders", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "positions", :force => true do |t|
     t.string   "name"
@@ -402,6 +408,15 @@ ActiveRecord::Schema.define(:version => 20141210143014) do
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
   add_index "refinery_users", ["slug"], :name => "index_refinery_users_on_slug"
 
+  create_table "relations", :force => true do |t|
+    t.integer  "x_c"
+    t.integer  "y_c"
+    t.integer  "store_id"
+    t.integer  "product_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
     t.string   "seo_meta_type"
@@ -413,6 +428,14 @@ ActiveRecord::Schema.define(:version => 20141210143014) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "id_type_index_on_seo_meta"
+
+  create_table "stores", :force => true do |t|
+    t.string   "name"
+    t.integer  "x_no"
+    t.integer  "y_no"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

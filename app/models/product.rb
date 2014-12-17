@@ -7,5 +7,8 @@
 
 class Product < ActiveRecord::Base
   attr_accessible :number, :status
+  
   has_one :line_item
+  has_many :relations
+  has_many :stores, :through => :relations
 end
