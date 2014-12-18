@@ -8,6 +8,12 @@ namespace :init_db do
     puts "this can not be down by ruby under 1.9.3"
   end
 
+  class String
+    def to_uft8
+      return $ec1.convert self
+    end
+  end
+
   desc "init role in db"
   task init_role: :environment do
     roles = %w(normal journalist exhibitor)
@@ -47,4 +53,28 @@ namespace :init_db do
       Product.create!(number: i, status: "free")
     end
   end
+
+  desc "init products"
+  task init_products_1: :environment do
+    Product.destroy_all
+    CSV.foreach("/Users/Zwm/Downloads/a/1.csv") do |row|
+      row.each do |item|
+        unless item.nil?
+          Product.create!(number: item, status: "free")
+        end
+      end
+    end
+  end
+
+  desc "init products"
+  task init_products_2: :environment do
+    CSV.foreach("/Users/Zwm/Downloads/a/9.csv") do |row|
+      row.each do |item|
+        unless item.nil?
+          Product.create!(number: item, status: "free")
+        end
+      end
+    end
+  end
+
 end
