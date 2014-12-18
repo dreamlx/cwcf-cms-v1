@@ -19,6 +19,14 @@
     <%= f.label :number %><br />
     <%= f.text_field :number %>
   </div>
+  <div class="field">
+    <%= f.label :store -%>
+    <select id="product_store" name="product[store_id]">
+      <% @stores.each do |store| %>
+        <option value="<%= store.id %>"><%= store.name %></option>
+      <% end %>
+    </select>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
