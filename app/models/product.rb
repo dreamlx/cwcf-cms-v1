@@ -11,4 +11,12 @@ class Product < ActiveRecord::Base
   has_one :line_item
   has_many :relations
   has_many :stores, :through => :relations
+
+  def get_x
+    relations.first[0].x_c
+  end
+
+  def get_y
+    relations.first[0].y_c
+  end
 end
