@@ -1,7 +1,7 @@
 
 Refinery::PagesController.class_eval do
   before_filter :fetch_hotels, :only => [:show]
-  before_filter :set_cart, :set_products
+  before_filter :set_cart, :set_products, :set_stores
 
   protected
 
@@ -18,6 +18,10 @@ Refinery::PagesController.class_eval do
   rescue ActiveRecord::RecordNotFound
     @cart = Cart.create
     session[:cart_id] = @cart.id
+  end
+
+  def set_stores
+    @stores = Store.all
   end
 
 end
