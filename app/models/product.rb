@@ -12,11 +12,16 @@ class Product < ActiveRecord::Base
   has_many :relations
   has_many :stores, :through => :relations
 
+  def add_to_store(store, x, y)
+    r = Relation.new(product_id: self.id, store_id: store.id, x_c: x, y_c:y)
+    r.save!
+  end
+
   def get_x
-    relations.first[0].x_c
+    relations.first.x_c
   end
 
   def get_y
-    relations.first[0].y_c
+    relations.first.y_c
   end
 end
