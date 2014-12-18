@@ -1,20 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class='show_container store_body'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @place_view_page.title() %></h1>
+    <section id='body'>
+      <h3>已选展位<a class="back" href="<%= refinery.url_for(@place_view_page.url_marketable) %>"><img src="/assets/back.jpg"></a></h3>
 
-<p>
-  <b>Name:</b>
-  <%= @store.name %>
-</p>
+      <div class="ordered_line_items">
+        <% if @cart.line_items.length > 0 %>
+          <% @cart.line_items.each do |item| %>
+            <div id="ordered_item_<%= item.product.id %>" data-id="<%= item.id %>"><%= item.product.number %></div>
+          <% end %>
+        <% else %>
+          还没有选座，请点选下面座位，点击两次可取消
+        <% end %>
+      </div>
+      <div class="order_btn">
+        <a type="button" class="btn btn-warning btn-lg btn-block" style="background-color: #ec971f!important">提交订单</a>
+      </div>
 
-<p>
-  <b>X no:</b>
-  <%= @store.x_no %>
-</p>
+      <div class="margin-1"></div>
 
-<p>
-  <b>Y no:</b>
-  <%= @store.y_no %>
-</p>
+      <h3><%= @store.name %></h3>
+      <div class="margin-1"></div>
+      <!-- 展区详细坐标 -->
+      <div class="list_products">
+        <input id="authenticity_token" name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+        <% for i in 0..@store.y_no-1 %>
+        <div class="row" style="width: <%= 42*(@store.x_no) %>px;">
+          <% for j in 0..@store.x_no-1 %>
+            <div>
+              <% @store.products.each do |product| %>
+                <% if (product.get_x == j+1)&&(product.get_y == i+1)%>
+                  <div class="product_item <%= 'ordered' if product.status != "free"%>" id="product_item_<%= product.id %>" data-number="<%= product.number %>">
+                    <%= product.number %>
+                  </div>
+                  <% break %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</div>
 
-
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
+<% content_for :stylesheets do %>
+<% if @place_view_page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @place_view_page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>

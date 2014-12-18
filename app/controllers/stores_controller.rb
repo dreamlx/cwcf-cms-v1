@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
+  before_filter :find_placeview_page, :set_cart
   def index
     @stores = Store.all
 
@@ -79,5 +80,16 @@ class StoresController < ApplicationController
       format.html { redirect_to stores_url }
       format.json { head :no_content }
     end
+  end
+
+  def find_placeview_page
+    @place_view_page = ::Refinery::Page.find("placeview")
+  end
+
+  def set_cart
+    @cart = Cart.find(session[:cart_id])
+  rescue ActiveRecord::RecordNotFound
+    @cart = Cart.create
+    session[:cart_id] = @cart.id
   end
 end

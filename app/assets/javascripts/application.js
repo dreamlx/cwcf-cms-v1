@@ -618,6 +618,9 @@ $(function () {
       });
       $(".product_item").click(function() {
         var _this = this;
+        if ($(_this).hasClass("ordered")){
+          return;
+        }
         var postdata = {
           "product_id": $(this)[0].id.slice(13)
         };

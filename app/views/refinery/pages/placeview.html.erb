@@ -7,20 +7,16 @@
       <div class="margin-1"></div>
       <%=raw @page.content_for(:body) %>
       <div class="margin-1"></div>
-
       <div>
-
         <h3>所有展区</h3>
-        <div class="ordered_line_items">
+        <div>
           <ul>
           <% @stores.each do |store| %>
             <li><a href="<%= '/stores/' + store.id.to_s() %>"><%= store.name %></a><li>
           <% end %>
           </ul>
         </div>
-
       </div>
-
     </section>
   </div>
 </div>

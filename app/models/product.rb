@@ -7,16 +7,16 @@
 
 class Product < ActiveRecord::Base
   attr_accessible :number, :status
-  
+
   has_one :line_item
   has_many :relations
   has_many :stores, :through => :relations
 
   def get_x
-    relations.first[0].x_c
+    relations.first.x_c
   end
 
   def get_y
-    relations.first[0].y_c
+    relations.first.y_c
   end
 end
