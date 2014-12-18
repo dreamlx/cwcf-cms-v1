@@ -1,9 +1,9 @@
-<h1>Listing products</h1>
+<h1>展位列表</h1>
 
 <table>
   <tr>
-    <th>Status</th>
-    <th>Number</th>
+    <th>展位编号</th>
+    <th>展位状态</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +11,9 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product.status %></td>
     <td><%= product.number %></td>
+    <td><%= product.status %></td>
+
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to '增加展位', new_product_path %>
