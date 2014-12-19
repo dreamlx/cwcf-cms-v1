@@ -699,8 +699,8 @@ $(function () {
           "x_c": slct_x,
           "y_c": slct_y
         };
-        var post_url = "/line_items"; //TODO
-        var post_type = 'post'; //TODO
+        var post_url = "/stores"; //TODO
+        var post_type = 'put'; //TODO
         $.ajax({
           url: post_url,
           type: post_type,
