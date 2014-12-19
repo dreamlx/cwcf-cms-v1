@@ -18,10 +18,15 @@ class Product < ActiveRecord::Base
   end
 
   def get_x
-    relations.first.x_c
+    # relations.collect.x_c
+    ary = relations.collect do |relation|
+      relation.x_c
+    end
   end
 
   def get_y
-    relations.first.y_c
+    ary = relations.collect do |relation|
+      relation.y_c
+    end
   end
 end

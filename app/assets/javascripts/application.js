@@ -610,7 +610,7 @@ $(function () {
         var ordered_line_product_id = $(this)[0].id.slice(13);
         var ordered_line_id = $(this)[0].dataset.id;
         $(".product_item").each(function() {
-          if ($(this)[0].id.slice(13) == ordered_line_product_id) {
+          if ($(this)[0].dataset.proid.slice(13) == ordered_line_product_id) {
             $(this).addClass("active");
             $(this)[0].dataset.id = ordered_line_id;
           }
@@ -618,11 +618,15 @@ $(function () {
       });
       $(".product_item").click(function() {
         var _this = this;
+        var _this_colloct_id =  $(_this)[0].dataset.proid;
+        var _this_colloct = $(".product_item").filter(function() {
+          return this.dataset.proid == _this_colloct_id;
+        });
         if ($(_this).hasClass("ordered")){
           return;
         }
         var postdata = {
-          "product_id": $(this)[0].id.slice(13)
+          "product_id": $(this)[0].dataset.proid.slice(13)
         };
         var post_url = "/line_items";
         var post_type = 'post';
@@ -642,9 +646,9 @@ $(function () {
           processData: false,
           contentType: "application/json; charset=UTF-8",
           success: function(data) {
-            if ($(_this).hasClass("active")) {
-              $(_this).removeClass("active");
-              var ordered_line_product_id = $(_this)[0].id.slice(13);
+            if (_this_colloct.hasClass("active")) {
+              _this_colloct.removeClass("active");
+              var ordered_line_product_id = $(_this)[0].dataset.proid.slice(13);
               var ordered_line_id = $(_this)[0].dataset.id;
               $(".ordered_line_items").children().each(function() {
                 if ($(this)[0].id.slice(13) == ordered_line_product_id) {
@@ -656,13 +660,15 @@ $(function () {
                 $(".ordered_line_items").html(no_content_str);
               }
             } else {
-              $(_this).addClass("active");
+              _this_colloct.addClass("active");
               var ordered_html = $(".ordered_line_items").html();
               if ($(".ordered_line_items").children().length == 0) {
                 ordered_html = "";
               }
-              $(_this)[0].dataset.id = data.id;
-              ordered_html += "<div id='ordered_item_" + $(_this)[0].id.slice(13) + "' data-id='" + data.id +"'>" + $(_this)[0].dataset.number +"</div>";
+              _this_colloct.each(function() {
+                this.dataset.id = data.id;
+              });
+              ordered_html += "<div id='ordered_item_" + $(_this)[0].dataset.proid.slice(13) + "' data-id='" + data.id +"'>" + $(_this)[0].dataset.number +"</div>";
               $(".ordered_line_items").html(ordered_html);
             }
           },

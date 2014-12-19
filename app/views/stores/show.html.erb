@@ -29,8 +29,8 @@
           <% for j in 0..@store.x_no-1 %>
             <div>
               <% @store.products.each do |product| %>
-                <% if (product.get_x == j)&&(product.get_y == i)%>
-                  <div class="product_item <%= 'ordered' if product.status != "free"%>" id="product_item_<%= product.id %>" data-number="<%= product.number %>">
+                <% if (product.get_x.include?(j))&&(product.get_y.include?(i))%>
+                  <div class="product_item <%= 'ordered' if product.status != "free"%>" data-proid="product_item_<%= product.id %>" data-number="<%= product.number %>">
                     <%= product.number %>
                   </div>
                   <% break %>

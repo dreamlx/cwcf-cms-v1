@@ -8,7 +8,7 @@
       <div>
         <div class="product_item_edit" data-coor="<%= i.to_s()+"x"+j.to_s() %>">
           <% @store.products.each do |product| %>
-            <% if (product.get_x == j)&&(product.get_y == i)%>
+            <% if (product.get_x.include?(j))&&(product.get_y.include?(i))%>
               <%= product.number %>
               <input type="hidden">
               <% break %>
