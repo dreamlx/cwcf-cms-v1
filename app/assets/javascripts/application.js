@@ -680,6 +680,12 @@ $(function () {
       var slct_x = "";
       var slct_y = "";
       var slct_item = null;
+      $(".product_item_edit").each(function() {
+        var _this = this;
+        if ($(_this).children().length > 0) {
+          $(_this).addClass("active");
+        }
+      });
       $(".product_item_edit").click(function() {
         slct_y = this.dataset.coor.split("x")[0];
         slct_x = this.dataset.coor.split("x")[1];
@@ -716,10 +722,15 @@ $(function () {
           success: function() {
             console.log("succ");//TODO
             $(slct_item).html(slct_pro_no);
+            if (slct_pro_no == ""){
+              $(slct_item).removeClass("active");
+            } else {
+              $(slct_item).addClass("active");
+            }
             $(".modal").hide();
           },
           error: function() {
-            console.log("error");//TODO
+            alert("系统繁忙，请稍后再试");
           }
         });
       });

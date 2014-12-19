@@ -1,5 +1,5 @@
 <div class="store_box">
-  <h3><%= @store.name %></h3>
+  <h3><%= @store.name %>   <%= link_to '返回展区列表', "/admin/stores" %></h3>
   <div class="list_products" id="cur_store_id" data-id="<%= @store.id %>">
     <input id="authenticity_token" name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
     <% for i in 0..@store.y_no-1 %>
@@ -10,6 +10,7 @@
           <% @store.products.each do |product| %>
             <% if (product.get_x == j)&&(product.get_y == i)%>
               <%= product.number %>
+              <input type="hidden">
               <% break %>
             <% end %>
           <% end %>
@@ -19,8 +20,6 @@
     </div>
     <% end %>
   </div>
-
-  <%= link_to '返回', "/admin/stores" %>
 
   <div id="storeModal" class="modal storeModal" tabindex="-1" role="dialog" aria-labelledby="storeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
