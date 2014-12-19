@@ -60,9 +60,23 @@ module Admin
     def update
       @store = Store.find(params[:id])
 
+
+      @product = Product.find(params[:product_id])
+      @x_c = params[:x_c].to_i
+      @y_c = params[:y_c].to_i
+
+      params.delete(:product_id) if params.has_key?(:store_id)
+      params.delete(:x_c) if params.has_key?(:x_c)
+      params.delete(:y_c) if params.has_key?(:y_c)
+
+      unless @product.blank?
+        r = Relation.new(store_id: @store.id, product_id: @product.id, x_c: @x_c, y_c: @y_c)
+        r.save!
+      end
+
       respond_to do |format|
         if @store.update_attributes(params[:store])
-          format.html { redirect_to "/admin/stores/"+@store.id.to_s(), notice: 'Store was successfully updated.' }
+          format.html { redirect_to @store, notice: 'Store was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }

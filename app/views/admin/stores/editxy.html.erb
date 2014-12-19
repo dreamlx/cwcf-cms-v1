@@ -7,6 +7,12 @@
       <% for j in 0..@store.x_no-1 %>
       <div>
         <div class="product_item_edit" data-coor="<%= i.to_s()+"x"+j.to_s() %>">
+          <% @store.products.each do |product| %>
+            <% if (product.get_x == j)&&(product.get_y == i)%>
+              <%= product.number %>
+              <% break %>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <% end %>
@@ -28,11 +34,11 @@
 
         <div class="modal-body">
           <div class="product_click">
-            <input name="product" type="radio" value="" />  空
+            <input name="product" type="radio" value="-1" data-no="" />  空
           </div>
           <% @products.each do |product| %>
             <div class="product_click">
-              <input name="product" type="radio" value="<%= product.id %>" />  <%= product.number %>
+              <input name="product" type="radio" value="<%= product.id %>" data-no="<%= product.number %>" />  <%= product.number %>
             </div>
           <% end %>
         </div>

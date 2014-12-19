@@ -75,9 +75,12 @@ class StoresController < ApplicationController
 
     respond_to do |format|
       if @store.update_attributes(params[:store])
+        puts "---"*50
+        puts "qwe"
         format.html { redirect_to @store, notice: 'Store was successfully updated.' }
         format.json { head :no_content }
       else
+        puts "---"*50
         format.html { render action: "edit" }
         format.json { render json: @store.errors, status: :unprocessable_entity }
       end
