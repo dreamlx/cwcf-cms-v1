@@ -694,12 +694,11 @@ $(function () {
           slct_pro_id = "";
         }
         var postdata = {
-          "store_id": $("#cur_store_id")[0].dataset.id,
           "product_id": slct_pro_id,
           "x_c": slct_x,
           "y_c": slct_y
         };
-        var post_url = "/stores"; //TODO
+        var post_url = "/stores/" + $("#cur_store_id")[0].dataset.id.to_s(); //TODO
         var post_type = 'put'; //TODO
         $.ajax({
           url: post_url,
