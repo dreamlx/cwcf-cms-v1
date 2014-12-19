@@ -58,10 +58,12 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-    
-    @stroe = Store.find(params[:product][:store_id])
+
+    @store = Store.find(params[:product][:store_id])
 
     params[:product].delete(:store_id) if params[:product].has_key?(:store_id)
+    params[:product].delete(:x_c) if params[:product].has_key?(:x_c)
+    params[:product].delete(:y_c) if params[:product].has_key?(:y_c)
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

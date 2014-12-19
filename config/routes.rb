@@ -14,14 +14,21 @@ MyNewApp::Application.routes.draw do
 
 
   resources :stores
-
+  get '/admin/stores', :to => 'Admin::Stores#index'
+  post '/admin/stores', :to => 'Admin::Stores#create'
+  get '/admin/stores/:id/edit', :to => 'Admin::Stores#edit'
+  put    'admin/stores/:id', :to => 'Admin::Stores#update'
+  delete '/admin/stores/:id', :to => 'Admin::Stores#destroy'
+  get '/admin/stores/new', :to => 'Admin::Stores#new'
+  get '/admin/stores/:id/editxy', :to => 'Admin::Stores#editxy'
+  get '/admin/stores/:id', :to => 'Admin::Stores#show'
 
   get "booking/index"
   resources :line_items
   resources :carts
   resources :products
   resources :blanks
-  
+
   mount Ckeditor::Engine => '/ckeditor'
 
 

@@ -27,7 +27,7 @@ body {
 
 a:hover {
   text-decoration: none!important;
-  background-color: initial!important;
+  background-color: initial;
 }
 
 ul, li {
@@ -1353,7 +1353,7 @@ dl.form_bg1 {
 .list_products {
   // height: 50px;
   width: 900px;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 10px 10px 0px 10px;
   border: 1px solid rgb(134, 134, 134);
   .row {
@@ -1368,7 +1368,7 @@ dl.form_bg1 {
     > div {
       float: left;
       margin: 3px;
-      .product_item {
+      .product_item, .product_item_edit {
         padding: 8px 0;
         background: white;
         text-align: center;
@@ -1377,7 +1377,7 @@ dl.form_bg1 {
       .product_item.ordered {
         background: rgb(252, 88, 70);
       }
-      .product_item.active {
+      .product_item.active, .product_item_edit.active{
         background: rgb(97, 160, 91);
       }
     }
@@ -1414,4 +1414,27 @@ a.back {
   float: right;
   width: 300px;
   margin-top: 40px;
+}
+
+.store_box {
+  margin-bottom: 180px;
+  margin-left: 20px;
+  margin-right: 100px;
+  h1 {
+    a.return-admin {
+      float: right;
+    }
+  }
+}
+
+#storeModal {
+  .modal-body {
+    max-height: 400px;
+    overflow-y: scroll;
+    .product_click {
+      input[type="radio"] {
+        margin-top: -2px;
+      }
+    }
+  }
 }

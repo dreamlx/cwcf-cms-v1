@@ -1,0 +1,45 @@
+<div class="store_box">
+  <h3><%= @store.name %></h3>
+  <div class="list_products">
+    <input id="authenticity_token" name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+    <% for i in 0..@store.y_no-1 %>
+    <div class="row" style="width: <%= 42*(@store.x_no) %>px;">
+      <% for j in 0..@store.x_no-1 %>
+      <div>
+        <div class="product_item_edit">
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+  <%= link_to '返回', "/admin/stores" %>
+
+  <div id="storeModal" class="modal storeModal" tabindex="-1" role="dialog" aria-labelledby="storeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" id="storeModalLabel">插入展位</h4>
+        </div>
+
+        <div class="modal-body">
+          <% @products.each do |product| %>
+            <div class="product_click">
+              <input name="product" type="radio" value="<%= product.id %>" />  <%= product.number %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <div class="btn-group">
+            <a type="button" class="btn btn-primary product_select">确认</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

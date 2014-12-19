@@ -674,4 +674,18 @@ $(function () {
 
       });
     }
+
+    //后台展位修改
+    if ($(".product_item_edit").length > 0) {
+      $(".product_item_edit").click(function() {
+        $("#storeModal").show();
+      });
+      $(".modal .close").click(function() {
+        $(".modal").hide();
+      });
+
+      $(".product_select").click(function() {
+        $(".modal").hide();
+      });
+    }
 });

@@ -1,0 +1,23 @@
+<div class="store_box">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <b>Name:</b>
+    <%= @store.name %>
+  </p>
+
+  <p>
+    <b>X no:</b>
+    <%= @store.x_no %>
+  </p>
+
+  <p>
+    <b>Y no:</b>
+    <%= @store.y_no %>
+  </p>
+
+
+  <%= link_to 'Edit', "/admin/stores/"+ @store.id.to_s() +"/edit" %> |
+  <%= link_to 'Back', "/admin/stores" %>
+
+</div>
