@@ -61,18 +61,31 @@ module Admin
       @store = Store.find(params[:id])
 
 
-      @product = Product.find(params[:product_id])
+      @product = Product.find(params[:product_id]) if params[:product_id].to_i != -1
       @x_c = params[:x_c].to_i
       @y_c = params[:y_c].to_i
 
-      params.delete(:product_id) if params.has_key?(:store_id)
+      params.delete(:product_id) if params.has_key?(:product_id)
       params.delete(:x_c) if params.has_key?(:x_c)
       params.delete(:y_c) if params.has_key?(:y_c)
 
       unless @product.blank?
-        r = Relation.new(store_id: @store.id, product_id: @product.id, x_c: @x_c, y_c: @y_c)
-        r.save!
+        r = Relation.where(:store_id => @store.id, :x_c => @x_c, :y_c => @y_c).first
+
+        if r
+          r.product_id = @product.id
+          r.save!
+        else
+          r = Relation.new(store_id: @store.id, product_id: @product.id, x_c: @x_c, y_c: @y_c)
+          r.save!
+        end
       end
+
+      if params[:product_id] == '-1'
+        r = Relation.where(:store_id => @store.id, :x_c => @x_c, :y_c => @y_c)
+        r.delete
+      end
+
 
       respond_to do |format|
         if @store.update_attributes(params[:store])
