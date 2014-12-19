@@ -19,22 +19,6 @@
     <%= f.label :number %><br />
     <%= f.text_field :number %>
   </div>
-  <div class="field">
-    <%= f.label :store -%>
-    <select id="product_store" name="product[store_id]">
-      <% @stores.each do |store| %>
-        <option value="<%= store.id %>"><%= store.name %></option>
-      <% end %>
-    </select>
-  </div>
-  <div class="field">
-    <%= f.label :x_c %><br />
-    <input id="product_x_c" name="product[x_c]" size="30" type="text">
-  </div>
-  <div class="field">
-    <%= f.label :y_c %><br />
-    <input id="product_y_c" name="product[y_c]" size="30" type="text">
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
