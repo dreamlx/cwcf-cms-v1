@@ -700,7 +700,7 @@ $(function () {
         var slct_pro_id = $("input[name='product']:checked").val();
         var slct_pro_no = $("input[name='product']:checked")[0].dataset.no;
         if (slct_pro_id == undefined){
-          slct_pro_id = "-1";
+          slct_pro_id = "zero";
         }
         var postdata = {
           "product_id": slct_pro_id,
