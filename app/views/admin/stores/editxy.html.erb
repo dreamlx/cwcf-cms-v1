@@ -1,12 +1,12 @@
 <div class="store_box">
   <h3><%= @store.name %></h3>
-  <div class="list_products">
+  <div class="list_products" id="cur_store_id" data-id="<%= @store.id %>">
     <input id="authenticity_token" name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
     <% for i in 0..@store.y_no-1 %>
     <div class="row" style="width: <%= 42*(@store.x_no) %>px;">
       <% for j in 0..@store.x_no-1 %>
       <div>
-        <div class="product_item_edit">
+        <div class="product_item_edit" data-coor="<%= i.to_s()+"x"+j.to_s() %>">
         </div>
       </div>
       <% end %>
@@ -27,6 +27,9 @@
         </div>
 
         <div class="modal-body">
+          <div class="product_click">
+            <input name="product" type="radio" value="" />  空
+          </div>
           <% @products.each do |product| %>
             <div class="product_click">
               <input name="product" type="radio" value="<%= product.id %>" />  <%= product.number %>

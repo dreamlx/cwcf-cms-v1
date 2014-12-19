@@ -29,7 +29,7 @@
           <% for j in 0..@store.x_no-1 %>
             <div>
               <% @store.products.each do |product| %>
-                <% if (product.get_x == j+1)&&(product.get_y == i+1)%>
+                <% if (product.get_x == j)&&(product.get_y == i)%>
                   <div class="product_item <%= 'ordered' if product.status != "free"%>" id="product_item_<%= product.id %>" data-number="<%= product.number %>">
                     <%= product.number %>
                   </div>

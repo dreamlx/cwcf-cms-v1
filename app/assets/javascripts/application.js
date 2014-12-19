@@ -677,7 +677,11 @@ $(function () {
 
     //后台展位修改
     if ($(".product_item_edit").length > 0) {
+      var slct_x = "";
+      var slct_y = "";
       $(".product_item_edit").click(function() {
+        slct_y = this.dataset.coor.split("x")[0];
+        slct_x = this.dataset.coor.split("x")[1];
         $("#storeModal").show();
       });
       $(".modal .close").click(function() {
@@ -685,7 +689,36 @@ $(function () {
       });
 
       $(".product_select").click(function() {
-        $(".modal").hide();
+        var slct_pro_id = $("input[name='product']:checked").val();
+        if (slct_pro_id == undefined){
+          slct_pro_id = "";
+        }
+        var postdata = {
+          "store_id": $("#cur_store_id")[0].dataset.id,
+          "product_id": slct_pro_id,
+          "x_c": slct_x,
+          "y_c": slct_y
+        };
+        var post_url = "/line_items"; //TODO
+        var post_type = 'post'; //TODO
+        $.ajax({
+          url: post_url,
+          type: post_type,
+          dataType: 'json',
+          data: JSON.stringify(postdata),
+          headers: {
+            'X-CSRF-Token': $("#authenticity_token").val()
+          },
+          processData: false,
+          contentType: "application/json; charset=UTF-8",
+          success: function() {
+            console.log("succ");//TODO
+            $(".modal").hide();
+          },
+          error: function() {
+            console.log("error");//TODO
+          }
+        });
       });
     }
 });
