@@ -1,3 +1,5 @@
+# 申请参展 + 记者证申请的邮件
+
 class BlankMailer < ActionMailer::Base
   default from: "fair@ewatch.cn"
 
