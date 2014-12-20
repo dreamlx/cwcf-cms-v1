@@ -4,7 +4,7 @@
     <section id='body'>
       <h3>已选展位<a class="back" href="<%= refinery.url_for(@place_view_page.url_marketable) %>"><img src="/assets/back.jpg"></a></h3>
 
-      <div class="ordered_line_items">
+      <div class="ordered_line_items" id="ordered_line_items" data-id="<%= @cart.id %>">
         <% if @cart.line_items.length > 0 %>
           <% @cart.line_items.each do |item| %>
             <div id="ordered_item_<%= item.product.id %>" data-id="<%= item.id %>"><%= item.product.number %></div>
@@ -14,7 +14,8 @@
         <% end %>
       </div>
       <div class="order_btn">
-        <a type="button" class="btn btn-warning btn-lg btn-block" style="background-color: #ec971f!important">提交订单</a>
+        <a type="button" class="btn btn-warning btn-lg order">提交订单</a>
+        <a type="button" class="btn btn-info btn-lg clear">清空订单</a>
       </div>
 
       <div class="margin-1"></div>

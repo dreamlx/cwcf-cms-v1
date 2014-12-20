@@ -617,6 +617,18 @@ $(function () {
         });
       });
       $(".product_item").click(function() {
+        console.log($("#current_user").length);
+        if ($("#current_user").length == 0){
+          $(".top-login-btn").trigger("click");
+          return;
+        }
+        if ($("#current_user").length > 0){
+          if (! ($("#current_user").hasClass("rlsu") || $("#current_user").hasClass("rlex"))) {
+            alert("您不是参展商用户, 如需参展选位，请注册参展商用户");
+            return;
+          }
+        }
+        console.log($("#current_user").length);
         var _this = this;
         var _this_colloct_id =  $(_this)[0].dataset.proid;
         var _this_colloct = $(".product_item").filter(function() {
@@ -670,6 +682,7 @@ $(function () {
               });
               ordered_html += "<div id='ordered_item_" + $(_this)[0].dataset.proid.slice(13) + "' data-id='" + data.id +"'>" + $(_this)[0].dataset.number +"</div>";
               $(".ordered_line_items").html(ordered_html);
+              $(".ordered_line_items")[0].dataset.id = data.cart_id;
             }
           },
           error: function(errors){
@@ -741,4 +754,61 @@ $(function () {
         });
       });
     }
+
+    $(".order_btn .order").click(function() {
+      if ($(".ordered_line_items").children().length == 0) {
+        alert("您还没有选展位");
+        return;
+      }
+
+      $.ajax({
+        url: "/orders",
+        type: "post",
+        dataType: 'json',
+        data: null,
+        headers: {
+          'X-CSRF-Token': $("#authenticity_token").val()
+        },
+        processData: false,
+        contentType: "application/json; charset=UTF-8",
+        success: function() {
+          alert("已成功提交订单");
+          var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
+          $(".ordered_line_items").html(no_content_str);
+          $(".product_item").each(function() {
+            $(this).removeClass("active");
+          });
+        },
+        error: function() {
+          alert("系统繁忙，请稍后再试");
+        }
+      });
+    });
+
+    $(".order_btn .clear").click(function() {
+      if ($(".ordered_line_items").children().length == 0) {
+        return;
+      }
+      $.ajax({
+        url: "/carts/" + $("#ordered_line_items")[0].dataset.id,
+        type: "delete",
+        dataType: 'json',
+        data: null,
+        headers: {
+          'X-CSRF-Token': $("#authenticity_token").val()
+        },
+        processData: false,
+        contentType: "application/json; charset=UTF-8",
+        success: function() {
+          var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
+          $(".ordered_line_items").html(no_content_str);
+          $(".product_item").each(function() {
+            $(this).removeClass("active");
+          });
+        },
+        error: function() {
+          alert("系统繁忙，请稍后再试");
+        }
+      });
+    });
 });
