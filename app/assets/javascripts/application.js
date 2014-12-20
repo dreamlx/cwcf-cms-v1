@@ -772,7 +772,7 @@ $(function () {
         processData: false,
         contentType: "application/json; charset=UTF-8",
         success: function() {
-          alert("已成功提交订单");
+          alert("已成功提交订单，请等待后台审核和邮件通知");
           var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
           $(".ordered_line_items").html(no_content_str);
           $(".product_item").each(function() {
