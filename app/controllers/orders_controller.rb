@@ -56,7 +56,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-
+        @order.set_product_status("locked")
         # 返回首页 或者 订单页面
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render json: @order, status: :created, location: @order }
@@ -74,6 +74,10 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
+        
+        if @order.status == "deny"
+          @order.set_product_status("free")
+        end
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
@@ -87,6 +91,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1.json
   def destroy
     @order = Order.find(params[:id])
+    @order.set_product_status('free')
     @order.destroy
 
     respond_to do |format|

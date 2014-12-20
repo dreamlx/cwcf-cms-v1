@@ -8,9 +8,10 @@
 class Product < ActiveRecord::Base
   attr_accessible :number, :status
 
-  has_one :line_item
+  has_many :line_item
   has_many :relations
   has_many :stores, :through => :relations
+  has_many :order, :through => :line_item
 
   def add_to_store(store, x, y)
     r = Relation.new(product_id: self.id, store_id: store.id, x_c: x, y_c:y)
