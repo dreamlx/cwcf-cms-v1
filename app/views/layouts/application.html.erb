@@ -28,10 +28,10 @@
             <form action="/refinery/users/login" method="post">
               <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
               <dd class="textinput">
-                <input id="txtUserName" type="text" placeholder="邮箱或者用户名" name="refinery_user[login]">
+                <input id="txtUserName" type="text" placeholder="邮箱或者用户名" name="refinery_user[login]" required="required">
               </dd>
               <dd class="textinput">
-                <input id="txtPassword" type="password" placeholder="密码" name="refinery_user[password]" autocomplete="off">
+                <input id="txtPassword" type="password" placeholder="密码" name="refinery_user[password]" autocomplete="off" required="required">
               </dd>
               <dd class="f">
                 <a href="/refinery/users/password/new">忘记密码</a>
@@ -47,23 +47,23 @@
         <div class="login_form" id="login_form2">
           <div class="close_btn">X&nbsp;关闭</div>
           <dl class="form_2">
-            
+
             <form id="regform" name="regform" action="/refinery/users/register" method="post">
               <div style="margin:0;padding:0;display:inline">
                 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
               </div>
               <div id="regmsgtips" style="color:#BC1B23">&nbsp;</div>
               <dd class="textinput">
-                <input id="txtEmail" type="text" class="input wide required email" name="user[email]" placeholder="邮箱">
+                <input id="txtEmail" type="text" class="input wide required email" name="user[email]" placeholder="邮箱" required="required"  pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$">
               </dd>
               <dd class="textinput">
-                <input id="txtName" type="text" class="input wide required" name="user[username]" placeholder="用户名">
+                <input id="txtName" type="text" class="input wide required" name="user[username]" placeholder="用户名" required="required">
               </dd>
               <dd class="textinput">
-                <input id="txtPassword1" type="password" value="" class="input wide required" minlength="6" maxlength="20" name="user[password]" placeholder="密码" autocomplete="off">
+                <input id="txtPassword1" type="password" value="" class="input wide required" minlength="6" maxlength="20" name="user[password]" placeholder="密码" autocomplete="off" required="required">
               </dd>
               <dd class="textinput">
-                <input id="txtPassword2" type="password" value="" class="input wide required" equalto="#txtPassword1" name="user[password_confirmation]" placeholder="密码确认" autocomplete="off">
+                <input id="txtPassword2" type="password" value="" class="input wide required" equalto="#txtPassword1" name="user[password_confirmation]" placeholder="密码确认" autocomplete="off" required="required">
               </dd>
 
               <dd class="sl">
