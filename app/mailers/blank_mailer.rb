@@ -1,5 +1,7 @@
+# 申请参展 + 记者证申请的邮件
+
 class BlankMailer < ActionMailer::Base
-  default from: "cwcf_dev@163.com"
+  default from: "fair@ewatch.cn"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,7 +10,7 @@ class BlankMailer < ActionMailer::Base
   #
   def confirm(blank)
     @blank = blank
-    mail(to: @blank.email, subject: "您的参展申请已经审核通过", from: "cwcf_dev@163.com", date: Time.now)
+    mail(to: @blank.email, subject: "您的参展申请已经审核通过", from: "fair@ewatch.cn", date: Time.now)
   end
 
   def apply(blank)

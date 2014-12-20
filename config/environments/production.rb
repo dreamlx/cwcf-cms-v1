@@ -55,12 +55,13 @@ MyNewApp::Application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.default_url_options = { :host => 'localhost: 3000' }
   ActionMailer::Base.smtp_settings = {
-    :address => "smtp.163.com",
+    :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
+    :address => "smtp.ewatch.cn",
     :port => 25,
-    :domain => "163.com",
+    :domain => "ewatch.cn",
     :authentication => :login,
-    :user_name => "cwcf_dev@163.com",
-    :password => "cwcf_12345678"
+    :user_name => "fair@ewatch.cn",
+    :password => "szwa_member"
   }
 
   # Enable threaded mode
