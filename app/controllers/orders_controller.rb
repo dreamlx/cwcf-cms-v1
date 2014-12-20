@@ -74,12 +74,12 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        
-        if @order.status == "deny"
+
+        if @order.status == "denied"
           @order.set_product_status("free")
         end
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @order, status: 200, message: '更新成功'}
       else
         format.html { render action: "edit" }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -101,7 +101,7 @@ class OrdersController < ApplicationController
   end
 
   private
-  
+
   def set_cart
     @cart = Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound

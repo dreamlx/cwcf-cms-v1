@@ -775,9 +775,7 @@ $(function () {
           alert("已成功提交订单，请等待后台审核和邮件通知");
           var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
           $(".ordered_line_items").html(no_content_str);
-          $(".product_item").each(function() {
-            $(this).removeClass("active");
-          });
+          $(".product_item.active").removeClass("active").addClass("ordered");
         },
         error: function() {
           alert("系统繁忙，请稍后再试");
@@ -802,11 +800,44 @@ $(function () {
         success: function() {
           var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
           $(".ordered_line_items").html(no_content_str);
-          $(".product_item").each(function() {
-            $(this).removeClass("active");
-          });
+          $(".product_item.active").removeClass("active");
         },
         error: function() {
+          alert("系统繁忙，请稍后再试");
+        }
+      });
+    });
+
+    //订单管理
+    $(".order_save").click(function() {
+      var _this = this;
+      var postdata = {
+        "order":{
+          "status": $("#select_" + _this.dataset.id)[0].value
+        }
+      };
+      $.ajax({
+        url: "orders/" + _this.dataset.id,
+        type: 'put',
+        dataType: 'json',
+        data: JSON.stringify(postdata),
+        headers: {
+          'X-CSRF-Token': $("#authenticity_token").val()
+        },
+        processData: false,
+        contentType: "application/json; charset=UTF-8",
+        success: function(data) {
+          var status_str = "";
+          if (data.status == "applied") {
+            status_str = "申请中";
+          } else if (data.status == "accepted") {
+            status_str = "已通过";
+          } else {
+            status_str = "已拒绝";
+          }
+          $("#status_" + _this.dataset.id).text(status_str);
+        },
+        error: function(errors){
           alert("系统繁忙，请稍后再试");
         }
       });
