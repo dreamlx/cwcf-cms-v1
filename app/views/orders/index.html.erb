@@ -1,4 +1,4 @@
-<h1>Listing orders</h1>
+<h1>订单管理</h1>
 
 <table>
   <tr>
@@ -8,7 +8,11 @@
   </tr>
 
 <% @orders.each do |order| %>
+
   <tr>
+    <% order.line_items.each do |line_item| %>
+      <td><%= line_item.product_id %></td>
+    <% end %>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
