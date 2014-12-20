@@ -61,7 +61,7 @@ module Admin
       @store = Store.find(params[:id])
 
 
-      @product = Product.find(params[:product_id]) if params[:product_id] != "zero"
+      @product = Product.find(params[:product_id]) unless (params[:product_id] == "zero" || params[:product_id].blank?)
       @x_c = params[:x_c].to_i
       @y_c = params[:y_c].to_i
 
@@ -88,7 +88,7 @@ module Admin
 
       respond_to do |format|
         if @store.update_attributes(params[:store])
-          format.html { redirect_to @store, notice: 'Store was successfully updated.' }
+          format.html { redirect_to "/admin/stores/"+@store.id.to_s(), notice: 'Store was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }

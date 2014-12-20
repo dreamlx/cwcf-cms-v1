@@ -60,7 +60,7 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
 
 
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id]) unless params[:product_id].blank?
     @x_c = params[:x_c].to_i
     @y_c = params[:y_c].to_i
 
