@@ -1444,3 +1444,21 @@ a.back {
     }
   }
 }
+
+.order-des {
+  margin-left: 15px;
+  padding: 3px;
+  -webkit-border-radius: 6px ;
+  -moz-border-radius: 6px ;
+  border-radius: 6px ;
+}
+
+.order-des.white-des {
+  background: white;
+}
+.order-des.blue-des {
+  background: rgb(97, 160, 91);
+}
+.order-des.red-des {
+  background: rgb(252, 88, 70);
+}
