@@ -50,6 +50,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(@cart)
+    @order.user_id = current_refinery_user.id
 
     respond_to do |format|
       if @order.save

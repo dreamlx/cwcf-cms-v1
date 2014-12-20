@@ -10,6 +10,7 @@ module Refinery
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
     
     has_one :blank
+    has_many :orders
     has_many :positions
     
     friendly_id :username, :use => [:slugged]
