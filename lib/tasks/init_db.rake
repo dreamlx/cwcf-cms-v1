@@ -57,7 +57,7 @@ namespace :init_db do
   desc "init products"
   task init_products_1: :environment do
     Product.destroy_all
-    CSV.foreach("/Users/Zwm/Downloads/a/1.csv") do |row|
+    CSV.foreach("/home/deploy/1.csv") do |row|
       row.each do |item|
         unless item.nil?
           Product.create!(number: item, status: "free")
@@ -68,7 +68,7 @@ namespace :init_db do
 
   desc "init products"
   task init_products_2: :environment do
-    CSV.foreach("/Users/Zwm/Downloads/a/9.csv") do |row|
+    CSV.foreach("/home/deploy/9.csv") do |row|
       row.each do |item|
         unless item.nil?
           Product.create!(number: item, status: "free")
