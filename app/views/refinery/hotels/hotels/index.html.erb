@@ -7,7 +7,7 @@
       <ul class="tab-5">
         <% (::Refinery::Page.where(:parent_id => @services_page)).order('lft ASC').each do |item| %>
         <li class="<%= 'hover' if item == @hotel_page %>">
-          <a href="<%= refinery.url_for(item.url_marketable) %>">
+          <a href="<%= refinery.url_for(item.url_marketable) %>" class="hotel_url">
             <% if (::Refinery::Page.where(:parent_id => @services_page).order('lft ASC').first != item) %>
             <span class="arrow-l">&#160;</span>
             <% end %>
