@@ -198,7 +198,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='/news/services'>" +
+                    "<a href='/audience/services'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-04 col-md-1 col-xs-1'>" +
                     "</div>" +
@@ -365,11 +365,20 @@ $(function () {
       var hotel_desc = $(this).text();
       var hotel_id = $(this).attr('data-index');
       if (hotel_desc.length > 110){
-         $(this).html(hotel_desc.substr(0, 110) + "..." + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+         $(this).html(hotel_desc.substr(0, 110) + "..." + "<a href='/" + url_first_page + "/services/hotels/"+hotel_id+"'>详情>></a>");
        }else {
-         $(this).html(hotel_desc + "<a href='/news/services/hotels/"+hotel_id+"'>详情>></a>");
+         $(this).html(hotel_desc + "<a href='/" + url_first_page + "/services/hotels/"+hotel_id+"'>详情>></a>");
        };
     });
+
+    if ($("a.hotel_url").length > 0) {
+      $("a.hotel_url").each(function() {
+        var hotel_url = this.href.split('/');
+        var hotel_url_left = hotel_url.splice(0,4);
+        this.href = "/" + url_first_page + "/" + hotel_url.join('/');
+      });
+
+    }
 
     //调整首页图片大小
 
