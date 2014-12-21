@@ -77,7 +77,7 @@ class BlanksController < ApplicationController
           # format.json { render json: @blank, status: :created, location: @blank }
           # redirect_to "/media/reporter-reg/reporter_suc"
           BlankMailer.apply(@blank).deliver
-          
+
           if (@blank.apply_type == "ju_apply")
             format.html { redirect_to "/media/reporter-reg/reporter_suc"}
           else
@@ -103,8 +103,8 @@ class BlanksController < ApplicationController
     @blank = Blank.find(params[:id])
 
     if @blank.update_attributes(params[:blank])
-      
-      if @blank.status = "accepted"
+
+      if @blank.status == "accepted"
         BlankMailer.confirm(@blank).deliver
       else
         BlankMailer.deny(@blank).deliver
