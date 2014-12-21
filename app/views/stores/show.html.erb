@@ -23,6 +23,8 @@
       <h3><%= @store.name %></h3>
       <div class="margin-1"></div>
       <!-- 展区详细坐标 -->
+      图例：<span class="order-des white-des">该场地可预订</span> <span class="order-des blue-des">该场地已被选</span> <span class="order-des red-des">该场地已被预订</span>
+      <div class="margin-1"></div>
       <div class="list_products">
         <input id="authenticity_token" name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
         <% for i in 0..@store.y_no-1 %>
@@ -30,7 +32,7 @@
           <% for j in 0..@store.x_no-1 %>
             <div>
               <% @store.products.each do |product| %>
-                <% if (product.get_x.include?(j))&&(product.get_y.include?(i))%>
+                <% if (product.get_xy.include?([j,i]))%>
                   <div class="product_item <%= 'ordered' if product.status != "free"%>" data-proid="product_item_<%= product.id %>" data-number="<%= product.number %>">
                     <%= product.number %>
                   </div>
