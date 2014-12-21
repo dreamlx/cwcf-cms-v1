@@ -76,6 +76,8 @@ class BlanksController < ApplicationController
           # format.html { redirect_to @blank, notice: '您的申请已经向后台提交' }
           # format.json { render json: @blank, status: :created, location: @blank }
           # redirect_to "/media/reporter-reg/reporter_suc"
+          BlankMailer.apply(@blank).deliver
+          
           if (@blank.apply_type == "ju_apply")
             format.html { redirect_to "/media/reporter-reg/reporter_suc"}
           else
@@ -101,6 +103,12 @@ class BlanksController < ApplicationController
     @blank = Blank.find(params[:id])
 
     if @blank.update_attributes(params[:blank])
+      
+      if @blank.status = "accepted"
+        BlankMailer.confirm(@blank).deliver
+      else
+        BlankMailer.deny(@blank).deliver
+      end
       render json: { blank: @blank }, status: 201, message: '更新成功', :callback => params['callback']
     else
       render json: { blank: @blank }, status: 400, message: '更新失败，请联系管理员', :callback => params['callback']
