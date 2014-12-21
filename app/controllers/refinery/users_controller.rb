@@ -25,6 +25,9 @@ module Refinery
         flash[:message] = "<h2>#{t('welcome', :scope => 'refinery.users.create', :who => @user.username).gsub(/\.$/, '')}.</h2>".html_safe
 
         sign_in(@user)
+        
+        OrderMailer.confirm_user(@user).deliver
+        
         if @user.has_role?(:superuser)
           redirect_back_or_default(refinery.admin_root_path)
         else
