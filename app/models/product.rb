@@ -18,16 +18,10 @@ class Product < ActiveRecord::Base
     r.save!
   end
 
-  def get_x
+  def get_xy
     # relations.collect.x_c
     ary = relations.collect do |relation|
-      relation.x_c
-    end
-  end
-
-  def get_y
-    ary = relations.collect do |relation|
-      relation.y_c
+      [relation.x_c, relation.y_c]
     end
   end
 end
