@@ -26,7 +26,7 @@ module Refinery
 
         sign_in(@user)
         
-        OrderMailer.confirm_user(@user).deliver
+        # OrderMailer.confirm_user(@user).deliver
         
         if @user.has_role?(:superuser)
           redirect_back_or_default(refinery.admin_root_path)
