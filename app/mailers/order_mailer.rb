@@ -13,4 +13,9 @@ class OrderMailer < ActionMailer::Base
     @user = Refinery::User.find(@order.user_id)
     mail(to: @user.email, subject: "您的订单已经创建，请等待后台审批", from: "fair@ewatch.cn", date: Time.now)
   end
+
+  def confirm_user(user)
+    @user = user
+    mail(to: @user.email, subject: "您在钟表网站的账号已经成功注册", from: "fair@ewatch.cn", date: Time.now)
+  end
 end
