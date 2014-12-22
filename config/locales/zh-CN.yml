@@ -1,0 +1,9 @@
+zh-CN:
+  refinery:
+    admin:
+      dashboard:
+        additional_dashboard_menu_items:
+          manage_applies: 管理申请
+          manage_place_view: 管理展位图
+          manage_exhibition_no: 管理展位号
+          manage_orders: 管理订单
