@@ -496,10 +496,10 @@ $(function () {
         if (this.children[0].src != window.location.href) {
           $(".ex-logo").html(this.children[0].outerHTML);
         }else {
-          $(".ex-logo").html("<div class='ex-logo-title'>" + this.title + "</div>");
+          $(".ex-logo").html("<div class='ex-logo-title'>" + this.dataset.title + "</div>");
         }
 
-        $(".ex-title").text(this.title);
+        $(".ex-title").text(this.dataset.title);
         $(".ex-desc").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + this.dataset.description);
         $(".ex-pic").html(this.dataset.images);
         if ($(".ex-pic").find("img").length > 0) {

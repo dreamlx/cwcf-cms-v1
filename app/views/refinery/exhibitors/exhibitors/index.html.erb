@@ -25,7 +25,7 @@
           <% @exhibitors.each do |exhibitor| %>
           <li>
             <div>
-              <a title="<%= exhibitor.title %>" data-description="<%= exhibitor.description %>" data-images="<%= exhibitor.images_text %>" >
+              <a data-title="<%= exhibitor.title %>" data-description="<%= exhibitor.description %>" data-images="<%= exhibitor.images_text %>" >
                 <img src="<%= exhibitor.logo_image.url if !exhibitor.logo_image.blank? %>" height="60" alt="<%= exhibitor.title %>">
               </a>
             </div>
