@@ -32,7 +32,7 @@
           <% for j in 0..@store.x_no-1 %>
             <div>
               <% @store.products.each do |product| %>
-                <% if (product.get_xy.include?([j,i]))%>
+                <% if (product.get_xy.include?([@store.id, j,i]))%>
                   <div class="product_item <%= 'ordered' if product.status != "free"%>" data-proid="product_item_<%= product.id %>" data-number="<%= product.number %>">
                     <%= product.number %>
                   </div>

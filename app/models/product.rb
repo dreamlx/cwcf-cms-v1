@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
   def get_xy
     # relations.collect.x_c
     ary = relations.collect do |relation|
-      [relation.x_c, relation.y_c]
+      [relation.store_id, relation.x_c, relation.y_c]
     end
   end
 end
