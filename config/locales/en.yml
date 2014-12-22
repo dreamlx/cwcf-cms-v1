@@ -2,4 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  refinery:
+    admin:
+      dashboard:
+        additional_dashboard_menu_items:
+          manage_applies: Manage Applies
+          manage_place_view: Manage Place View
+          manage_exhibition_no: Manage Exhibition No.
+          manage_orders: Manage Orders

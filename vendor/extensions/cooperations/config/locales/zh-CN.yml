@@ -2,49 +2,48 @@ zh-CN:
   refinery:
     plugins:
       cooperation_types:
-        title: Cooperation Types
+        title: 合作媒体类型
       cooperations:
-        title: Cooperations
+        title: 合作媒体
     cooperations:
       admin:
         cooperation_types:
           actions:
-            create_new: "建立新的 Cooperation Type"
-            reorder: "对 Cooperation Types 重新排序"
-            reorder_done: "对 Cooperation Types 的重新排序结束"
+            create_new: "建立新的合作媒体类型"
+            reorder: "对合作媒体类型重新排序"
+            reorder_done: "对合作媒体类型的重新排序结束"
           records:
-            title: Cooperation Types
+            title: 合作媒体类型
             sorry_no_results: "对不起，未找到结果。"
-            no_items_yet: 目前没有 Cooperation Types . 点击 "Add New Cooperation Type" 创建一个cooperation
-              type.
+            no_items_yet: 目前没有合作媒体类型. 点击 "建立新的合作媒体类型" 创建一个合作媒体类型.
           cooperation_type:
-            view_live_html: "查看 cooperation type 的最新内容.<br/><em>(新窗口中打开)</em>"
-            edit: "编辑 cooperation type"
-            delete: "永久删除 cooperation type"
+            view_live_html: "查看合作媒体类型的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑合作媒体类型"
+            delete: "永久删除合作媒体类型"
         cooperations:
           actions:
-            create_new: "建立新的 Cooperation"
-            reorder: "对 Cooperations 重新排序"
-            reorder_done: "对 Cooperations 的重新排序结束"
+            create_new: "建立新的合作媒体"
+            reorder: "对合作媒体重新排序"
+            reorder_done: "对合作媒体的重新排序结束"
           records:
-            title: Cooperations
+            title: 合作媒体
             sorry_no_results: "对不起，未找到结果。"
-            no_items_yet: 目前没有 Cooperations . 点击 "Add New Cooperation" 创建一个cooperation.
+            no_items_yet: 目前没有合作媒体 . 点击 "建立新的合作媒体" 创建一个合作媒体.
           cooperation:
-            view_live_html: "查看 cooperation 的最新内容.<br/><em>(新窗口中打开)</em>"
-            edit: "编辑 cooperation"
-            delete: "永久删除 cooperation"
+            view_live_html: "查看合作媒体的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑合作媒体"
+            delete: "永久删除合作媒体"
       cooperation_types:
         show:
-          other: "其他 Cooperation Types"
+          other: "其他合作媒体类型"
       cooperations:
         show:
-          other: "其他 Cooperations"
+          other: "其他合作媒体"
   activerecord:
     attributes:
       refinery/cooperations/cooperation_type:
-        name: Name
+        name: 名称
       refinery/cooperations/cooperation:
-        title: Title
-        cooperation_avatar_id: Cooperation Avatar
-        main_url: Main Url
+        title: 标题
+        cooperation_avatar_id: 合作媒体标识
+        main_url: 链接
