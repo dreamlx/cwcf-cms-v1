@@ -614,106 +614,12 @@ $(function () {
       })
     }
 
-    if ($(".product_item").length > 0) {
-      $(".ordered_line_items").children().each(function() {
-        var ordered_line_product_id = $(this)[0].id.slice(13);
-        var ordered_line_id = $(this)[0].dataset.id;
-        $(".product_item").each(function() {
-          if ($(this)[0].dataset.proid.slice(13) == ordered_line_product_id) {
-            $(this).addClass("active");
-            $(this)[0].dataset.id = ordered_line_id;
-          }
-        });
-      });
-      $(".product_item").click(function() {
-        console.log($("#current_user").length);
-        if ($("#current_user").length == 0){
-          $(".top-login-btn").trigger("click");
-          return;
-        }
-        if ($("#current_user").length > 0){
-          if (! ($("#current_user").hasClass("rlsu") || $("#current_user").hasClass("rlex"))) {
-            alert("您不是参展商用户, 如需参展选位，请注册参展商用户");
-            return;
-          }
-        }
-        console.log($("#current_user").length);
-        var _this = this;
-        var _this_colloct_id =  $(_this)[0].dataset.proid;
-        var _this_colloct = $(".product_item").filter(function() {
-          return this.dataset.proid == _this_colloct_id;
-        });
-        if ($(_this).hasClass("ordered")){
-          return;
-        }
-        var postdata = {
-          "product_id": $(this)[0].dataset.proid.slice(13)
-        };
-        var post_url = "/line_items";
-        var post_type = 'post';
-        if ($(_this).hasClass("active")) {
-          post_url = "/line_items/" + $(this)[0].dataset.id;
-          post_type = "delete";
-          postdata = "";
-        }
-        $.ajax({
-          url: post_url,
-          type: post_type,
-          dataType: 'json',
-          data: JSON.stringify(postdata),
-          headers: {
-            'X-CSRF-Token': $("#authenticity_token").val()
-          },
-          processData: false,
-          contentType: "application/json; charset=UTF-8",
-          success: function(data) {
-            if (_this_colloct.hasClass("active")) {
-              _this_colloct.removeClass("active");
-              var ordered_line_product_id = $(_this)[0].dataset.proid.slice(13);
-              var ordered_line_id = $(_this)[0].dataset.id;
-              $(".ordered_line_items").children().each(function() {
-                if ($(this)[0].id.slice(13) == ordered_line_product_id) {
-                  $(this)[0].remove();
-                }
-              });
-              if ($(".ordered_line_items").children().length == 0) {
-                var no_content_str = "还没有选座，请点选下面座位，点击两次可取消";
-                $(".ordered_line_items").html(no_content_str);
-              }
-            } else {
-              _this_colloct.addClass("active");
-              var ordered_html = $(".ordered_line_items").html();
-              if ($(".ordered_line_items").children().length == 0) {
-                ordered_html = "";
-              }
-              _this_colloct.each(function() {
-                this.dataset.id = data.id;
-              });
-              ordered_html += "<div id='ordered_item_" + $(_this)[0].dataset.proid.slice(13) + "' data-id='" + data.id +"'>" + $(_this)[0].dataset.number +"</div>";
-              $(".ordered_line_items").html(ordered_html);
-              $(".ordered_line_items")[0].dataset.id = data.cart_id;
-            }
-          },
-          error: function(errors){
-            alert("系统繁忙，请稍后再试");
-          }
-        });
-
-
-      });
-    }
-
+    
     //后台展位修改
     if ($(".product_item_edit").length > 0) {
       var slct_x = "";
       var slct_y = "";
       var slct_item = null;
-      $(".product_item_edit").each(function() {
-        var _this = this;
-        if ($(_this).children().length > 0) {
-          $(_this).addClass("active");
-        }
-      });
       $(".product_item_edit").click(function() {
         slct_y = this.dataset.coor.split("x")[0];
         slct_x = this.dataset.coor.split("x")[1];
