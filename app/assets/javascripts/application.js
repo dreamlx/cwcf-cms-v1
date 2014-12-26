@@ -614,7 +614,7 @@ $(function () {
       })
     }
 
-    
+
     //后台展位修改
     if ($(".product_item_edit").length > 0) {
       var slct_x = "";
@@ -757,4 +757,16 @@ $(function () {
         }
       });
     });
+
+    //联系我们
+    $(".contact_box ul").each(function(){
+      $(this).addClass("contact_list");
+      $($(this).children()[0]).addClass("photo");
+      var cont_name = $($(this).children()[0]).text();
+      var cont_img = $($(this).children()[0]).children()[0].outerHTML;
+      var cont_html = "<span class='txt'>" + cont_name + "</span><span class='bg'></span>" + cont_img;
+      $($(this).children()[0]).html(cont_html);
+      $($(this).children()[1]).addClass("info");
+      $($(this).children()[2]).addClass("qr");
+    })
 });
