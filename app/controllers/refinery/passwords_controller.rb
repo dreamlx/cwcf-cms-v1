@@ -5,7 +5,7 @@ module Refinery
 
     before_filter :store_password_reset_return_to, :only => [:update]
     def store_password_reset_return_to
-      session[:'refinery_user_return_to'] = refinery.admin_root_path
+      session[:'refinery_user_return_to'] = refinery.root_path
     end
     protected :store_password_reset_return_to
 
@@ -37,8 +37,8 @@ module Refinery
         user.send(:generate_reset_password_token!)
         puts '-' * 1000
         UserMailer.reset_notification(user, request).deliver
-        redirect_to refinery.login_path,
-                    :notice => t('email_reset_sent', :scope => 'refinery.users.forgot')
+        redirect_to refinery.root_path,
+                    :notice => '1112'
       else
         flash.now[:error] = if (email = params[:refinery_user][:email]).blank?
           t('blank_email', :scope => 'refinery.users.forgot')

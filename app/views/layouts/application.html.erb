@@ -98,6 +98,9 @@
         <% if flash.now[:notice] == "1111" %>
           alert("您的用户名或密码错误.");
         <% end %>
+        <% if flash.now[:notice] == "1112" %>
+          alert("请您注意查收邮件.");
+        <% end %>
       });
     </script>
   </body>
