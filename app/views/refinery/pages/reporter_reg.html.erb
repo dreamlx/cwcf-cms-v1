@@ -28,7 +28,7 @@
             <input name="blank[mobile_phone]" type="text" class="txtinput" required="required"/>
           </dd>
           <dd><span>电子邮箱*</span>
-            <input name="blank[email]" type="text" class="txtinput1" required="required"  pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$"/></dd>
+            <input name="blank[email]" type="text" class="txtinput1" value="<%= current_refinery_user.email %>" disabled="disabled"/></dd>
           <dd><span>国家</span>
             <input name="blank[country]" type="text" class="txtinput1" /></dd>
           <dd><span>公司邮编*</span>
