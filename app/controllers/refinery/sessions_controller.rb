@@ -16,6 +16,12 @@ module Refinery
       "/"
     end
 
+    def new
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: '1111' }
+      end
+    end
+
   protected
 
     # We don't like this alert.

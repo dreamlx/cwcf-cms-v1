@@ -93,5 +93,12 @@
       </footer>
     </div>
     <%= render "/refinery/javascripts" %>
+    <script>
+      $(document).ready(function(){
+        <% if flash.now[:notice] == "1111" %>
+          alert("您的用户名或密码错误.");
+        <% end %>
+      });
+    </script>
   </body>
 </html>
