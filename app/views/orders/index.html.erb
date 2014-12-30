@@ -9,7 +9,7 @@
     <th>申请状态</th>
     <th>更改状态</th>
     <th></th>
-    <th></th>
+    <!-- <th></th> -->
   </tr>
 
 <% @orders.each do |order| %>
@@ -39,7 +39,7 @@
       </select>
     </td>
     <td><a href="javascript:;" class="order_save" data-id="<%= order.id %>">更新</a></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!-- <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
   </tr>
 <% end %>
 </table>

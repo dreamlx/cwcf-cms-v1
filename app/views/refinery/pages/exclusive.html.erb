@@ -1,0 +1,58 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @page.title() %></h1>
+    <section id='body'>
+      <div class="margin-1"></div>
+      <div class="margin-1"></div>
+      <div class="margin-1"></div>
+      <div class="form_txt">请尽量详细地填写您的信息。</div>
+      <form id="vipclub_form" action="/vipers" method="post">
+        <dl class="form_bg1">
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+          <dd><span>姓名*</span>
+            <input name="viper[name]" type="text" class="txtinput1" required="required"/>
+          </dd>
+          <dd><span>职务</span>
+            <input name="viper[job]" type="text" class="txtinput1"/>
+          </dd>
+          <dd><span>公司名称*</span>
+            <input name="viper[co_name]" type="text" class="txtinput1" required="required"/>
+          </dd>
+          <dd><span>地址*</span>
+          	<input name="viper[address]" type="text" class="txtinput2" required="required"/></dd>
+          <dd><span>邮编*</span>
+         	 <input name="viper[zip]" type="text" class="txtinput1" required="required"/></dd>
+          <dd><span>电话*</span>
+            <input name="viper[tel]" type="text" class="txtinput" required="required"/></dd>
+          <dd><span>电子邮箱*</span>
+          	<input name="viper[email]" type="text" class="txtinput1" value="<%= current_refinery_user.email if current_refinery_user %>"/></dd>
+          <dd><span>手机*</span>
+            <input name="viper[phone]" type="text" class="txtinput" required="required"/></dd>
+          <dd><span>网址</span>
+            <input name="viper[co_url]" type="text" class="txtinput1" /></dd>
+          <dd><span>参观过几届展览会</span>
+            <input name="viper[vip_num]" type="text" class="txtinput" /></dd>
+          <input name="viper[app_type]" value="jp_order" type="hidden" />
+          
+		  <dd class="form-btn"></dd>
+          <dd class="form-btn"></dd>
+          <dd class="form-btn"><input name="commit" type="submit" value="提交" class="btn btn-primary"/><input type="reset" value="重置" class="btn btn-warning"/></dd>
+        </dl>
+      </form>
+
+      <div class="margin-1"></div>
+      <%=raw @page.content_for(:body) %>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @page.background_image.present? %>
+    <style type="text/css">
+      body {
+        background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+        background-size:cover;
+      }
+    </style>
+  <% end %>
+<% end %>

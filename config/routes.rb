@@ -12,6 +12,9 @@ end
 
 MyNewApp::Application.routes.draw do
 
+  resources :vipers
+
+
   resources :orders
 
 

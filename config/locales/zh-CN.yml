@@ -7,8 +7,13 @@ zh-CN:
           manage_place_view: 管理展位图
           manage_exhibition_no: 管理展位号
           manage_orders: 管理订单
+          manage_vipers: 管理VIP申请
       image_picker:
         none_selected: 当前没有图片被选中, 请点这里去选取一个.
         remove_current: 删除当前图片
       resource_picker:
         no_resource_selected: 当前没有文件被选中, 请点这里去选取一个.
+    roles:
+      normal: 普通用户
+      journalist: 记者
+      exhibitor: 参展商

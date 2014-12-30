@@ -1,0 +1,63 @@
+<div class="store_box">
+<h1>Vip买家 和 晶品荟 申请 <a href="/refinery" class="return-admin">Admin</a></h1>
+<input name="authenticity_token" id="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
+<table>
+  <tr>
+    <th>姓名</th>
+    <th>职务</th>
+	<th>邮箱</th>
+    <th>公司名称</th>
+    <th>地址</th>
+    <th>邮编</th>
+    <th>电话</th>
+    <th>手机</th>
+    <th>网址</th>
+    <th>参展次数</th>
+    <th>购买数量</th>
+	<th>申请类型</th>
+    <th>状态</th>
+    <th>更改状态</th>
+    <th></th>
+  </tr>
+
+<% @vipers.each do |viper| %>
+  <tr>
+    <td><%= viper.name %></td>
+    <td><%= viper.job %></td>
+	  <td><%= viper.email %></td>
+    <td><%= viper.co_name %></td>
+    <td><%= viper.address %></td>
+    <td><%= viper.zip %></td>
+    <td><%= viper.tel %></td>
+    <td><%= viper.phone %></td>
+    <td><%= viper.co_url %></td>
+    <td><%= viper.t_ex %></td>
+    <td><%= viper.vip_num %></td>
+  	<td>
+  		<% if viper.app_type == "vip" %>
+  			<%= "Vip买家" %>
+  		<% else %>
+  			<%= "晶品荟" %>
+  		<% end %>
+  	</td>
+    <td id="status_<%= viper.id %>">
+      <% if viper.status == "applied" %>
+      申请中
+      <% elsif viper.status == "accepted" %>
+      已通过
+      <% else %>
+      已拒绝
+      <% end %>
+    </td>
+    <td>
+      <select name="viper[status]" id="select_<%= viper.id %>">
+        <option value="applied">申请中</option>
+        <option value="accepted">已通过</option>
+        <option value="denied">被拒绝</option>
+      </select>
+    </td>
+    <td><a href="javascript:;" class="vip_update_btn" data-id="<%= viper.id %>">更新</a></td>
+  </tr>
+<% end %>
+</table>
+</div>
