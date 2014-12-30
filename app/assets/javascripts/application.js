@@ -337,11 +337,6 @@ $(function () {
 
     //用户是否登录
     if ($("#current_user").length == 0){
-      var patt1 = new RegExp("/partners/apply");
-      var patt2 = new RegExp("/media/reporter-reg");
-      if (patt1.test(location.pathname) || patt2.test(location.pathname)) {
-        window.location.href="/"
-      }
 
       if ($("#ex_apply_href").length > 0) {
         $("#ex_apply_href")[0].href = "javascript:;";
@@ -379,6 +374,25 @@ $(function () {
       });
 
     }
+
+    //首页轮播图片
+    var home_img_list_html = "";
+    $(".image_source").find("img").each(function(index) {
+      var avtive_or = "";
+      if (index == 0){
+        avtive_or = "active";
+      }
+      home_img_list_html += "<div class='"+ avtive_or + " item'><div class='carousel-inner-item carousel-inner-item-"+ (index+1).toString() +"'></div></div>";
+    });
+    $("#carousel-banners .carousel-inner").html(home_img_list_html);
+    $(".image_source").find("img").each(function(index) {
+      var bg_cs = "url(" + this.src + ") no-repeat center";
+      $(".carousel-inner-item-" + (index+1).toString()).css({
+        "background":bg_cs,
+        "background-size":"cover"
+      });
+    });
+
 
     //调整首页图片大小
 

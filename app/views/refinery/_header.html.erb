@@ -33,3 +33,27 @@
     </div>
   </div>
 </div>
+<script>
+  var patt1 = new RegExp("/partners/apply");
+  var patt2 = new RegExp("/media/reporter-reg");
+  var patt3 = new RegExp("/blanks");
+  var patt4 = new RegExp("/admin/stores");
+  var patt5 = new RegExp("/products");
+  var patt6 = new RegExp("/orders");
+  <% if !refinery_user_signed_in? %>
+  console.log(location.pathname);
+    if (patt1.test(location.pathname) || patt2.test(location.pathname)
+      || patt3.test(location.pathname) || patt4.test(location.pathname)
+      || patt5.test(location.pathname) || patt6.test(location.pathname)) {
+      window.location.href="/";
+    }
+
+  <% else %>
+    <% if !current_refinery_user.has_role?(:superuser) %>
+      if (patt3.test(location.pathname) || patt4.test(location.pathname) ||
+        patt5.test(location.pathname) || patt6.test(location.pathname)){
+          window.location.href="/";
+      }
+    <% end %>
+  <% end %>
+</script>
