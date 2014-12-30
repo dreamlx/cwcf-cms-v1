@@ -40,18 +40,21 @@
   var patt4 = new RegExp("/admin/stores");
   var patt5 = new RegExp("/products");
   var patt6 = new RegExp("/orders");
+  var patt7 = new RegExp("/vipers");
   <% if !refinery_user_signed_in? %>
   console.log(location.pathname);
     if (patt1.test(location.pathname) || patt2.test(location.pathname)
       || patt3.test(location.pathname) || patt4.test(location.pathname)
-      || patt5.test(location.pathname) || patt6.test(location.pathname)) {
+      || patt5.test(location.pathname) || patt6.test(location.pathname)
+      || patt7.test(location.pathname)) {
       window.location.href="/";
     }
 
   <% else %>
     <% if !current_refinery_user.has_role?(:superuser) %>
       if (patt3.test(location.pathname) || patt4.test(location.pathname) ||
-        patt5.test(location.pathname) || patt6.test(location.pathname)){
+        patt5.test(location.pathname) || patt6.test(location.pathname)
+        || patt7.test(location.pathname)){
           window.location.href="/";
       }
     <% end %>

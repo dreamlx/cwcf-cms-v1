@@ -772,6 +772,43 @@ $(function () {
       });
     });
 
+    //VIP申请管理
+    if ($(".vip_update_btn").length > 0) {
+      $(".vip_update_btn").click(function() {
+        var _this = this;
+        var postdata = {
+          "viper":{
+            "status": $("#select_" + _this.dataset.id)[0].value
+          }
+        };
+        $.ajax({
+          url: "vipers/" + _this.dataset.id,
+          type: 'put',
+          dataType: 'json',
+          data: JSON.stringify(postdata),
+          headers: {
+            'X-CSRF-Token': $("#authenticity_token").val()
+          },
+          processData: false,
+          contentType: "application/json; charset=UTF-8",
+          success: function(data) {
+            var status_str = "";
+            if (data.viper.status == "applied") {
+              status_str = "申请中";
+            } else if (data.viper.status == "accepted") {
+              status_str = "已通过";
+            } else {
+              status_str = "已拒绝";
+            }
+            $("#status_" + _this.dataset.id).text(status_str);
+          },
+          error: function(errors){
+            alert("系统繁忙，请稍后再试");
+          }
+        });
+      })
+    }
+
     //联系我们
     $(".contact_box ul").each(function(){
       $(this).addClass("contact_list");

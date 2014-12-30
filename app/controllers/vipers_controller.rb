@@ -45,8 +45,13 @@ class VipersController < ApplicationController
 
     respond_to do |format|
       if @viper.save
-        format.html { redirect_to @viper, notice: 'Viper was successfully created.' }
-        format.json { render json: @viper, status: :created, location: @viper }
+        if (@blank.apply_type == "vip")
+          format.html { redirect_to "/audience/vipclub/vip_apply_succ"}
+        else
+          format.html { redirect_to "/audience/exclusive/exlusive_apply_suc"}
+        end
+        # format.html { redirect_to @viper, notice: 'Viper was successfully created.' }
+        # format.json { render json: @viper, status: :created, location: @viper }
       else
         format.html { render action: "new" }
         format.json { render json: @viper.errors, status: :unprocessable_entity }
@@ -59,15 +64,20 @@ class VipersController < ApplicationController
   def update
     @viper = Viper.find(params[:id])
 
-    respond_to do |format|
-      if @viper.update_attributes(params[:viper])
-        format.html { redirect_to @viper, notice: 'Viper was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @viper.errors, status: :unprocessable_entity }
-      end
+    if @viper.update_attributes(params[:viper])
+      render json: { viper: @viper }, status: 201, message: '更新成功', :callback => params['callback']
+    else
+      render json: { viper: @viper }, status: 400, message: '更新失败，请联系管理员', :callback => params['callback']
     end
+    # respond_to do |format|
+    #   if @viper.update_attributes(params[:viper])
+    #     format.html { redirect_to @viper, notice: 'Viper was successfully updated.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: "edit" }
+    #     format.json { render json: @viper.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /vipers/1
