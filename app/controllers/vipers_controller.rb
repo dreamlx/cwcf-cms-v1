@@ -45,7 +45,7 @@ class VipersController < ApplicationController
 
     respond_to do |format|
       if @viper.save
-        if (@blank.apply_type == "vip")
+        if (@viper.app_type == "vip")
           format.html { redirect_to "/audience/vipclub/vip_apply_succ"}
         else
           format.html { redirect_to "/audience/exclusive/exlusive_apply_suc"}
