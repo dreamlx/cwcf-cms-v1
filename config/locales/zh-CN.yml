@@ -12,3 +12,7 @@ zh-CN:
         remove_current: 删除当前图片
       resource_picker:
         no_resource_selected: 当前没有文件被选中, 请点这里去选取一个.
+    roles:
+      normal: 普通用户
+      journalist: 记者
+      exhibitor: 参展商
