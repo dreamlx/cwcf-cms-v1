@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141220044722) do
+ActiveRecord::Schema.define(:version => 20141230063950) do
 
   create_table "blanks", :force => true do |t|
     t.string   "co_name"
@@ -454,6 +454,24 @@ ActiveRecord::Schema.define(:version => 20141220044722) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "vipers", :force => true do |t|
+    t.string   "name"
+    t.string   "job"
+    t.string   "co_name"
+    t.string   "address"
+    t.string   "zip"
+    t.string   "tel"
+    t.string   "phone"
+    t.string   "co_url"
+    t.integer  "t_ex"
+    t.integer  "vip_num"
+    t.string   "app_type"
+    t.string   "status"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

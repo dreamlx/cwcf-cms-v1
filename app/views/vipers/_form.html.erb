@@ -1,0 +1,65 @@
+<%= form_for(@viper) do |f| %>
+  <% if @viper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@viper.errors.count, "error") %> prohibited this viper from being saved:</h2>
+
+      <ul>
+      <% @viper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :job %><br />
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+    <%= f.label :co_name %><br />
+    <%= f.text_field :co_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :co_url %><br />
+    <%= f.text_field :co_url %>
+  </div>
+  <div class="field">
+    <%= f.label :t_ex %><br />
+    <%= f.number_field :t_ex %>
+  </div>
+  <div class="field">
+    <%= f.label :vip_num %><br />
+    <%= f.number_field :vip_num %>
+  </div>
+  <div class="field">
+    <%= f.label :app_type %><br />
+    <%= f.text_field :app_type %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
