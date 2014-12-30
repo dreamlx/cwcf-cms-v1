@@ -21,8 +21,8 @@ Ckeditor.setup do |config|
   # config.authorize_with :cancan
 
   # Asset model classes
-  config.picture_model { Refinery::Image }
-  config.attachment_file_model { Refinery::Resource }
+  config.picture_model { Ckeditor::Picture }
+  config.attachment_file_model { Ckeditor::AttachmentFile }
   # config.picture_model { Refinery::Image }
   # config.attachment_file_model { Refinery::Resource }
 
