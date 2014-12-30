@@ -18,6 +18,7 @@
     <th>状态</th>
     <th>更改状态</th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @vipers.each do |viper| %>
@@ -57,6 +58,7 @@
       </select>
     </td>
     <td><a href="javascript:;" class="vip_update_btn" data-id="<%= viper.id %>">更新</a></td>
+    <td><%= link_to 'Destroy', viper, method: :delete, data: { confirm: '确定删除?' } %></td>
   </tr>
 <% end %>
 </table>
