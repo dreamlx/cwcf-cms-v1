@@ -58,9 +58,9 @@ zh-CN:
         reset_password: 重置密码
     user_mailer:
       reset_notification:
-        subject: 密码重置的链接
-        reset_request_received_for: "请求收%{username}到重置密码"
-        visit_this_url: 浏览此URL去选择一个新密码
+        subject: 钟表展重设密码邮件
+        reset_request_received_for: "钟表展网站收到%{username}重置密码的请求"
+        visit_this_url: 点击下面的链接 （若不能点击请复制到浏览器地址栏）
         remain_same_if_no_action: '如果你不进行操作, 你的密码将维持不变'
     roles:
       normal: 普通用户
