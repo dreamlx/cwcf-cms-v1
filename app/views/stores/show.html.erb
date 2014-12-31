@@ -86,12 +86,14 @@ body {
               alert("您不是参展商用户, 如需参展选位，请注册参展商用户");
               return;
             }else {
-              <% if !current_refinery_user.is_ex_certified %>
-                var b_conf = confirm("您是未认证参展商用户，如需参展选位，请先提交参展申请，如已提交，请等待审核!");
-                if (b_conf == true) {
-                  location.href = "/partners/apply";
-                }
-                return;
+              <% if current_refinery_user %>
+                <% if !current_refinery_user.is_ex_certified %>
+                  var b_conf = confirm("您是未认证参展商用户，如需参展选位，请先提交参展申请，如已提交，请等待审核!");
+                  if (b_conf == true) {
+                    location.href = "/partners/apply";
+                  }
+                  return;
+                <% end %>
               <% end %>
             }
           }

@@ -470,9 +470,9 @@ $(function () {
       });
     }
 
-    if ($("#myDate").length > 0){
-      var $input = $("#myDate");
-      var time_div = $input.parent().parent();
+    if ($(".count-input input").length > 0){
+      var $input = $(".count-input input");
+      var time_div = $input.parent().parent().parent();
       var time_box = time_div.parent();
       var deadline = $input.val();
 
@@ -581,6 +581,11 @@ $(function () {
     }
 
 
+    $("ul.ico_links li.i2").hover(function() {
+      $(".sina-weibo").fadeIn();
+    }, function() {
+      $(".sina-weibo").fadeOut();
+    });
     $("ul.ico_links li.i3").hover(function() {
       $(".qrcode").fadeIn();
     }, function() {

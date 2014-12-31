@@ -877,13 +877,16 @@ ul.news-list {
   left: 100px;
   display: none;
   font-family: "Microsoft YaHei";
+  background-color: rgba(255,255,255,0.6);
+  width: 380px;
+  padding: 10px 10px 0 10px;
   > span {
-    color: white;
+    color: #ff3245;
     font-size: 24px;
   }
   .countdown {
     font-size: 24px;
-    color: white;
+    color: #ff3245;
     span {
 
     }
@@ -1265,7 +1268,7 @@ dl.form_bg1 {
   li {
     float: left;
     width: 24px;
-    margin-top: 10px;
+    margin-top: 18px;
     margin-right: 10px;
   }
   li.i1 {
@@ -1303,6 +1306,17 @@ dl.form_bg1 {
   }
 }
 
+.sina-weibo{
+  display: none;
+  background: url(../assets/weiboqr.png) no-repeat;
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  bottom: 100%;
+  left: 166px;
+}
 .qrcode {
   display: none;
   background: url(../assets/qrcode.png) no-repeat;
