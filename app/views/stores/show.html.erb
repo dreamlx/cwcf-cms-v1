@@ -1,3 +1,24 @@
+<script>
+  <% if !current_refinery_user %>
+    alert("请登录");
+    window.location.href = "/";
+  <% end %>
+  <% if current_refinery_user&&!current_refinery_user.has_role?(:exhibitor) %>
+    alert("请注册参展商用户，并提交参展申请");
+    window.location.href = "/";
+  <% end %>
+  <% if current_refinery_user %>
+    <% if !current_refinery_user.is_ex_certified %>
+      var b_conf = confirm("您是未认证参展商用户，如需参展选位，请先提交参展申请，如已提交，请等待审核!");
+      if (b_conf == true) {
+        location.href = "/partners/apply";
+      }else {
+        location.href = "/";
+      }
+      return;
+    <% end %>
+  <% end %>
+</script>
 <div class='show_container store_body'>
   <div class='show_body'>
     <h1 id='body_content_title'><%=raw @place_view_page.title() %></h1>
