@@ -66,6 +66,18 @@ namespace :init_db do
     end
   end
 
+  desc "change name"
+  task change_image_name: :environment do
+    Refinery::Image.all.each  do |image|
+      if image.image_name.include?(' ')
+        puts image.image_name
+        title = image.title.gsub!(' ', '_')
+        image.update_attribute(:image_name, title)
+        image.save!
+      end
+    end
+  end
+
   desc "init products"
   task init_products_2: :environment do
     CSV.foreach("/home/deploy/9.csv") do |row|

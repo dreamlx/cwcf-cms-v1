@@ -21,6 +21,7 @@ module Refinery
 
     # allows Mass-Assignment
     attr_accessible :id, :image, :image_size
+    attr_accessor :title
 
     delegate :size, :mime_type, :url, :width, :height, :to => :image
 
