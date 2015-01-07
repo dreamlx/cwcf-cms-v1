@@ -825,4 +825,10 @@ $(function () {
       $($(this).children()[1]).addClass("info");
       $($(this).children()[2]).addClass("qr");
     })
-});
+    //参展资料下载
+    $(".down-div .h3-tit").append("<span class='h3-tit-arrow'></span>");
+    $(".down-div > ul").addClass("dlist");
+    $(".down-div > ul").addClass("dlist");
+    $(".down-div > ul > li:even").addClass("left");
+    $(".down-div > ul > li:odd").addClass("right");
+  });
