@@ -12,7 +12,7 @@
   </head>
   <body id="<%= canonical_id @page %>">
     <!-- <%= site_bar -%> -->
-    <div class="old-ie"><div>为了最佳浏览效果，请升级ie，<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">点击此处下载最新ie</a></div></div>
+    <!--[if lt IE 9 ]><div class="old-ie"><div>为了最佳浏览效果，请升级ie，<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">点击此处下载最新ie</a></div></div><![endif]-->
     <div id="page_container">
       <header id="header">
         <%= render "/refinery/header" -%>
@@ -104,6 +104,7 @@
         <% end %>
       });
     </script>
+    <!--[if lt IE 9 ]>
     <script>
       $(document).ready(function(){
         $("#page_container").css({"-webkit-filter":"blur(5px)",'-moz-filter':"blur(5px)","-ms-filter":"blur(5px)","filter":"progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);"});
@@ -111,5 +112,6 @@
         $(".old-ie").animate({top: "0"}, "slow");
       });
     </script>
+    <![endif]-->
   </body>
 </html>
