@@ -6,13 +6,13 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <%= render "/refinery/html_tag" %>
-<!--[if lt IE 9 ]><script>alert("dsadsdsd");</script><![endif]-->
   <% site_bar = render('/refinery/site_bar', :head => true) -%>
   <head>
     <%= render "/refinery/head" %>
   </head>
   <body id="<%= canonical_id @page %>">
     <!-- <%= site_bar -%> -->
+    <div class="old-ie"><div>为了最佳浏览效果，请升级ie，<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">点击此处下载最新ie</a></div></div>
     <div id="page_container">
       <header id="header">
         <%= render "/refinery/header" -%>
@@ -102,16 +102,13 @@
         <% if flash.now[:notice] == "1112" %>
           alert("请您注意查收邮件.");
         <% end %>
-        // function getIE() {
-        //   if(navigator.appName == "Microsoft Internet Explorer"){
-        //     if(navigator.appVersion.match(/8./i)<='8.'){
-        //
-        //     }else{
-        //       location.href='http://www.jannn.com';
-        //     }
-        //   }
-        // }
-        // getIE();
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#page_container").css({"-webkit-filter":"blur(5px)",'-moz-filter':"blur(5px)","-ms-filter":"blur(5px)","filter":"progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);"});
+        $("#page_container").css('opacity',0.6);
+        $(".old-ie").animate({top: "0"}, "slow");
       });
     </script>
   </body>

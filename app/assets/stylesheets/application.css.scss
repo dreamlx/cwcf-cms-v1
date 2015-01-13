@@ -1504,3 +1504,20 @@ a.beian{
   margin-left: 50px;
   color: black;
 }
+
+.old-ie {
+  z-index: 999;
+  float: left;
+  position: absolute;
+  width: 100%;
+  top: -200px;
+  div {
+    width: 500px;
+    margin: auto;
+    background: white;
+    height: 200px;
+    text-align: center;
+    padding-top: 90px;
+    border-radius: 0 0 15px 15px;
+  }
+}
