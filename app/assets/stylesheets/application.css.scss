@@ -213,6 +213,7 @@ ul, ol, dl {
 .copy-right {
   background-color: rgb(47,143,218);
   //height: 20px;
+  text-align: center;
 }
 
 .login-regist.col-md-12 {
@@ -874,26 +875,26 @@ ul.news-list {
 
 .countdown_box {
   position: absolute;
-  top: 140px;
-  left: 100px;
+  top: 107px;
+  left: 0;
   display: none;
   font-family: "Microsoft YaHei";
-  background-color: rgba(255,255,255,0.6);
-  width: 410px;
+  background-color: rgba(255,255,255,0.4);
+  width: 330px;
   padding: 10px 10px 0 10px;
   > span {
     color: #ff3245;
-    font-size: 24px;
+    font-size: 20px;
   }
   .countdown {
-    font-size: 24px;
+    font-size: 20px;
     color: #ff3245;
     span {
 
     }
     span.digit {
       font-family: "digit";
-      font-size: 42px;
+      font-size: 34px;
       color: #2f8fda;
     }
   }
@@ -1496,4 +1497,10 @@ a.back {
 
 .image_source {
   display: none;
+}
+
+
+a.beian{
+  margin-left: 50px;
+  color: black;
 }
