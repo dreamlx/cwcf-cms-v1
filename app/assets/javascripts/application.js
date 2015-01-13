@@ -673,7 +673,6 @@ $(function () {
           processData: false,
           contentType: "application/json; charset=UTF-8",
           success: function() {
-            console.log("succ");//TODO
             $(slct_item).html(slct_pro_no);
             if (slct_pro_no == ""){
               $(slct_item).removeClass("active");
