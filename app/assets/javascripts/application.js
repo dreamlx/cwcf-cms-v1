@@ -843,4 +843,14 @@ $(function () {
     $(".down-div > ul").addClass("dlist");
     $(".down-div > ul > li:even").addClass("left");
     $(".down-div > ul > li:odd").addClass("right");
+
+
+    $(".blog-pre").each(function() {
+      var blog_desc = $(this).text();
+      if (blog_desc.length > 110){
+        $(this).html(blog_desc.substr(0, 110) + "...");
+      }else {
+        $(this).html(blog_desc);
+      };
+    });
   });

@@ -1,6 +1,6 @@
 <div class='show_container'>
   <div class='show_body'>
-    <h1 id='body_content_title'><%=raw @page.parent.title() %></h1>
+    <h1 id='body_content_title'><a href="<%= refinery.url_for(@page.parent.parent.url_marketable) %>"><img src="/assets/back.jpg"></a><%= @page.parent.title() %></h1>
     <section id='body'>
       <h4 class="little-title align-center"><%=raw @page.title() %></h4>
       <%=raw @page.content_for(:body) %>

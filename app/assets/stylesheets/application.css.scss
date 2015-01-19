@@ -824,10 +824,11 @@ ul.tab-5 {
 
 ul.news-list {
   li {
-    border-bottom: solid 1px white;
+    // border-bottom: 2px solid #c5c6c6;
     margin-top: 15px;
+    height: 120px;
     span {
-      float: right;
+      // float: right;
     }
   }
 }
@@ -1520,4 +1521,41 @@ a.beian{
     padding-top: 90px;
     border-radius: 0 0 15px 15px;
   }
+}
+
+
+.blog-list-pic {
+  width: 180px;
+  height: 110px;
+  float: left;
+  margin-right: 15px;
+}
+
+.blog-list-content{
+  float: left;
+  font-size: 12px;
+  width: 490px;
+}
+
+div.h3-tit1 h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: #2f8fda;
+  }
+}
+
+.date1 {
+  line-height: 30px;
+  margin-bottom:5px;
+  height: 30px;
+}
+div.blog-pre {
+  border-bottom: 2px solid #c5c6c6;
+  padding-bottom: 15px;
+  line-height: 1.5em;
 }

@@ -5,12 +5,23 @@
       <ul class="news-list">
         <% (::Refinery::Page.where(:parent_id => @page.id )).order('lft ASC').each do |news_item| %>
             <li>
-              <a href='<%= refinery.url_for(news_item.url_marketable) %>'>
-                <%= news_item.title() %>
-              </a>
-              <span>
-                <%= news_item.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S').to_s %>
-              </span>
+              <div class="blog-list-pic" style="background: url(<%= news_item.page_avatar.url if news_item.page_avatar -%>) no-repeat center;background-size:cover;">
+              </div>
+              <div class="blog-list-content">
+                <div class="h3-tit1">
+                  <h3>
+                    <a href='<%= refinery.url_for(news_item.url_marketable) %>'>
+                      <%= news_item.title() %>
+                    </a>
+                  </h3>
+                </div>
+                <div class="date1">
+                  <span>
+                    时间：<%= news_item.created_at.localtime.strftime('%Y年%m月%d日').to_s %>
+                  </span>
+                </div>
+                <div class="blog-pre"><%=raw news_item.content_for(:body) %></div>
+              </div>
             </li>
         <% end %>
       </ul>
