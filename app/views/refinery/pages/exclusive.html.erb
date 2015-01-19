@@ -5,6 +5,8 @@
       <div class="margin-1"></div>
       <div class="margin-1"></div>
       <div class="margin-1"></div>
+      <%=raw @page.content_for(:body) %>
+      <div class="margin-1"></div>
       <div class="form_txt">请尽量详细地填写您的信息。</div>
       <form id="vipclub_form" action="/vipers" method="post">
         <dl class="form_bg1">
@@ -33,15 +35,12 @@
           <dd><span>参观过几届展览会</span>
             <input name="viper[vip_num]" type="text" class="txtinput" /></dd>
           <input name="viper[app_type]" value="jp_order" type="hidden" />
-          
+
 		  <dd class="form-btn"></dd>
           <dd class="form-btn"></dd>
           <dd class="form-btn"><input name="commit" type="submit" value="提交" class="btn btn-primary"/><input type="reset" value="重置" class="btn btn-warning"/></dd>
         </dl>
       </form>
-
-      <div class="margin-1"></div>
-      <%=raw @page.content_for(:body) %>
     </section>
   </div>
 </div>
