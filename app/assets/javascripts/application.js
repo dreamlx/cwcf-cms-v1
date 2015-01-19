@@ -153,7 +153,7 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
-                    "<a href='/partners/apply_insured'>" +
+                    "<a href='/partners/insured_apply'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1 col-xs-1'>" +
                     "</div>" +
