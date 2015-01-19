@@ -463,9 +463,11 @@ $(function () {
     }
 
     if ($(".photo-list").length > 0 && $(".photo-list").find("img").length > 0){
-      var img_list_html = "<div class='photo-view'>"+ $(".photo-list").find("img")[0].outerHTML +"</div><ul class='bxslider'>";
+      var imageNoStyle = $(".photo-list").find("img")[0].outerHTML.split("style")[0] + ">";
+      var img_list_html = "<div class='photo-view'>"+ imageNoStyle +"</div><ul class='bxslider'>";
       $(".photo-list").find("img").each(function() {
-        img_list_html += "<li>" + this.outerHTML + "</li>";
+        imageNoStyle = this.outerHTML.split("style")[0] + ">";
+        img_list_html += "<li>" + imageNoStyle + "</li>";
       })
       img_list_html += "</ul>";
       $(".photo-list").html(img_list_html);
