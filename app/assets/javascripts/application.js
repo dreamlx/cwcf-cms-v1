@@ -153,6 +153,17 @@ $(function () {
                     "</a>" +
                     " </div>" +
                     "<div class='card-wrapper'>" +
+                    "<a href='/partners/apply_insured'>" +
+                    "<div class='col-md-12 card'>" +
+                    "<div class='bg-left bg-05 col-md-1 col-xs-1'>" +
+                    "</div>" +
+                    "<div class='bg col-md-10'>" +
+                    "<span class='card-content'>申请参保</span>" +
+                    "</div>" +
+                    "</div>" +
+                    "</a>" +
+                    " </div>" +
+                    "<div class='card-wrapper'>" +
                     "<a href='/partners/apply' id='ex_apply_href'>" +
                     "<div class='col-md-12 card'>" +
                     "<div class='bg-left bg-06 col-md-1 col-xs-1'>" +
