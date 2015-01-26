@@ -8,5 +8,14 @@ class OrderObserver < ActiveRecord::Observer
       
     end
   end
+
+  def after_update(order)
+
+    begin
+      OrderMailer.update_confirm(order).deliver
+    rescue Net::SMTPAuthenticationError
+      
+    end
+  end
   
 end
