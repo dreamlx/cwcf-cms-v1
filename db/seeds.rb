@@ -16,7 +16,7 @@ Refinery::Hotels::Engine.load_seed
 Refinery::CorpPartners::Engine.load_seed
 
 # Added by Refinery CMS Contacts extension
-# Refinery::Contacts::Engine.load_seed
+ Refinery::Contacts::Engine.load_seed
 
 # Added by Refinery CMS Blog engine
 Refinery::Blog::Engine.load_seed

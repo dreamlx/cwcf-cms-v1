@@ -12,7 +12,7 @@ gem 'autoprefixer-rails'
 # end
 
 gem 'mysql2'
-
+gem 'yaml_db'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -7,10 +7,10 @@ development:
   encoding: utf8
   adapter: mysql2
   host: localhost
-  database: cwcf_dev
+  database: cwcf_pro
   username: root
   password: deploy
-
+  encoding: utf8
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -21,7 +21,7 @@ test: &test
   username: root
   password: deploy
   database: cwcf_test
-
+  encoding: utf8
 production: &production
   encoding: utf8
   adapter: mysql2
@@ -29,3 +29,4 @@ production: &production
   database: cwcf_pro
   username: root
   password: deploy
+  encoding: utf8
