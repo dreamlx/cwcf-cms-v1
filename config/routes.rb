@@ -2,13 +2,40 @@ Refinery::Core::Engine.routes.prepend do
   get '/about-us', :to => 'pages#about_us', :as => :about_us
   get '/news/services/hotels', :to => 'Hotels::Hotels#index'
   get '/news/services/hotels/:id', :to => 'Hotels::Hotels#show'
-  get '/news/previous', :to => 'Previous::Previous#index'
-  get '/news/previous/:id', :to => 'Previous::Previous#show'
+  get '/audience/services/hotels', :to => 'Hotels::Hotels#index'
+  get '/audience/services/hotels/:id', :to => 'Hotels::Hotels#show'
   get '/news/corp_partners', :to => 'CorpPartners::CorpPartners#index'
+  get '/media/cooperation', :to => 'Cooperations::Cooperations#index'
+  get '/partners/visitors', :to => 'Exhibitors::Exhibitors#index'
   # get '/news/corp_partners/:id', :to => 'CorpPartners::CorpPartners#show'
 end
 
 MyNewApp::Application.routes.draw do
+
+  resources :vipers
+
+
+  resources :orders
+
+
+  resources :stores
+  get '/admin/stores', :to => 'Admin::Stores#index'
+  post '/admin/stores', :to => 'Admin::Stores#create'
+  get '/admin/stores/:id/edit', :to => 'Admin::Stores#edit'
+  put    'admin/stores/:id', :to => 'Admin::Stores#update'
+  delete '/admin/stores/:id', :to => 'Admin::Stores#destroy'
+  get '/admin/stores/new', :to => 'Admin::Stores#new'
+  get '/admin/stores/:id/editxy', :to => 'Admin::Stores#editxy'
+  get '/admin/stores/:id', :to => 'Admin::Stores#show'
+
+  get "booking/index"
+  resources :line_items
+  resources :carts
+  resources :products
+  resources :blanks
+
+  mount Ckeditor::Engine => '/ckeditor'
+
 
   # This line mounts Refinery's routes at the root of your application.
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.

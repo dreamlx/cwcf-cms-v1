@@ -1,0 +1,53 @@
+sk:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Pridať Cooperation Type
+            reorder: Preusporiadať Cooperation Types
+            reorder_done: Koniec radenia Cooperation Types
+          records:
+            title: Cooperation Types
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Cooperation Types. Kliknite na "Pridať
+              Cooperation Type" pre pridanie prvého cooperation type.
+          cooperation_type:
+            view_live_html: Zobraziť náhľad cooperation type<br/><em>(otvorí sa v
+              novom okne)</em>
+            edit: Upraviť cooperation type
+            delete: Zmazať cooperation type
+        cooperations:
+          actions:
+            create_new: Pridať Cooperation
+            reorder: Preusporiadať Cooperations
+            reorder_done: Koniec radenia Cooperations
+          records:
+            title: Cooperations
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Cooperations. Kliknite na "Pridať
+              Cooperation" pre pridanie prvého cooperation.
+          cooperation:
+            view_live_html: Zobraziť náhľad cooperation<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť cooperation
+            delete: Zmazať cooperation
+      cooperation_types:
+        show:
+          other: Daľšie Cooperation Types
+      cooperations:
+        show:
+          other: Daľšie Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url

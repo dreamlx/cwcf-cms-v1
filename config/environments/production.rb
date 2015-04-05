@@ -49,9 +49,20 @@ MyNewApp::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  if config.respond_to?(:action_mailer)
-    # config.action_mailer.raise_delivery_errors = false
-  end
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'localhost: 3000' }
+  ActionMailer::Base.smtp_settings = {
+    :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
+    :address => "smtp.ewatch.cn",
+    :port => 25,
+    :domain => "ewatch.cn",
+    :authentication => :login,
+    :user_name => "fair@ewatch.cn",
+    :password => "szwa_member"
+  }
 
   # Enable threaded mode
   # config.threadsafe!

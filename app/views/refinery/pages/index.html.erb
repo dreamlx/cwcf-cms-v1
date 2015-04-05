@@ -2,7 +2,8 @@
   <% if @page.background_image.present? %>
   <style type="text/css">
     body {
-      background-image: url(<%= @page.background_image.url -%>);
+      background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+      background-size:cover;
     }
   </style>
   <% end %>

@@ -1,0 +1,21 @@
+<h2>预定展位</h2>
+
+<h3>可用展位</h3>
+
+<div class="list_products">
+<% @products.each do |product| %>
+<tr>
+  <% if product.status == "free" %>
+    <td><%= product.number %> </td>
+    <td><%= product.id %> </td>
+    <td><%= button_to '加入我的展区预定', line_items_path(product_id: product.id) %></td>
+  <% end %>
+</tr>
+<% end %>
+</div>
+
+<table>
+<% @cart.line_items.each do |item| %>
+  <td><%= item.product.number %></td>
+<% end %>
+</table>

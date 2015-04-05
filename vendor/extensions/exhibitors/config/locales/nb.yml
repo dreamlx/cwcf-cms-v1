@@ -1,0 +1,33 @@
+nb:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Lag en ny Exhibitor
+            reorder: Endre rekkefølgen på Exhibitors
+            reorder_done: Ferdig å endre rekkefølgen Exhibitors
+          records:
+            title: Exhibitors
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Exhibitors enda. Klikk på "Lag en ny Exhibitor" for å legge til din første exhibitor.
+          exhibitor:
+            view_live_html: Vis hvordan denne exhibitor ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne exhibitor
+            delete: Fjern denne exhibitor permanent
+      exhibitors:
+        show:
+          other: Andre Exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand

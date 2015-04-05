@@ -1,0 +1,35 @@
+zh-CN:
+  refinery:
+    plugins:
+      exhibitors:
+        title: 展商
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: 建立新的展商
+            reorder: 对展商重新排序
+            reorder_done: 对展商的重新排序结束
+          records:
+            title: 展商
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Exhibitors yet. Click "Add New Exhibitor" to add your first exhibitor.
+            no_items_yet: 目前没有展商. 点击 "建立新的展商" 创建一个展商.
+          exhibitor:
+            view_live_html: 查看展商的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑展商
+            delete: 永久删除展商
+      exhibitors:
+        show:
+          other: 其他展商
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: 标题
+        logo: 标识
+        description: 描述
+        year: 年份
+        area: 展区
+        place_num: 展位号
+        brand: 品牌

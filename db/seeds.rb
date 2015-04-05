@@ -12,8 +12,17 @@ Refinery::Pages::Engine.load_seed
 # Added by Refinery CMS Hotels extension
 Refinery::Hotels::Engine.load_seed
 
-# Added by Refinery CMS Previous extension
-Refinery::Previous::Engine.load_seed
-
 # Added by Refinery CMS CorpPartners extension
 Refinery::CorpPartners::Engine.load_seed
+
+# Added by Refinery CMS Contacts extension
+ Refinery::Contacts::Engine.load_seed
+
+# Added by Refinery CMS Blog engine
+Refinery::Blog::Engine.load_seed
+
+# Added by Refinery CMS Exhibitors extension
+Refinery::Exhibitors::Engine.load_seed
+
+# Added by Refinery CMS Cooperations extension
+Refinery::Cooperations::Engine.load_seed

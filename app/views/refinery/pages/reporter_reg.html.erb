@@ -1,0 +1,72 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @page.title() %></h1>
+    <section id='body'>
+      <div class="margin-1"></div>
+      <div class="margin-1"></div>
+      <div class="margin-1"></div>
+      <div class="form_txt">请尽量详细地填写您的信息，有助于您顺利通过记者证审核。</div>
+      <form id="reporter_form" action="/blanks" method="post">
+        <dl class="form_bg">
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+          <dd><span>媒体名称*</span>
+            <input name="blank[co_name]" type="text" class="txtinput1" required="required"/>
+          </dd>
+          <dd><span>记者姓名*</span>
+            <input name="blank[contact_name]" type="text" class="txtinput" required="required"/>
+          </dd>
+          <dd><span>公司职务*</span>
+            <input name="blank[job_position]" type="text" class="txtinput" required="required"/>
+          </dd>
+          <dd><span>负责栏目</span>
+            <input name="blank[job_columb]" type="text" class="txtinput1" />
+          </dd>
+          <dd><span>性别*</span>
+            <input name="blank[gender]" type="radio" value="0" checked="checked" />男　<input type="radio" name="blank[gender]" value="1" />女
+          </dd>
+          <dd><span>联系手机*</span>
+            <input name="blank[mobile_phone]" type="text" class="txtinput" required="required"/>
+          </dd>
+          <dd><span>电子邮箱*</span>
+            <input name="blank[email]" type="text" class="txtinput1" value="<%= current_refinery_user.email %>"/></dd>
+          <dd><span>国家</span>
+            <input name="blank[country]" type="text" class="txtinput1" /></dd>
+          <dd><span>公司邮编*</span>
+            <input name="blank[co_zip]" type="text" class="txtinput" required="required"/></dd>
+          <dd><span>公司地址*</span>
+            <input name="blank[co_add]" type="text" class="txtinput2" required="required"/></dd>
+          <dd><span>公司网址</span>
+            <input name="blank[co_url]" type="text" class="txtinput1" /></dd>
+          <dd><span>媒体类别*</span>
+            <select name="blank[media_type]">
+              <option value="网络">网络</option>
+              <option value="电视">电视</option>
+              <option value="期刊">期刊</option>
+              <option value="广播">广播</option>
+              <option value="移动">移动</option>
+              <option value="其他">其他</option>
+            </select>
+          </dd>
+          <input name="blank[apply_type]" value="ju_apply" type="hidden" />
+          <div class="margin-1"></div>
+          <div class="margin-1"></div>
+          <div class="margin-1"></div>
+          <dd class="form-btn"><input name="commit" type="submit" value="提交" class="btn btn-primary"/><input type="reset" value="重置" class="btn btn-warning"/></dd>
+        </dl>
+      </form>
+      <div class="margin-1"></div>
+      <%=raw @page.content_for(:body) %>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>

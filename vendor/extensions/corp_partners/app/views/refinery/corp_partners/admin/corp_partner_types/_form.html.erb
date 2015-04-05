@@ -1,0 +1,15 @@
+<%= form_for [refinery, :corp_partners_admin, @corp_partner_type] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @corp_partner_type,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.corp_partner_types.admin.corp_partner_types.corp_partner_type'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @corp_partner_type.name) -%>
+<% end -%>

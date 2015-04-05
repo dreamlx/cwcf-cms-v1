@@ -1,0 +1,29 @@
+<%= form_for(@store, url: "/admin/stores" + (@store.blank? ? "" : ("/"+ @store.id.to_s()))) do |f| %>
+<% if @store.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+  <ul>
+    <% @store.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :展区编号 %><br />
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :展区列数 %><br />
+  <%= f.number_field :x_no %>
+</div>
+<div class="field">
+  <%= f.label :展区行数 %><br />
+  <%= f.text_field :y_no %>
+</div>
+<div class="actions">
+  <%= f.submit "确定" %>
+</div>
+<% end %>

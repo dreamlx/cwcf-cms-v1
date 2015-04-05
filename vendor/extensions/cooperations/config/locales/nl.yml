@@ -1,0 +1,53 @@
+nl:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Nieuwe Cooperation Type toevoegen
+            reorder: De volgorde van de Cooperation Types wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Cooperation Type-volgorde
+          records:
+            title: Cooperation Types
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Cooperation Types. Druk op 'Nieuwe Cooperation
+              Type toevoegen' om de eerste toe te voegen.
+          cooperation_type:
+            view_live_html: Deze cooperation type op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze cooperation type
+            delete: Deze cooperation type definitief verwijderen
+        cooperations:
+          actions:
+            create_new: Nieuwe Cooperation toevoegen
+            reorder: De volgorde van de Cooperations wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Cooperation-volgorde
+          records:
+            title: Cooperations
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Cooperations. Druk op 'Nieuwe Cooperation
+              toevoegen' om de eerste toe te voegen.
+          cooperation:
+            view_live_html: Deze cooperation op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze cooperation
+            delete: Deze cooperation definitief verwijderen
+      cooperation_types:
+        show:
+          other: Andere Cooperation Types
+      cooperations:
+        show:
+          other: Andere Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url

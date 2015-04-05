@@ -1,0 +1,108 @@
+
+  <div class='blanks_body'>
+    <h1 id='body_content_title'>表单申请列表 <a href="/refinery" class="return-admin">Admin</a></h1>
+    <input name="authenticity_token" id="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
+    <div class="blanks-filter">
+      <h4>过滤器</h4>
+      <form class="filterform" name="filterform" action="/blanks" method="get">
+        <dd class="filter-item"><span>申请类型</span>
+          <select name="media_type">
+            <option value="all">请选择</option>
+            <option value="ju_apply">记者证</option>
+            <option value="ex_apply">参展商</option>
+          </select>
+        </dd>
+        <dd  class="filter-item"><span>申请状态</span>
+          <select name="status">
+            <option value="all">请选择</option>
+            <option value="applied">申请中</option>
+            <option value="accepted">已通过</option>
+            <option value="denied">已拒绝</option>
+          </select>
+        </dd>
+        <dd  class="filter-item">
+          <input name="co_name" placeholder="公司名称">
+        </dd>
+        <dd class="filter-item"><input id="btnButtonReg" type="submit" value="确定"></dd>
+      </form>
+    </div>
+    <section id='blanks'>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>申请类型</th>
+          <th>公司名称</th>
+          <th>品牌名称</th>
+          <th>联系人</th>
+          <th>公司地址</th>
+          <th>公司邮编</th>
+          <th>公司电话</th>
+          <th>联系人电话</th>
+          <th>记者（负责栏目）</th>
+          <th>联系邮箱</th>
+          <th>国籍</th>
+          <th>记者（媒体类型）</th>
+          <th>公司传真</th>
+          <th>申请状态</th>
+          <th>更改状态</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <% @blanks.each do |blank| %>
+        <tr>
+          <td><%= blank.id %></td>
+          <td><% blank.apply_type %>
+            <% if blank.apply_type == "ex_apply" %>
+            参展商
+            <% else %>
+            记者证
+            <% end %>
+          </td>
+          <td><%= blank.co_name %></td>
+          <td><%= blank.brand_name %></td>
+          <td><%= blank.contact_name %></td>
+          <td><%= blank.co_add %></td>
+          <td><%= blank.co_zip %></td>
+          <td><%= blank.co_phone %></td>
+          <td><%= blank.mobile_phone %></td>
+          <td><%= blank.job_columb %></td>
+          <td><%= blank.email %></td>
+          <td><%= blank.country %></td>
+          <td><%= blank.media_type %></td>
+          <td><%= blank.co_fax %></td>
+          <td id="status_<%= blank.id %>">
+						<% if blank.status == "applied" %>
+							申请中
+						<% elsif blank.status == "accepted" %>
+							已通过
+						<% else %>
+							已拒绝
+						<% end %>
+					</td>
+          <td>
+            <select name="blank[status]" id="select_<%= blank.id %>">
+              <option value="applied">申请中</option>
+              <option value="accepted">已通过</option>
+              <option value="denied">被拒绝</option>
+            </select>
+          </td>
+          <!-- <td><%= link_to '查看', blank %></td> -->
+          <td><a href="javascript:;" class="update_btn" data-id="<%= blank.id %>">更新</a></td>
+          <td><%= link_to '删除', blank, method: :delete, data: { confirm: '确定删除?' } %></td>
+        </tr>
+        <% end %>
+      </table>
+    </section>
+  </div>
+
+<% content_for :stylesheets do %>
+<style type="text/css">
+.blanks_body {
+  margin: 40px 40px 80px 40px;
+}
+.blanks_body h1 {
+  margin-bottom: 40px;
+}
+</style>
+<% end %>

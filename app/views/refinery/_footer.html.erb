@@ -1,9 +1,24 @@
 <nav class="navbar navbar-default navbar-fixed-bottom navbar-bottom" role="navigation">
-  <div class="row">
-    <div class="logo-share col-md-3">
-      <h1 id='logo'>
-        <%= link_to Refinery::Core.site_name, refinery.root_path %>
-      </h1>
+  <div class="row footer-menu">
+    <div class="logo-share col-md-2">
+      <ul class="ico_links">
+        <li class="words">了解：</li>
+        <li class="i1"><a href="//www.fitime.cn" target="_blank"><img class="jph_logo" src="/assets/jplogo.png"/></a></li>
+        <li class="words">关注：</li>
+        <li class="i2"><span></span><a href="http://weibo.com/chinawatchfair" target="_blank"></a></li>
+        <li class="i3"><a href="javascript:;" class="wei_btn"></a></li>
+        <li class="i4"><a href="javascript:;" class="tel_btn"></a></li>
+      </ul>
+    </div>
+    <div class="sina-weibo">
+
+    </div>
+
+    <div class="qrcode">
+
+    </div>
+    <div class="tele-share">
+      0755-82949106
     </div>
 
     <div class="menu menu-bottom">
@@ -20,7 +35,7 @@
   <div class="row copy-right">
     <p>
       <%= t('.copyright', :year => Time.now.year,
-                      :site_name => Refinery::Core.site_name) %>
+                      :site_name => Refinery::Core.site_name) %> <a class="beian" href="http://www.miitbeian.gov.cn" target="_blank">ICP号码：[粤]ICP备13057432号</a>
     </p>
   </div>
 </nav>

@@ -1,0 +1,17 @@
+<div class="store_box">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @product.status %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @product.number %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+</div>

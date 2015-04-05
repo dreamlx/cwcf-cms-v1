@@ -1,0 +1,18 @@
+<%# Add items here to have them appear on your dashboard's right hand side menu %>
+<% if current_refinery_user.has_role?(:superuser)%>
+  <li>
+    <a href="/blanks" class="edit_icon"><%= t('.manage_applies') %></a>
+  </li>
+  <li>
+    <a href="/admin/stores" class="edit_icon"><%= t('.manage_place_view') %></a>
+  </li>
+  <li>
+    <a href="/products" class="edit_icon"><%= t('.manage_exhibition_no') %></a>
+  </li>
+  <li>
+    <a href="/orders" class="edit_icon"><%= t('.manage_orders') %></a>
+  </li>
+  <li>
+    <a href="/vipers" class="edit_icon"><%= t('.manage_vipers') %></a>
+  </li>
+<% end %>

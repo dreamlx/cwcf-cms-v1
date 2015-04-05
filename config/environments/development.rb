@@ -14,9 +14,22 @@ MyNewApp::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  if config.respond_to?(:action_mailer)
-    config.action_mailer.raise_delivery_errors = false
-  end
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'localhost: 3000' }
+  # ActionMailer::Base.smtp_settings[:openssl_verify_mode] = false
+  # ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
+  ActionMailer::Base.smtp_settings = {
+    :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
+    :address => "smtp.ewatch.cn",
+    :port => 25,
+    :domain => "ewatch.cn",
+    :authentication => :login,
+    :user_name => "fair@ewatch.cn",
+    :password => "szwa_member"
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

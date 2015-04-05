@@ -1,10 +1,27 @@
 tr:
   refinery:
     plugins:
+      corp_partner_types:
+        title: Corp Partner Types
       corp_partners:
         title: Corp Partners
     corp_partners:
       admin:
+        corp_partner_types:
+          actions:
+            create_new: Yeni Ekle Corp Partner Type
+            reorder: Tekrar sirala Corp Partner Types
+            reorder_done: Tekrar siralama tamamlandiCorp Partner Types
+          records:
+            title: Corp Partner Types
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Corp Partner Types yok henuz.  Tikla "Yeni
+              Ekle Corp Partner Type" eklemek senin ilk corp partner type.
+          corp_partner_type:
+            view_live_html: Bunu canlu corp partner type goruntule <br/><em>(yeni
+              bir pencerede acar)</em>
+            edit: Bunu Duzenle corp partner type
+            delete: Bunu Sil corp partner type sonsuza dek
         corp_partners:
           actions:
             create_new: Yeni Ekle Corp Partner
@@ -13,17 +30,24 @@ tr:
           records:
             title: Corp Partners
             sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
-            no_items_yet: Herhangi bir Corp Partners yok henuz.  Tikla "Yeni Ekle Corp Partner" eklemek senin ilk corp partner.
+            no_items_yet: Herhangi bir Corp Partners yok henuz.  Tikla "Yeni Ekle
+              Corp Partner" eklemek senin ilk corp partner.
           corp_partner:
-            view_live_html: Bunu canlu corp partner goruntule <br/><em>(yeni bir pencerede acar)</em>
+            view_live_html: Bunu canlu corp partner goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
             edit: Bunu Duzenle corp partner
             delete: Bunu Sil corp partner sonsuza dek
+      corp_partner_types:
+        show:
+          other: Diger Corp Partner Types
       corp_partners:
         show:
           other: Diger Corp Partners
   activerecord:
     attributes:
-      'refinery/corp_partners/corp_partner':
+      refinery/corp_partners/corp_partner_type:
+        name: Name
+      refinery/corp_partners/corp_partner:
         title: Title
         corp_partner_avatar_id: Corp Partner Avatar
         main_url: Main Url

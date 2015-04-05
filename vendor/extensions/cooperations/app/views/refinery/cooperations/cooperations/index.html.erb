@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="cooperations">
+    <% @cooperations.each do |cooperation| %>
+      <li>
+        <%= link_to cooperation.title, refinery.cooperations_cooperation_path(cooperation) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

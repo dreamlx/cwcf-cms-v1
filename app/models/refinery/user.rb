@@ -8,6 +8,11 @@ module Refinery
     has_and_belongs_to_many :roles, :join_table => :refinery_roles_users
 
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
+
+    has_one :blank
+    has_many :orders
+    has_many :positions
+
     friendly_id :username, :use => [:slugged]
 
     # Include default devise modules. Others available are:
@@ -87,16 +92,21 @@ module Refinery
       roles.any?{|r| r.title == title.to_s.camelize}
     end
 
+    def remove_role(title)
+      raise ArgumentException, "Role should be the title of the role not a role object." if title.is_a?(::Refinery::Role)
+      roles.delete_if { |r| r.title == title.to_s.camelize}
+    end
+
     def create_first
       if valid?
         # first we need to save user
         save
         # add refinery role
-        add_role(:refinery)
+        # add_role(:refinery)
         # add superuser role if there are no other users
-        add_role(:superuser) if ::Refinery::Role[:refinery].users.count == 1
+        # add_role(:superuser) if ::Refinery::Role[:refinery].users.count == 1
         # add plugins
-        self.plugins = Refinery::Plugins.registered.in_menu.names
+        # self.plugins = Refinery::Plugins.registered.in_menu.names
       end
 
       # return true/false based on validations
@@ -105,6 +115,29 @@ module Refinery
 
     def to_s
       username.to_s
+    end
+
+    def is_certified
+      Blank.where("user_id = ?", self.id).collect do |blank|
+        if blank.status == "accepted"
+          return true
+        end
+      end
+      return false
+    end
+
+    def is_ex_certified
+      if self.is_certified && self.has_role?(:exhibitor)
+        return true
+      end
+      return false
+    end
+
+    def is_jo_certified
+      if self.is_certified && self.has_role?(:journalist)
+        return true
+      end
+      return false
     end
 
     private
@@ -120,6 +153,7 @@ module Refinery
     def strip_username
       self.username = self.username.strip.gsub(/\ {2,}/, ' ') if self.username?
     end
+
 
   end
 end

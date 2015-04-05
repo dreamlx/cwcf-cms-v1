@@ -1,10 +1,27 @@
 nl:
   refinery:
     plugins:
+      corp_partner_types:
+        title: Corp Partner Types
       corp_partners:
         title: Corp Partners
     corp_partners:
       admin:
+        corp_partner_types:
+          actions:
+            create_new: Nieuwe Corp Partner Type toevoegen
+            reorder: De volgorde van de Corp Partner Types wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Corp Partner Type-volgorde
+          records:
+            title: Corp Partner Types
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Corp Partner Types. Druk op 'Nieuwe Corp
+              Partner Type toevoegen' om de eerste toe te voegen.
+          corp_partner_type:
+            view_live_html: Deze corp partner type op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze corp partner type
+            delete: Deze corp partner type definitief verwijderen
         corp_partners:
           actions:
             create_new: Nieuwe Corp Partner toevoegen
@@ -13,17 +30,24 @@ nl:
           records:
             title: Corp Partners
             sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-            no_items_yet: Er zijn nog geen Corp Partners. Druk op 'Nieuwe Corp Partner toevoegen' om de eerste toe te voegen.
+            no_items_yet: Er zijn nog geen Corp Partners. Druk op 'Nieuwe Corp Partner
+              toevoegen' om de eerste toe te voegen.
           corp_partner:
-            view_live_html: Deze corp partner op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            view_live_html: Deze corp partner op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
             edit: Bewerk deze corp partner
             delete: Deze corp partner definitief verwijderen
+      corp_partner_types:
+        show:
+          other: Andere Corp Partner Types
       corp_partners:
         show:
           other: Andere Corp Partners
   activerecord:
     attributes:
-      'refinery/corp_partners/corp_partner':
+      refinery/corp_partners/corp_partner_type:
+        name: Name
+      refinery/corp_partners/corp_partner:
         title: Title
         corp_partner_avatar_id: Corp Partner Avatar
         main_url: Main Url

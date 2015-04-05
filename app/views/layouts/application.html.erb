@@ -12,6 +12,7 @@
   </head>
   <body id="<%= canonical_id @page %>">
     <!-- <%= site_bar -%> -->
+    <!--[if lt IE 9 ]><div class="old-ie"><div>为了最佳浏览效果，请升级ie，<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">点击此处下载最新ie</a></div></div><![endif]-->
     <div id="page_container">
       <header id="header">
         <%= render "/refinery/header" -%>
@@ -21,11 +22,96 @@
         <div class='card-holder' id="card-holder">
 
         </div>
+        <div class="login_form" id="login_form1">
+          <div class="close_btn">X&nbsp;关闭</div>
+          <dl class="form_1">
+
+            <form action="/refinery/users/login" method="post">
+              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>" >
+              <dd class="textinput">
+                <input id="txtUserName" type="text" placeholder="邮箱或者用户名" name="refinery_user[login]" required="required">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword" type="password" placeholder="密码" name="refinery_user[password]" autocomplete="off" required="required">
+              </dd>
+              <dd class="f">
+                <a href="/refinery/users/password/new">忘记密码</a>
+              </dd>
+
+              <dd class="form-btn">
+                <input id="btnLoginSubmit" type="submit" value="登录">
+              </dd>
+            </form>
+
+          </dl>
+        </div>
+        <div class="login_form" id="login_form2">
+          <div class="close_btn">X&nbsp;关闭</div>
+          <dl class="form_2">
+
+            <form id="regform" name="regform" action="/refinery/users/register" method="post">
+              <div style="margin:0;padding:0;display:inline">
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
+              </div>
+              <div id="regmsgtips" style="color:#BC1B23">&nbsp;</div>
+              <dd class="textinput">
+                <input id="txtEmail" type="text" class="input wide required email" name="user[email]" placeholder="邮箱" required="required"  pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$">
+              </dd>
+              <dd class="textinput">
+                <input id="txtName" type="text" class="input wide required" name="user[username]" placeholder="用户名" required="required">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword1" type="password" value="" class="input wide required" minlength="6" maxlength="20" name="user[password]" placeholder="密码" autocomplete="off" required="required">
+              </dd>
+              <dd class="textinput">
+                <input id="txtPassword2" type="password" value="" class="input wide required" equalto="#txtPassword1" name="user[password_confirmation]" placeholder="密码确认" autocomplete="off" required="required">
+              </dd>
+
+              <dd class="sl">
+                <label class="label1  radio-on">
+                  <input type="radio" name="jiaose" value="exhibitor" id="RadioGroup1_0" checked="checked">
+                  参展商
+                </label>
+                <label class="label2">
+                  <input type="radio" name="jiaose" value="normal" id="RadioGroup1_1">
+                  观众
+                </label>
+                <label style="margin:none !important" class="label3">
+                  <input type="radio" name="jiaose" value="journalist" id="RadioGroup1_2">
+                  记者
+                </label>
+              </dd>
+
+
+              <dd class="form-btn"><input id="btnButtonReg" type="submit" value="注册"></dd>
+              <dd class="f1">请填写您的真实资料，以方便收到最新资讯！</dd>
+            </form>
+          </dl>
+        </div>
       </section>
       <footer>
         <%= render "/refinery/footer" -%>
       </footer>
     </div>
     <%= render "/refinery/javascripts" %>
+    <script>
+      $(document).ready(function(){
+        <% if flash.now[:notice] == "1111" %>
+          alert("您的用户名或密码错误.");
+        <% end %>
+        <% if flash.now[:notice] == "1112" %>
+          alert("请您注意查收邮件.");
+        <% end %>
+      });
+    </script>
+    <!--[if lt IE 9 ]>
+    <script>
+      $(document).ready(function(){
+        $("#page_container").css({"-webkit-filter":"blur(5px)",'-moz-filter':"blur(5px)","-ms-filter":"blur(5px)","filter":"progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);"});
+        $("#page_container").css('opacity',0.6);
+        $(".old-ie").animate({top: "0"}, "slow");
+      });
+    </script>
+    <![endif]-->
   </body>
 </html>

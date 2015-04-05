@@ -1,0 +1,27 @@
+<h1>展区列表</h1>
+
+<table>
+  <tr>
+    <th>展区编号</th>
+    <th>展区的列数</th>
+    <th>展区的行数</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stores.each do |store| %>
+  <tr>
+    <td><%= store.name %></td>
+    <td><%= store.x_no %></td>
+    <td><%= store.y_no %></td>
+    <td><%= link_to '查看当前展区', store %></td>
+    <td><%= link_to '编辑当前展区', edit_store_path(store) %></td>
+    <td><%= link_to '删除当前展区', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '增加新展区', new_store_path %>

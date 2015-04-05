@@ -1,0 +1,81 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @visitors_page.title() %></h1>
+    <section id='body'>
+      <div class="margin-1"></div>
+      <div class="h3-tit">
+        <h3>展商搜索</h3>
+        <span class="h3-tit-arrow"></span>
+      </div>
+
+      <div class="margin-1"></div>
+      <form action="visitors" method="get">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td class="txt_input"><input type="text" name="place_num" value="" placeholder="输入展位号..."></td>
+            <td class="txt_input"><input type="text" name="place_name" value="" placeholder="输入公司名称..."></td>
+            <td class="btn"><input type="submit" value="提交"></td>
+          </tr>
+        </tbody></table>
+      </form>
+      <div class="margin-1"></div>
+
+      <ul id="exhibitors" class="blist">
+        <% if @exhibitors.length > 0 %>
+          <% @exhibitors.each do |exhibitor| %>
+          <li>
+            <div>
+              <a data-title="<%= exhibitor.title %>" data-description="<%= exhibitor.description %>" data-images="<%= exhibitor.images_text %>" >
+                <img src="<%= exhibitor.logo_image.url if !exhibitor.logo_image.blank? %>" height="60" alt="<%= exhibitor.title %>">
+              </a>
+            </div>
+          </li>
+          <% end %>
+        <% else %>
+          <div class="no-content">
+            您好，没有查询到相关展商
+          </div>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<div id="exhibitorModal" class="modal exhibitorModal" tabindex="-1" role="dialog" aria-labelledby="exhibitorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="exhibitorModalLabel"></h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row ex-body">
+          <div class="ex-logo">
+          </div>
+          <div class="ex-content">
+            <div class="ex-title">
+            </div>
+            <div class="ex-desc">
+            </div>
+          </div>
+        </div>
+        <div class="row ex-pic">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+<% if @visitors_page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @visitors_page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>

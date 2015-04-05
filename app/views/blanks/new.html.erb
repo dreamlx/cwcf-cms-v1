@@ -1,0 +1,20 @@
+
+<div class='blanks_body'>
+  <h1 id='body_content_title'>新建申请表单</h1>
+  <section id='blanks'>
+    <%= render 'form' %>
+
+    <%= link_to 'Back', blanks_path %>
+  </section>
+</div>
+
+<% content_for :stylesheets do %>
+<style type="text/css">
+  .blanks_body {
+    margin: 40px 40px 80px 40px;
+  }
+  .blanks_body h1 {
+    margin-bottom: 40px;
+  }
+</style>
+<% end %>

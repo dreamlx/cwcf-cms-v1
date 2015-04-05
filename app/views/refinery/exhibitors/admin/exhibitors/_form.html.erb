@@ -1,0 +1,73 @@
+<%= form_for [refinery, :exhibitors_admin, @exhibitor] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @exhibitor,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :logo -%>
+    <%= f.text_field :logo -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:description],
+                :object => "exhibitors/exhibitor" -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+    :f => f,
+    :fields => [:images_text],
+    :object => "exhibitors/exhibitor" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :year -%>
+    <%= f.number_field :year -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :area -%>
+    <%= f.text_field :area -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :place_num -%>
+    <%= f.text_field :place_num -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :brand -%>
+    <%= f.text_field :brand -%>
+  </div>
+
+  <div class="field">
+    <%= f.label :logo_image %>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :logo_image_id,
+      :image => f.object.logo_image,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.exhibitors.admin.exhibitors.exhibitor'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @exhibitor.title) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

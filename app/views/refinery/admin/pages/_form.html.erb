@@ -27,6 +27,18 @@
     %>
   </div>
 
+  <div class="field">
+    <%= f.label :page_avatar %>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+      :f => f,
+      :field => :page_avatar_id,
+      :image => f.object.page_avatar,
+      :toggle_image_display => false
+    }
+    %>
+  </div>
+
+
   <%= render 'form_advanced_options', :f => f %>
 
   <%= render '/refinery/admin/form_actions', :f => f,
@@ -70,36 +82,6 @@
         });
         e.preventDefault();
       });
-      window['raptor']('.raptor-preset-element').raptor({
-        autoEnable:true,
-        plugins:{
-          dock:{
-            docked:true,
-            dockToElement:true,
-            persist:false
-          },
-          cancel:false,
-          revisions:false,
-          save:false,
-          saveJson:false,
-          unsavedEditWarning:false,
-          placeholder:{
-            content: "这里填写内容",
-            tag: 'p',
-            select: true
-          }
-        },
-        unloadWarning:false,
-        maximum: 10000
-      });
     });
   </script>
-<% end %>
-
-<% content_for :stylesheets do %>
-  <style type="text/css">
-    .new_page_parts {
-      z-index: 20;
-    }
-  </style>
 <% end %>

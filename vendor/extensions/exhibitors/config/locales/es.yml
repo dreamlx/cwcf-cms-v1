@@ -1,0 +1,34 @@
+es:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+#        article: masculino/femenino
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Crear nuevo exhibitor
+            reorder: Reordenar exhibitors
+            reorder_done: Reordenación de exhibitors completada
+          records:
+            title: Exhibitors
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay exhibitors todavía. Pulsa en "Crear nuevo Exhibitor" para crear tu primer exhibitor.
+          exhibitor:
+            view_live_html: Ver este exhibitor como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este exhibitor
+            delete: Borrar este exhibitor para siempre
+      exhibitors:
+        show:
+          other: Otros exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand

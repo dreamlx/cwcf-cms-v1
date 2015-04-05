@@ -1,3 +1,6 @@
 // Import Bootstrap and Customize it here.
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body {
+  font-family: "Microsoft YaHei", "SimHei";
+}

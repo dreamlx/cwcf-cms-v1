@@ -2,31 +2,31 @@ zh-CN:
   refinery:
     plugins:
       hotels:
-        title: Hotels
+        title: 酒店
     hotels:
       admin:
         hotels:
           actions:
-            create_new: 建立新的 Hotel
-            reorder: 对 Hotels 重新排序
-            reorder_done: 对 Hotels 的重新排序结束
+            create_new: 建立新的酒店
+            reorder: 对酒店重新排序
+            reorder_done: 对酒店的重新排序结束
           records:
-            title: Hotels
+            title: 酒店
             sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
 
             # There are no Hotels yet. Click "Add New Hotel" to add your first hotel.
-            no_items_yet: 目前没有 Hotels . 点击 "Add New Hotel" 创建一个hotel.
+            no_items_yet: 目前没有酒店 . 点击 "建立新的酒店" 创建一个酒店.
           hotel:
-            view_live_html: 查看 hotel 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 hotel
-            delete: 永久删除 hotel
+            view_live_html: 查看酒店的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑酒店
+            delete: 永久删除 酒店
       hotels:
         show:
-          other: 其他 Hotels
+          other: 其他酒店
   activerecord:
     attributes:
       'refinery/hotels/hotel':
-        title: Title
-        star: Star
-        address: Address
-        description: Description
+        title: 标题
+        star: 星级
+        address: 地址
+        description: 描述

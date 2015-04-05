@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @corp_partner_type.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @corp_partner_type.name %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="corp_partner_types">
+      <% @corp_partner_types.each do |corp_partner_type| %>
+        <li>
+          <%= link_to corp_partner_type.name, refinery.corp_partners_corp_partner_type_path(corp_partner_type) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

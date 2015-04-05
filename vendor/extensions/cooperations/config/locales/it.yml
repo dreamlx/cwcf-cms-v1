@@ -1,0 +1,53 @@
+it:
+  refinery:
+    plugins:
+      cooperation_types:
+        title: Cooperation Types
+      cooperations:
+        title: Cooperations
+    cooperations:
+      admin:
+        cooperation_types:
+          actions:
+            create_new: Aggiungi Nuovo Cooperation Type
+            reorder: Riordina Cooperation Types
+            reorder_done: Termina il Riordino di Cooperation Types
+          records:
+            title: Cooperation Types
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Cooperation Types. Clicca "Aggiungi Nuovo
+              Cooperation Type" per aggiungere il tuo primo cooperation type.
+          cooperation_type:
+            view_live_html: Guarda live questo cooperation type <br/><em>(apre una
+              nuova finestra)</em>
+            edit: Modifica questo cooperation type
+            delete: Rimuovi per sempre questo cooperation type
+        cooperations:
+          actions:
+            create_new: Aggiungi Nuovo Cooperation
+            reorder: Riordina Cooperations
+            reorder_done: Termina il Riordino di Cooperations
+          records:
+            title: Cooperations
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Cooperations. Clicca "Aggiungi Nuovo
+              Cooperation" per aggiungere il tuo primo cooperation.
+          cooperation:
+            view_live_html: Guarda live questo cooperation <br/><em>(apre una nuova
+              finestra)</em>
+            edit: Modifica questo cooperation
+            delete: Rimuovi per sempre questo cooperation
+      cooperation_types:
+        show:
+          other: Altri Cooperation Types
+      cooperations:
+        show:
+          other: Altri Cooperations
+  activerecord:
+    attributes:
+      refinery/cooperations/cooperation_type:
+        name: Name
+      refinery/cooperations/cooperation:
+        title: Title
+        cooperation_avatar_id: Cooperation Avatar
+        main_url: Main Url

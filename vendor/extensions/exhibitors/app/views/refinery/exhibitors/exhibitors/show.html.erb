@@ -1,0 +1,63 @@
+<% content_for :body_content_title do %>
+  <%= @exhibitor.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @exhibitor.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Logo</h1>
+    <p>
+      <%=raw @exhibitor.logo %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @exhibitor.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Year</h1>
+    <p>
+      <%=raw @exhibitor.year %>
+    </p>
+  </section>
+  <section>
+    <h1>Area</h1>
+    <p>
+      <%=raw @exhibitor.area %>
+    </p>
+  </section>
+  <section>
+    <h1>Place Num</h1>
+    <p>
+      <%=raw @exhibitor.place_num %>
+    </p>
+  </section>
+  <section>
+    <h1>Brand</h1>
+    <p>
+      <%=raw @exhibitor.brand %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="exhibitors">
+      <% @exhibitors.each do |exhibitor| %>
+        <li>
+          <%= link_to exhibitor.title, refinery.exhibitors_exhibitor_path(exhibitor) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

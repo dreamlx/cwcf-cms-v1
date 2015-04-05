@@ -1,0 +1,33 @@
+it:
+  refinery:
+    plugins:
+      exhibitors:
+        title: Exhibitors
+    exhibitors:
+      admin:
+        exhibitors:
+          actions:
+            create_new: Aggiungi Nuovo Exhibitor
+            reorder: Riordina Exhibitors
+            reorder_done: Termina il Riordino di Exhibitors
+          records:
+            title: Exhibitors
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Exhibitors. Clicca "Aggiungi Nuovo Exhibitor" per aggiungere il tuo primo exhibitor.
+          exhibitor:
+            view_live_html: Guarda live questo exhibitor <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo exhibitor
+            delete: Rimuovi per sempre questo exhibitor
+      exhibitors:
+        show:
+          other: Altri Exhibitors
+  activerecord:
+    attributes:
+      'refinery/exhibitors/exhibitor':
+        title: Title
+        logo: Logo
+        description: Description
+        year: Year
+        area: Area
+        place_num: Place Num
+        brand: Brand

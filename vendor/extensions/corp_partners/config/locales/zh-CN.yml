@@ -1,31 +1,49 @@
 zh-CN:
   refinery:
     plugins:
+      corp_partner_types:
+        title: 合作伙伴类型
       corp_partners:
-        title: Corp Partners
+        title: 合作伙伴
     corp_partners:
       admin:
+        corp_partner_types:
+          actions:
+            create_new: "建立新的合作伙伴类型"
+            reorder: "对合作伙伴类型重新排序"
+            reorder_done: "对合作伙伴类型的重新排序结束"
+          records:
+            title: 合作伙伴类型
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有合作伙伴类型 . 点击 "建立新的合作伙伴类型" 创建一个合作伙伴类型.
+          corp_partner_type:
+            view_live_html: "查看合作伙伴类型的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑合作伙伴类型"
+            delete: "永久删除合作伙伴类型"
         corp_partners:
           actions:
-            create_new: 建立新的 Corp Partner
-            reorder: 对 Corp Partners 重新排序
-            reorder_done: 对 Corp Partners 的重新排序结束
+            create_new: "建立新的合作伙伴"
+            reorder: "对合作伙伴重新排序"
+            reorder_done: "对合作伙伴的重新排序结束"
           records:
-            title: Corp Partners
-            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
-
-            # There are no Corp Partners yet. Click "Add New Corp Partner" to add your first corp partner.
-            no_items_yet: 目前没有 Corp Partners . 点击 "Add New Corp Partner" 创建一个corp partner.
+            title: 合作伙伴
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有合作伙伴 . 点击 "建立新的合作伙伴" 创建一个合作伙伴.
           corp_partner:
-            view_live_html: 查看 corp partner 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 corp partner
-            delete: 永久删除 corp partner
+            view_live_html: "查看合作伙伴的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑合作伙伴"
+            delete: "永久删除合作伙伴"
+      corp_partner_types:
+        show:
+          other: "其他合作伙伴类型"
       corp_partners:
         show:
-          other: 其他 Corp Partners
+          other: "其他合作伙伴类型"
   activerecord:
     attributes:
-      'refinery/corp_partners/corp_partner':
-        title: Title
-        corp_partner_avatar_id: Corp Partner Avatar
-        main_url: Main Url
+      refinery/corp_partners/corp_partner_type:
+        name: 名称
+      refinery/corp_partners/corp_partner:
+        title: 标题
+        corp_partner_avatar_id: 合作伙伴标识
+        main_url: 链接

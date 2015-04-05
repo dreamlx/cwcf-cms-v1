@@ -1,0 +1,41 @@
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%= @page.title() %></h1>
+    <section id='body'>
+      <div class="row-fluid">
+        <div class="col-md-12">
+          <div class="row mix-grid">
+            <% (::Refinery::Page.where(:parent_id => @page.id )).order('lft ASC').each do |previou_item| %>
+              <div class="col-md-4 col-sm-6 mix ">
+                <div class="mix-inner">
+                  <a href='<%= "/news/previous/"+previou_item.id.to_s() %>'>
+                    <% if previou_item.page_avatar.blank? %>
+                      <div class="previous-title-item">
+                        <div><%= previou_item.title() %></div>
+                      </div>
+                    <% else %>
+                      <div class="previous-item">
+                        <img src='<%= previou_item.page_avatar.url %>'>
+                      </div>
+                    <% end %>
+                  </a>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% if @page.background_image.present? %>
+  <style type="text/css">
+    body {
+      background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+      background-size:cover;
+    }
+  </style>
+  <% end %>
+<% end %>

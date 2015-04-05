@@ -1,42 +1,27 @@
 <div class='show_container'>
 	<div class='show_body'>
-		<h1 id='body_content_title'><%=raw @page.title() %></h1>
+		<h1 id='body_content_title'><%=raw @page.parent.title() %></h1>
 		<section id='body'>
-      <ul class="nav nav-tabs" role="tablist">
-				<li class="active">
-					<a href='#traffic-services'  role="tab" data-toggle="tab">
-						交通信息
-						</a>
+			<div class="margin-1"></div>
+			<ul class="tab-5">
+				<% (::Refinery::Page.where(:parent_id => @page.parent_id )).order('lft ASC').each do |item| %>
+				<li class="<%= 'hover' if item == @page %>">
+					<a href="<%= refinery.url_for(item.url_marketable) %>">
+						<% if (::Refinery::Page.where(:parent_id => @page.parent_id ).order('lft ASC').first != item) %>
+						<span class="arrow-l">&#160;</span>
+						<% end %>
+						<span class="arrow-c w164"><%= item.title() %></span>
+						<% if (::Refinery::Page.where(:parent_id => @page.parent_id ).order('lft ASC').last != item) %>
+						<span class="arrow-r">&#160;</span>
+						<% end %>
+					</a>
 				</li>
-				<li>
-					<a href='/news/services/hotels'>
-						酒店信息
-						</a>
-				</li>
-				<li>
-					<a href='#repast-services'  role="tab" data-toggle="tab">
-						餐饮指南
-						</a>
-				</li>
-				<li>
-					<a href='#other-services'  role="tab" data-toggle="tab">
-						其他服务
-						</a>
-				</li>
-      </ul>
-      <div class="tab-content">
-				<div class="tab-pane active" id='traffic-services'>
-					<%=raw @page.content_for(:traffic_services) %>
-				</div>
-				<div class="tab-pane" id='hotel-services'>
-				</div>
-				<div class="tab-pane" id='repast-services'>
-					<%=raw @page.content_for(:repast_services) %>
-				</div>
-				<div class="tab-pane" id='other-services'>
-					<%=raw @page.content_for(:other_services) %>
-				</div>
-      </div>
+				<% end %>
+			</ul>
+			<div class="margin-1"></div>
+			<!-- <div class="photo-list"> -->
+				<%=raw @page.content_for(:body) %>
+			<!-- <div> -->
 		</section>
 	</div>
 </div>
@@ -45,7 +30,8 @@
   <% if @page.background_image.present? %>
   <style type="text/css">
     body {
-      background-image: url(<%= @page.background_image.url -%>);
+      background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+			background-size:cover;
     }
   </style>
   <% end %>

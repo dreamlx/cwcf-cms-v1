@@ -1,0 +1,8 @@
+<div class="store_box">
+  <h1>Editing store</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to '查看当前展区', "/admin/stores/"+ @store.id.to_s() %> |
+  <%= link_to '返回', "/admin/stores" %>
+</div>

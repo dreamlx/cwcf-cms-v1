@@ -1,5 +1,7 @@
 <div class='page_part' id='<%= new_part ? "page_part_new_#{part_index}" : part.to_param %>'>
   <%= hidden_field_tag "page[parts_attributes][#{part_index}][title]", part.title if new_part %>
-  <%= text_area_tag "page[parts_attributes][#{part_index}][body]", part.body, :rows => 20, :class => 'raptor-preset-element widest' %>
+
+  <%= cktext_area "page[parts_attributes][#{part_index}]", "body", :value => part.body, :rows => 40, :ckeditor => {:language => 'zh-cn'}%>
+
   <%= hidden_field_tag "page[parts_attributes][#{part_index}][position]", part_index %>
 </div>

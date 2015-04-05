@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Cooperations::Admin::CooperationsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.cooperations_admin_cooperations_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_cooperations_admin_cooperation_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Cooperations::Admin::CooperationsController.sortable? && ::Refinery::Cooperations::Cooperation.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Cooperations"),
+                 refinery.cooperations_admin_cooperations_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Cooperations"),
+                 refinery.cooperations_admin_cooperations_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
