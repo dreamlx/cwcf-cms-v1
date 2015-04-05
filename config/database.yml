@@ -7,7 +7,7 @@ development:
   encoding: utf8
   adapter: mysql2
   host: localhost
-  database: cwcf_pro
+  database: cwcf_dev
   username: root
   password: deploy
   encoding: utf8
