@@ -17,7 +17,9 @@
                 </div>
                 <div class="date1">
                   <span>
-                    时间：<%= news_item.created_at.localtime.strftime('%Y年%m月%d日').to_s %>
+<!--                     时间：<%= news_item.created_at.localtime.strftime('%Y年%m月%d日').to_s %> -->
+<% cookies.permanent[:visit_count].nil? ? cookies.permanent[:visit_count] = 0 : cookies.permanent[:visit_count] += 1 %>
+                    阅读数：<%= cookies.permanent[:visit_count] %>
                   </span>
                 </div>
                 <div class="blog-pre"><%=raw news_item.content_for(:body) %></div>

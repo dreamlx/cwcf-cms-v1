@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141230063950) do
+ActiveRecord::Schema.define(:version => 20150406100956) do
 
   create_table "blanks", :force => true do |t|
     t.string   "co_name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20141230063950) do
     t.datetime "updated_at",   :null => false
     t.string   "status"
     t.integer  "user_id"
+    t.string   "co_en_name"
+    t.string   "co_en_add"
   end
 
   create_table "carts", :force => true do |t|
