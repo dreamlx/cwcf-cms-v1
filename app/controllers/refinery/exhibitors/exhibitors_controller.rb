@@ -7,7 +7,7 @@ module Refinery
 
       def index
         fiter = params[:place_name]
-        @exhibitors = Exhibitor.where("title like '%#{fiter}%'").paginate(:page => params[:page], :per_page => 10)
+        @exhibitors = Exhibitor.where("title like '%#{fiter}%'").paginate(:page => params[:page], :per_page => 20)
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @exhibitor in the line below:
         present(@page)
@@ -24,7 +24,7 @@ module Refinery
     protected
 
       def find_all_exhibitors
-        @exhibitors = Exhibitor.order('title ASC').paginate(:page => params[:page], :per_page => 10)
+        @exhibitors = Exhibitor.order('title ASC').paginate(:page => params[:page], :per_page => 20)
       end
 
       def find_page
