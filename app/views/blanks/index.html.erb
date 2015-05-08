@@ -1,6 +1,6 @@
 
   <div class='blanks_body'>
-    <h1 id='body_content_title'>表单申请列表 <a href="/refinery" class="return-admin">Admin</a></h1>
+    <h2 id='body_content_title'>表单申请列表 <a href="/refinery" class="return-admin button">返回Admin</a></h2>
     <input name="authenticity_token" id="authenticity_token" type="hidden" value="<%= form_authenticity_token() %>">
     <div class="blanks-filter">
       <h4>过滤器</h4>
@@ -26,10 +26,17 @@
         <dd class="filter-item"><input id="btnButtonReg" type="submit" value="确定"></dd>
       </form>
     </div>
-    <section id='blanks'>
-      <table>
+    <section id='blanks' >
+
+      <div style='overflow-x:scroll; width:100%'>
+      <h5 style="float:left; color:red">横向滚动查看更多</h5>
+      <table width="2900px" >
         <tr>
           <th>ID</th>
+          <th>申请状态</th>
+          <th>更改状态</th>
+          <th></th>
+          <th></th>
           <th>申请类型</th>
           <th>公司名称</th>
           <th>comany name</th>
@@ -45,15 +52,31 @@
           <th>国籍</th>
           <th>记者（媒体类型）</th>
           <th>公司传真</th>
-          <th>申请状态</th>
-          <th>更改状态</th>
-          <th></th>
-          <th></th>
+          
         </tr>
 
         <% @blanks.each do |blank| %>
         <tr>
           <td><%= blank.id %></td>
+          <td id="status_<%= blank.id %>">
+            <% if blank.status == "applied" %>
+              申请中
+            <% elsif blank.status == "accepted" %>
+              已通过
+            <% else %>
+              已拒绝
+            <% end %>
+          </td>
+          <td>
+            <select name="blank[status]" id="select_<%= blank.id %>">
+              <option value="applied">申请中</option>
+              <option value="accepted">已通过</option>
+              <option value="denied">被拒绝</option>
+            </select>
+          </td>
+          <!-- <td><%= link_to '查看', blank %></td> -->
+          <td><a href="javascript:;" class="update_btn" data-id="<%= blank.id %>">更新</a></td>
+          <td><%= link_to '删除', blank, method: :delete, data: { confirm: '确定删除?' } %></td>
           <td><% blank.apply_type %>
             <% if blank.apply_type == "ex_apply" %>
             参展商
@@ -75,28 +98,12 @@
           <td><%= blank.country %></td>
           <td><%= blank.media_type %></td>
           <td><%= blank.co_fax %></td>
-          <td id="status_<%= blank.id %>">
-						<% if blank.status == "applied" %>
-							申请中
-						<% elsif blank.status == "accepted" %>
-							已通过
-						<% else %>
-							已拒绝
-						<% end %>
-					</td>
-          <td>
-            <select name="blank[status]" id="select_<%= blank.id %>">
-              <option value="applied">申请中</option>
-              <option value="accepted">已通过</option>
-              <option value="denied">被拒绝</option>
-            </select>
-          </td>
-          <!-- <td><%= link_to '查看', blank %></td> -->
-          <td><a href="javascript:;" class="update_btn" data-id="<%= blank.id %>">更新</a></td>
-          <td><%= link_to '删除', blank, method: :delete, data: { confirm: '确定删除?' } %></td>
+          
+          
         </tr>
         <% end %>
       </table>
+      </div>
     </section>
   </div>
 

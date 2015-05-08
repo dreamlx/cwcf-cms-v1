@@ -1,0 +1,89 @@
+
+<% cookies[:visit_count].nil? ? cookies[:visit_count] = 350 : cookies[:visit_count] %>
+<div class='show_container'>
+  <div class='show_body'>
+    <h1 id='body_content_title'><%=raw @page.title() %></h1>
+
+    <ul class="tab-5">
+        <li class="first hover">
+          <a href="/event/cwcf-fm/关于论坛">
+            <span class="arrow-c" style='width: 150px'>关于论坛</span>
+
+          </a>
+        </li>
+        <li class="first hover">
+          <a href="/event/cwcf-fm/论坛服务">
+            <span class="arrow-c " style='width: 150px'>论坛服务</span>
+            <span class="arrow-r">&#160;</span>
+          </a>
+        </li>
+        <li class="first hover">
+          <a href="/event/cwcf-fm/媒体报道">
+            <span class="arrow-l">&#160;</span>
+            <span class="arrow-c " style='width: 150px'>媒体报道</span>
+            
+          </a>
+        </li>
+        <li class="first hover">
+          <a href="/event/cwcf-fm/历届回顾">
+            <span class="arrow-c " style='width: 150px'>历届回顾</span>
+            
+          </a>
+        </li>
+      </ul>
+    <section id='body'>
+      <ul class="news-list">
+        <% (::Refinery::Page.where(:parent_id => @page.id )).order('lft ASC').each do |news_item| %>
+            <li>
+              <div class="blog-list-pic" style="background: url(<%= news_item.page_avatar.url if news_item.page_avatar -%>) no-repeat center;background-size:cover;">
+              </div>
+              <div class="blog-list-content">
+                <div class="h3-tit1">
+                  <h3>
+                    <a href='<%= refinery.url_for(news_item.url_marketable) %>'>
+                      <%= news_item.title() %>
+                    </a>
+                  </h3>
+                </div>
+                <div class="date1">
+                  
+                  阅读数：<%= cookies[:visit_count].to_i + rand(100).to_i %>
+
+                  <!-- <span>
+                    时间：<%= news_item.created_at.localtime.strftime('%Y年%m月%d日').to_s %>
+                  </span> -->
+                </div>
+                <div class="blog-pre"><%=raw news_item.content_for(:body) %></div>
+              </div>
+            </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+
+<div style="text-align: right;"><span style="font-size:18.7199993133545px"><strong><a href="http://121.41.26.127/event/cwcf-fm/关于论坛">关于论坛</a></strong></span></div>
+
+<div style="text-align: right;">&nbsp;</div>
+
+<div style="text-align: right;"><span style="font-size:18.7199993133545px"><strong><a href="http://121.41.26.127/event/cwcf-fm/论坛服务">论坛服务</a></strong></span></div>
+
+<div style="text-align: right;">&nbsp;</div>
+
+<div style="text-align: right;"><span style="font-size:18.7199993133545px"><strong><a href="http://121.41.26.127/event/cwcf-fm/媒体报道">媒体报道</a></strong></span></div>
+
+<div style="text-align: right;">&nbsp;</div>
+
+<div style="text-align:right"><strong><a href="http://121.41.26.127/event/cwcf-fm/%E5%8E%86%E5%B1%8A%E5%9B%9E%E9%A1%BE">历届回顾</a></strong></div>
+
+<% content_for :stylesheets do %>
+<% if @page.background_image.present? %>
+<style type="text/css">
+body {
+  background: url(<%= @page.background_image.url -%>) no-repeat fixed;
+  background-size:cover;
+}
+</style>
+<% end %>
+<% end %>
