@@ -75,7 +75,7 @@
             </select>
           </td>
           <!-- <td><%= link_to '查看', blank %></td> -->
-          <td><a href="javascript:;" class="update_btn" data-id="<%= blank.id %>">更新</a></td>
+          <td><a href="javascript:;" class="update_btn btn" data-id="<%= blank.id %>">更新</a></td>
           <td><%= link_to '删除', blank, method: :delete, data: { confirm: '确定删除?' } %></td>
           <td><% blank.apply_type %>
             <% if blank.apply_type == "ex_apply" %>

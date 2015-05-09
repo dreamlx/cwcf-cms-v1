@@ -629,6 +629,7 @@ $(function () {
           processData: false,
           contentType: "application/json; charset=UTF-8",
           success: function(data) {
+
             var status_str = "";
             if (data.blank.status == "applied") {
               status_str = "申请中";
@@ -637,6 +638,8 @@ $(function () {
             } else {
               status_str = "已拒绝";
             }
+
+            alert('申请状态改变了:' + status_str);
             $("#status_" + _this.dataset.id).text(status_str);
           },
           error: function(errors){
