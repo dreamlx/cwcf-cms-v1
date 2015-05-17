@@ -41,11 +41,12 @@ class VipersController < ApplicationController
   # POST /vipers.json
   def create
     @viper = Viper.new(params[:viper])
+
     @viper.status = "applied"
 
     respond_to do |format|
       if @viper.save
-        BlankMailer.apply(@viper).deliver
+        ViperMailer.apply(@viper).deliver
         if (@viper.app_type == "vip")
           format.html { redirect_to "/audience/vipclub/vip_apply_succ"}
         else
@@ -66,10 +67,10 @@ class VipersController < ApplicationController
     @viper = Viper.find(params[:id])
         
     if @viper.update_attributes(params[:viper])
-      BlankMailer.confirm(@blank).deliver
+      ViperMailer.confirm(@viper).deliver
       render json: { viper: @viper }, status: 201, message: '更新成功', :callback => params['callback']
     else
-      BlankMailer.deny(@blank).deliver
+      ViperMailer.deny(@viper).deliver
       render json: { viper: @viper }, status: 400, message: '更新失败，请联系管理员', :callback => params['callback']
     end
     # respond_to do |format|
