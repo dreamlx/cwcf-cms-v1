@@ -10,7 +10,7 @@ class ViperMailer < ActionMailer::Base
   #
   def confirm(viper)
     @viper = viper
-    if @viper.apply_type == "vip"
+    if @viper.app_type == "vip"
       mail(to: @viper.email,
           subject: "您的参展申请已经审核通过",
           from: "fair@ewatch.cn",
@@ -44,7 +44,7 @@ class ViperMailer < ActionMailer::Base
 
   def apply(viper)
     @viper = viper
-    if @viper.apply_type == "vip"
+    if @viper.app_type == "vip"
       mail(to: @viper.email, subject: "申请参展确认函", date: Time.now)
     else
       mail( to: @viper.email,
@@ -57,7 +57,7 @@ class ViperMailer < ActionMailer::Base
 
   def deny(viper)
     @viper = viper
-    if @viper.apply_type == "vip"
+    if @viper.app_type == "vip"
       mail(to: @viper.email, subject: "您的申请没有通过审核", date: Time.now,
         body: "您好，很抱歉，您所提交的信息不详细，请重新申请。
 
