@@ -45,7 +45,8 @@ class BlankMailer < ActionMailer::Base
   def apply(blank)
     @blank = blank
     if @blank.apply_type == "ex_apply"
-      mail(to: @blank.email, subject: "申请参展确认函", date: Time.now)
+      mail(to: @blank.email, subject: "申请参展确认函", date: Time.now, body: "亲爱的朋友：
+您的申请我们已经收到了 请耐心等待回复")
     else
       mail( to: @blank.email,
             subject: "记者证申请确认",

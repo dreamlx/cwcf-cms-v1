@@ -45,7 +45,9 @@ class ViperMailer < ActionMailer::Base
   def apply(viper)
     @viper = viper
     if @viper.app_type == "vip"
-      mail(to: @viper.email, subject: "申请参展确认函", date: Time.now)
+      mail(to: @viper.email, subject: "申请参展确认函", date: Time.now,
+        body: "亲爱的朋友：
+您的申请我们已经收到了 请耐心等待回复")
     else
       mail( to: @viper.email,
             subject: "申请确认",
